@@ -1,0 +1,116 @@
+
+{% extends "layout.html" %}
+
+
+    
+{% block beforeContent %}
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+                alpha
+            </strong>
+            <span class="govuk-phase-banner__text">
+                This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+            </span>
+        </p>
+    </div>
+  <a class="govuk-back-link" href="/">Back</a>
+{% endblock %}
+    
+    
+{% block content %}
+    
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl">Defence Home</h1>
+
+                {{ govukTable({
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: false,
+                head: [
+                    {
+                        text: "Dataset ID",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "Matrix Ref",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "Martix ID",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "User ID",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "Created on",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "Reval Text File",
+                        classes: 'col-one-seventh'
+                    },
+                    {
+                        text: "Defence Text File",
+                        classes: 'col-one-seventh'
+                    }
+                ],
+                rows: [
+                    [
+                    {
+                        text: "First 6 weeks"
+                    },
+                    {
+                        text: "£109.80 per week"
+                    },
+                    {
+                        text: "£59.10 per week"
+                    }
+                    ],
+                    [
+                    {
+                        text: "Next 33 weeks"
+                    },
+                    {
+                        text: "£159.80 per week"
+                    },
+                    {
+                        text: "£89.10 per week"
+                    }
+                    ],
+                    [
+                    {
+                        text: "Total estimated pay"
+                    },
+                    {
+                        text: "£4,282.20"
+                    },
+                    {
+                        text: "£2,182.20"
+                    }
+                    ],
+                    [
+                    {
+                        text: "Another Row"
+                    },
+                    {
+                        text: "£4,282.20"
+                    },
+                    {
+                        text: "£2,182.20"
+                    }
+                    ]
+                ]
+                }) }}
+                
+
+                {{ govukButton({
+                text: "Create new dataset",
+                href: "create-new-dataset"
+                }) }}
+        </div>
+    </div>
+{% endblock %}
