@@ -18,9 +18,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Set CCA Reference
-    </h1>
+
+    <form action="/form-handler" method="post" novalidate>
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "text-file-type",
+        name: "text-file-type",
+        fieldset: {
+          legend: {
+            text: "Set Reval or Defence Text File",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select one of the options below."
+        },
+        items: [
+          {
+            value: "reval",
+            text: "Reval"
+          },
+          {
+            value: "defence",
+            text: "Defence"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
 
   </div>
 </div>

@@ -18,9 +18,24 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Set CCA Reference
-    </h1>
+
+    <form action="/form-handler" method="post" novalidate>
+      {{ govukInput({
+        label: {
+          text: "Set CDB Case Number",
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        classes: "govuk-input--width-20",
+        id: "cdb-case-num",
+        name: "cdb-case-num"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
 
   </div>
 </div>
