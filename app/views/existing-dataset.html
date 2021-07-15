@@ -14,7 +14,7 @@
             </span>
         </p>
     </div>
-    <a class="govuk-back-link" href="/">Back</a>
+    <a class="govuk-back-link" href="/defence-home">Back</a>
 {% endblock %}
     
     
@@ -23,7 +23,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <h1 class="govuk-heading-xl">Defence Home</h1>
+            <h1 class="govuk-heading-xl">Dataset abc_123</h1>
 
                 {{ govukTable({
                 captionClasses: "govuk-table__caption--m",
@@ -50,11 +50,11 @@
                         classes: 'col-one-eighth'
                     },
                     {
-                        text: "Reval Text File",
+                        text: " ",
                         classes: 'col-one-eighth'
                     },
                     {
-                        text: "Defence Text File",
+                        text: " ",
                         classes: 'col-one-eighth'
                     },
                     {
@@ -80,13 +80,13 @@
                             text: "Date here"
                         },
                         {
-                            text: "Y/N"
+                            html: "<a href='#'>Analyse Data</a>"
                         },
                         {
-                            text: "Y/N"
+                            html: "<a href='#'>Refresh Data</a>"
                         },
                         {
-                            html: "<a href='/existing-dataset'>Open</a>"
+                            html: "<a href='#'>Complete Process</a>"
                         }
                     ]
                     
@@ -95,8 +95,8 @@
                 
 
                 {{ govukButton({
-                text: "Create new dataset",
-                href: "create-new-dataset"
+                text: "Get Comparable Data",
+                href: "get-comparable-data"
                 }) }}
         </div>
     </div>
