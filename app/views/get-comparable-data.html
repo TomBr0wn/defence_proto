@@ -31,35 +31,23 @@
                 head: [
                     {
                         text: "Dataset ID",
-                        classes: 'col-one-eighth'
+                        classes: 'col-one-fifth'
                     },
                     {
                         text: "Matrix Ref",
-                        classes: 'col-one-eighth'
+                        classes: 'col-one-fifth'
                     },
                     {
                         text: "Martix ID",
-                        classes: 'col-one-eighth'
+                        classes: 'col-one-fifth'
                     },
                     {
                         text: "User ID",
-                        classes: 'col-one-eighth'
+                        classes: 'col-one-fifth'
                     },
                     {
                         text: "Created on",
-                        classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
+                        classes: 'col-one-fifth'
                     }
                 ],
                 rows: [
@@ -78,15 +66,6 @@
                         },
                         {
                             text: "Date here"
-                        },
-                        {
-                            html: "<a href='#'>Analyse Data</a>"
-                        },
-                        {
-                            html: "<a href='#'>Refresh Data</a>"
-                        },
-                        {
-                            html: "<a href='#'>Complete Process</a>"
                         }
                     ]
                     
@@ -106,7 +85,7 @@
                       {{ data['compare-date'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a href="#">
+                      <a href="compare-date">
                         Change
                         <span class="govuk-visually-hidden"> date</span>
                       </a>
@@ -121,7 +100,7 @@
                       {{ data['compare-postcode'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a href="#">
+                      <a href="compare-postcode">
                         Change
                         <span class="govuk-visually-hidden"> postcode</span>
                       </a>
@@ -136,7 +115,7 @@
                       {{ data['compare-street'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                      <a href="#">
+                      <a href="compare-street">
                         Change
                         <span class="govuk-visually-hidden"> street</span>
                       </a>

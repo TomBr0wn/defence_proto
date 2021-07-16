@@ -20,6 +20,11 @@ $govuk-assets-path: "/govuk/assets/";
 }
 
 // Custom Table columns
+
+.col-one-fifth {
+    width: 20%;
+}
+
 .col-one-sixth {
     width: 16.666%;
 }
@@ -34,4 +39,28 @@ $govuk-assets-path: "/govuk/assets/";
 
 .col-one-twelfth {
     width: 8.333%;
+}
+
+
+// Grid settings for analyse
+
+.grid-parent {
+	display: -ms-grid;
+	display: grid;
+	// IE prefixes
+	-ms-grid-columns: 5fr 20fr;
+	-ms-grid-rows: 1fr;
+	grid-template-columns: 5fr 20fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.first-grid-col {
+	-ms-grid-column: 1;
+	padding-right: 2rem;
+}
+
+.second-grid-col {
+	-ms-grid-column: 2;
 }
