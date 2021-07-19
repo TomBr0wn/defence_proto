@@ -26,6 +26,21 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Dataset ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['dataset-id'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="/create-dataset-id">
+            Change
+            <span class="govuk-visually-hidden"> dataset id</span>
+          </a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           CCA Reference
         </dt>
         <dd class="govuk-summary-list__value">
@@ -34,7 +49,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/create-cca-ref">
             Change
-            <span class="govuk-visually-hidden"> name</span>
+            <span class="govuk-visually-hidden"> cca reference</span>
           </a>
         </dd>
       </div>
@@ -49,7 +64,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/create-cdb-case">
             Change
-            <span class="govuk-visually-hidden"> date of birth</span>
+            <span class="govuk-visually-hidden"> cdb case</span>
           </a>
         </dd>
       </div>
@@ -64,7 +79,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="/create-matrix-ref">
             Change
-            <span class="govuk-visually-hidden"> contact information</span>
+            <span class="govuk-visually-hidden"> matrix reference</span>
           </a>
         </dd>
       </div>
@@ -79,7 +94,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="create-text-file">
             Change
-            <span class="govuk-visually-hidden"> contact details</span>
+            <span class="govuk-visually-hidden"> reval or defence text file</span>
           </a>
         </dd>
       </div>
