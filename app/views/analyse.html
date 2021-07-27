@@ -25,26 +25,30 @@
         <div class="grid-parent">
             <div class="first-grid-col govuk-!-margin-right-1">
                 <!-- Start of nav -->
-                <h2 class="govuk-heading-s">Summary</h2>
-                <hr class="govuk-section-break govuk-section-break--visible" />
-                <ul class="govuk-list govuk-list--spaced govuk-!-font-size-19 govuk-!-margin-top-3 sideNavSpacer">
-                    <li>
-                        <span class="blueLeftBorder"></span>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/properties_landing_tabs">Hereditaments</a>
-                    </li>
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/matrices_landing_tabs">Rentals</a>
-                    </li>
-                </ul>
-                <ul class="govuk-list govuk-list--spaced govuk-!-font-size-19 govuk-!-margin-top-3 sideNavSpacer">
-                    <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/rentals_landing_tabs">Cases</a>
-                    </li>
-                </ul>
-                <hr class="govuk-section-break govuk-section-break--visible" />
-                <!-- <form action="">
-            <button class="govuk-button govuk-button--secondary govuk-!-margin-top-6" data-module="govuk-button" formaction="/matrices_landing">Start valuation</button>
-        </form> -->
+                
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-third">
+                  
+                      {{ mojSideNavigation({
+                        label: 'Side navigation',
+                        items: [{
+                          text: 'Nav item 1',
+                          href: '#1',
+                          active: true
+                        }, {
+                          text: 'Nav item 2',
+                          href: '#2'
+                        }, {
+                          text: 'Nav item 3',
+                          href: '#3'
+                        }]
+                      }) }}
+                  
+                    </div>
+                  
+                  </div>
+                
 
                 <!-- End of Nav -->
             </div>
@@ -79,19 +83,19 @@
                     </ul>
                     <div class="govuk-tabs__panel" id="properties-dash">
                         <!-- <h2 class="govuk-heading-l">Overview</h2> -->
-                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/pbi-16-9-dash.png" />
+                        <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="https://via.placeholder.com/256x144.jpg/0000FF/808080"/>
                     </div>
                     <div class="govuk-tabs__panel" id="properties-map">
                         <!-- <h2 class="govuk-heading-l">Properties</h2> -->
-                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/pbi-16-9-props-controls.jpg" />
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
                     </div>
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-map">
                         <!-- <h2 class="govuk-heading-l">Properties & Rentals</h2> -->
-                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/pbi-16-9-rentals-controls.jpg" />
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
                     </div>
                     <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-table">
                         <!-- <h2 class="govuk-heading-l">Assessment Data & Rental Evidence</h2> -->
-                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/pbi-16-9-table-controls.jpg" />
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
                     </div>
                 </div>
                 <!---------- END OF TABS ----------->
