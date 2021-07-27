@@ -23,7 +23,7 @@
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <h1 class="govuk-heading-xl">Dataset abc_123</h1>
+            <h1 class="govuk-heading-xl">Complete Process</h1>
             <h2 class="govuk-heading-m">Details</h2>
 
                 {{ govukTable({
@@ -49,18 +49,6 @@
                     {
                         text: "Created on",
                         classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
-                    },
-                    {
-                        text: " ",
-                        classes: 'col-one-eighth'
                     }
                 ],
                 rows: [
@@ -79,26 +67,31 @@
                         },
                         {
                             text: "Date here"
-                        },
-                        {
-                            html: "<a href='analyse'>Analyse Data</a>"
-                        },
-                        {
-                            html: "<a href='#'>Refresh Data</a>"
-                        },
-                        {
-                            html: "<a href='complete-process'>Complete Process</a>"
                         }
                     ]
                     
                 ]
                 }) }}
                 
-
-                {{ govukButton({
-                text: "Get Comparable Data",
-                href: "get-comparable-data"
-                }) }}
+                <div class="govuk-button-group">
+                    {{ govukButton({
+                        text: "Create new text file",
+                        classes: "govuk-button--primary",
+                        href: "complete-process-new-textfile"
+                    }) }}
+                  
+                    {{ govukButton({
+                      text: "Upload to CDB and Link Matrix",
+                      classes: "govuk-button--secondary",
+                      href: "complete-process-upload-cbd"
+                    }) }}
+                    
+                    {{ govukButton({
+                        text: "Upload Comparable Data and Link Matrix",
+                        classes: "govuk-button--secondary",
+                        href: "complete-process-upload-comparable"
+                      }) }}
+                  </div>
         </div>
     </div>
 {% endblock %}
