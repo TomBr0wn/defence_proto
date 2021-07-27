@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Nav item 1',
+      href: '#1',
+      active: true
+    },
+    {
+      text: 'Nav item 2',
+      href: '#2'
+    },
+    {
+      text: 'Nav item 3',
+      href: '#3'
+    }
+  ]
+}) }}
+<a class="govuk-back-link" href="existing-dataset">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-xl">Analyse: Dataset abc_123</h1>
+            </div>
+        </div>
+
+        <div class="second-grid-col">
+            <form action="">
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button" formaction="/filters">Filter Dataset</button>
+                    <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-top-6" data-module="govuk-button" formaction="/matrices_landing">Start valuation</button> -->
+                    <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="/matrices_landing">Start valuation</button> -->
+                    <!-- <a class="govuk-link govuk-link--no-visited-state" href="properties_powerbi_table.html">View Power BI table</a> -->
+                </div>
+            </form>
+            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">Filters Selected:</p>
+            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">None</p>
+
+        </div>
+        <!---------- START OF TABS ----------->
+        <div class="govuk-tabs govuk-!-margin-top-6" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">Contents</h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#properties-dash">Report 1</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#properties-map">Report 2</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#mixed-map">Report 3</a>
+                </li>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#mixed-table">Report 4</a>
+                </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="properties-dash">
+                <!-- <h2 class="govuk-heading-l">Overview</h2> -->
+                <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="https://via.placeholder.com/256x144.jpg/0000FF/808080" />
+            </div>
+            <div class="govuk-tabs__panel" id="properties-map">
+                <!-- <h2 class="govuk-heading-l">Properties</h2> -->
+                <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-map">
+                <!-- <h2 class="govuk-heading-l">Properties & Rentals</h2> -->
+                <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-table">
+                <!-- <h2 class="govuk-heading-l">Assessment Data & Rental Evidence</h2> -->
+                <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="" />
+            </div>
+        </div>
+        <!---------- END OF TABS ----------->
+
+        <!-- </div> end of grid parent -->
+    </main>
+</div>
+{% endblock %}
+</body>
+
+</html>
