@@ -153,12 +153,19 @@
             </tbody>
         </table>
 
-
-
-        {{ govukButton({
+        <div class="govuk-button-group">
+            {{ govukButton({
                 text: "Add remark",
-                href: "analyse-hereditaments-remark"
-                }) }}
+                classes: "govuk-button--primary",
+                href: "analyse-hereditaments-add-remark"
+            }) }}
+
+            {{ govukButton({
+                text: "Create Schedule",
+                classes: "govuk-button--secondary",
+                href: "analyse-hereditaments-create-schedule"
+            }) }}
+        </div>
     </div>
 </div>
 {% endblock %}
