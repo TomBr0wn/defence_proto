@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body> {% extends "layout.html" %} {% block pageTitle %} Add remark to hereditament {% endblock %} {% block content %}
+    <div class="govuk-width-container">
+        <a class="govuk-back-link" href="/matrix_hereditaments">Back</a>
+        <main class="govuk-main-wrapper">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">Add remark to hereditament(s)</h1>
+                </div>
+            </div>
+            <!-------------------------- FORM ------------------------->
+            <form action="">
+
+                <div class="govuk-form-group">
+
+                    <div class="govuk-form-group">
+                        <h3 class="govuk-heading-m">User ID: abcd1234</h3>
+                    </div>
+
+                    <textarea class="govuk-textarea govuk-!-width-one-half " id="add-a-comment " name="add-a-comment " rows="8 " aria-describedby="add-a-comment-hint "></textarea>
+                </div>
+
+                <div class="govuk-button-group ">
+                    <button formaction="/matrix_hereditaments_overwrite_warning" class="govuk-button " data-module="govuk-button ">Save remark</button>
+                    <a class="govuk-link" href="/matrix_hereditaments">Cancel</a>
+                </div>
+
+            </form>
+
+            <!--------------------- START OF TABLE ----------------------------->
+
+
+            <table class="govuk-table govuk-!-margin-right-9 govuk-!-font-size-16 ">
+                <thead class="govuk-table__head ">
+                    <tr class="govuk-table__row ">
+                        <th scope="col " class="govuk-table__header col-one-twelfth">Survey unit address</th>
+                        <th scope="col " class="govuk-table__header col-two-twelfth">Existing remark</th>
+                        <th scope="col " class="govuk-table__header col-one-twelfth">Remark last updated by:</th>
+                        <th scope="col " class="govuk-table__header col-one-twelfth">Remark last updated on:</th>
+                        <th scope="col " class="govuk-table__header col-two-twelfth">Property attributes</th>
+                        <th scope="col " class="govuk-table__header col-three-twelfth">Survey details</th>
+                        <th scope="col " class="govuk-table__header col-one-twelfth">&nbsp;</th>
+                        <th scope="col " class="govuk-table__header col-one-twelfth">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body ">
+                    <tr class="govuk-table__row ">
+                        <td class="govuk-table__cell ">22 Roman Rd, Leeds, LS2 8ZE</td>
+                        <td class="govuk-table__cell ">I'm always relieved when someone is delivering a eulogy and I realise I'm listening to it.<br><br>
+                            <span class="govuk-!-font-weight-bold ">{{ data['add-a-comment'] }}</span>
+                        </td>
+                        <td class="govuk-table__cell ">Craig E Warner</td>
+                        <td class="govuk-table__cell ">10/04/2017</td>
+                        <td class="govuk-table__cell ">
+                            <ul>
+                                <li>Some attribute</li>
+                                <li>Another attribute</li>
+                                <li>Yet another etc</li>
+                            </ul>
+                        </td>
+                        <td class="govuk-table__cell ">Some survey details</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link" href="/matrix_hereditaments_owner_edit">Edit remark</a>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link" href="/matrix_hereditaments_owner_delete">Delete remark</a>
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row ">
+                        <td class="govuk-table__cell ">38 Park Square North, Leeds, LS1 2NY</td>
+                        <td class="govuk-table__cell ">I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing.<br><br>
+                            <span class="govuk-!-font-weight-bold ">{{ data['add-a-comment'] }}</span>
+                        </td>
+                        <td class="govuk-table__cell ">Rufus Obrien</td>
+                        <td class="govuk-table__cell ">16/04/2020</td>
+                        <td class="govuk-table__cell ">
+                            <ul>
+                                <li>Some attribute</li>
+                                <li>Another attribute</li>
+                                <li>Yet another etc</li>
+                            </ul>
+                        </td>
+                        <td class="govuk-table__cell ">Some survey details</td>
+                        <td class="govuk-table__cell ">&nbsp;</td>
+                        <td class="govuk-table__cell ">&nbsp;</td>
+                    </tr>
+                    <tr class="govuk-table__row ">
+                        <td class="govuk-table__cell ">83 Albion Street, Leeds, LS1 5AP</td>
+                        <td class="govuk-table__cell ">Outstanding work, well-written and informational as well, thank you author for this masterpiece.<br> {{ data['add-a-comment'] }}</td>
+                        <td class="govuk-table__cell ">Jane Dillon</td>
+                        <td class="govuk-table__cell ">16/04/2018</td>
+                        <td class="govuk-table__cell ">
+                            <ul>
+                                <li>Some attribute</li>
+                                <li>Another attribute</li>
+                                <li>Yet another etc</li>
+                            </ul>
+                        </td>
+                        <td class="govuk-table__cell ">Some survey details</td>
+                        <td class="govuk-table__cell ">&nbsp;</td>
+                        <td class="govuk-table__cell ">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- </div> -->
+            <!-- </div> end of grid parent -->
+
+
+
+            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link " href="#top "><svg role="presentation " focusable="false " class="app-back-to-top__icon " xmlns="http://www.w3.org/2000/svg " width="13 " height="17 " viewBox="0 0 13 17 "><path fill="currentColor " d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z "></path></svg>   Back to top</a>
+
+        </main>
+    </div> {% endblock %} </body>
+
+</html>
