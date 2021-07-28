@@ -1,13 +1,48 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-    <title></title>
-</head>
 
-<body> {% extends "layout.html" %} {% block pageTitle %} Add remark to hereditament {% endblock %} {% block content %}
+
+{% block beforeContent %}
+<!-- <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div> -->
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Hereditaments',
+      href: 'analyse-hereditaments.html',
+      active: true
+    },
+    {
+      text: 'Rentals',
+      href: 'analyse-rentals.html'
+    },
+    {
+      text: 'Cases',
+      href: 'analyse-cases.html'
+    }
+  ]
+}) }}
+
+<a class="govuk-back-link" href="/analyse-hereditaments">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
     <div class="govuk-width-container">
-        <a class="govuk-back-link" href="/matrix_hereditaments">Back</a>
+        
         <main class="govuk-main-wrapper">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
@@ -114,7 +149,10 @@
 
 
 
-            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link " href="#top "><svg role="presentation " focusable="false " class="app-back-to-top__icon " xmlns="http://www.w3.org/2000/svg " width="13 " height="17 " viewBox="0 0 13 17 "><path fill="currentColor " d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z "></path></svg>   Back to top</a>
+            <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link " href="#top "><svg role="presentation " focusable="false " class="app-back-to-top__icon " xmlns="http://www.w3.org/2000/svg " width="13 " height="17 "
+                    viewBox="0 0 13 17 ">
+                    <path fill="currentColor " d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z "></path>
+                </svg> Back to top</a>
 
         </main>
     </div> {% endblock %} </body>
