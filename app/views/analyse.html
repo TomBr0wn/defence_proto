@@ -1,6 +1,4 @@
-{% extends "layout.html" %}
-
-{% block beforeContent %}
+{% extends "layout.html" %} {% block beforeContent %}
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -11,10 +9,7 @@
         </span>
     </p>
 </div>
-<a class="govuk-back-link" href="existing-dataset">Back</a>
-{% endblock %}
-
-{% block content %}
+<a class="govuk-back-link" href="existing-dataset">Back</a> {% endblock %} {% block content %}
 <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
@@ -30,20 +25,20 @@
                 <ul class="govuk-list govuk-list--spaced govuk-!-font-size-19 govuk-!-margin-top-3 sideNavSpacer">
                     <li>
                         <span class="blueLeftBorder"></span>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/properties_landing_tabs">Hereditaments</a>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/hereditaments">Hereditaments</a>
                     </li>
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/matrices_landing_tabs">Rentals</a>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/rentals">Rentals</a>
                     </li>
                 </ul>
                 <ul class="govuk-list govuk-list--spaced govuk-!-font-size-19 govuk-!-margin-top-3 sideNavSpacer">
                     <li>
-                        <a class="govuk-link govuk-link--no-visited-state" href="/rentals_landing_tabs">Cases</a>
+                        <a class="govuk-link govuk-link--no-visited-state" href="/cases">Cases</a>
                     </li>
                 </ul>
                 <hr class="govuk-section-break govuk-section-break--visible" />
-                
-                
+
+
 
                 <!-- End of Nav -->
             </div>
@@ -78,7 +73,7 @@
                     </ul>
                     <div class="govuk-tabs__panel" id="properties-dash">
                         <!-- <h2 class="govuk-heading-l">Overview</h2> -->
-                        <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="https://via.placeholder.com/256x144.jpg/0000FF/808080"/>
+                        <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="https://via.placeholder.com/256x144.jpg/0000FF/808080" />
                     </div>
                     <div class="govuk-tabs__panel" id="properties-map">
                         <!-- <h2 class="govuk-heading-l">Properties</h2> -->
