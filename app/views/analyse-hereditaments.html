@@ -3,7 +3,7 @@
 
 
 {% block beforeContent %}
-<!-- <div class="govuk-phase-banner">
+<div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
             alpha
@@ -12,30 +12,10 @@
             This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
         </span>
     </p>
-</div> -->
+</div>
 
-{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
-{{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Hereditaments',
-      href: 'analyse-hereditaments.html',
-      active: true
-    },
-    {
-      text: 'Rentals',
-      href: 'analyse-rentals.html'
-    },
-    {
-      text: 'Cases',
-      href: 'analyse-cases.html'
-    }
-  ]
-}) }}
-
-<a class="govuk-back-link" href="/analyse-flat">Back</a>
+<a class="govuk-back-link" href="/analyse">Back</a>
 {% endblock %}
 
 
