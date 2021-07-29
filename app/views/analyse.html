@@ -1,4 +1,5 @@
-{% extends "layout.html" %} {% block beforeContent %}
+{% extends "layout.html" %}
+{% block beforeContent %}
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -9,7 +10,9 @@
         </span>
     </p>
 </div>
-<a class="govuk-back-link" href="existing-dataset">Back</a> {% endblock %} {% block content %}
+<a class="govuk-back-link" href="existing-dataset">Back</a>
+{% endblock %}
+{% block content %}
 <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
@@ -43,12 +46,14 @@
 
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-quarter">
+                <!-- <h3 class="govuk-heading-m">Categories</h3> -->
 
                 {{ mojSideNavigation({
                         label: 'Side navigation',
                         items: [{
                             text: 'Hereditaments',
-                            href: 'analyse-hereditaments.html'
+                            href: 'analyse-hereditaments.html',
+                            active: 'true'
                         }, {
                             text: 'Rentals',
                             href: 'analyse-rentals.html'
@@ -58,15 +63,15 @@
                         }]
                         }) }}
             </div>
-        
 
 
 
-        <!-- End of Nav -->
 
-        
+            <!-- End of Nav -->
+
+
             <div class="govuk-grid-column-three-quarters">
-                
+
                 <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">Filters Selected:</p>
                 <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">None</p>
 
