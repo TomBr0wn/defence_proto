@@ -16,7 +16,7 @@
 
 
 
-<a class="govuk-back-link" href="/analyse-hereditaments">Back</a>
+<a class="govuk-back-link" href="/analyse-hereditaments-add-remark">Back</a>
 {% endblock %}
 
 
@@ -27,31 +27,31 @@
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Add remark to hereditament(s)</h1>
-            </div>
-        </div>
-        <!-------------------------- FORM ------------------------->
-        <form action="">
+                <h1 class="govuk-heading-xl">Confirm - Add remark</h1>
+                
+                {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
-            <div class="govuk-form-group">
+{{ mojBanner({
+  type: 'success',
+  text: 'You have successfully added 1 question.',
+  iconFallbackText: 'Success'
+}) }}
 
-                <div class="govuk-form-group">
-                    <h3 class="govuk-heading-m">User ID: abcd1234</h3>
+                <p class="govuk-body-l">Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and
+                    will tell you what can be done.</p>
+                <div class="govuk-button-group">
+                    {{ govukButton({
+                              text: "Continue",
+                              href: "analyse-hereditaments-add-remark-success"
+                        }) }}
+
+                    <a class="govuk-link" href="/analyse-hereditaments-add-remark">Cancel</a>
                 </div>
 
-                <textarea class="govuk-textarea govuk-!-width-one-half " id="add-a-comment " name="add-a-comment " rows="8 " aria-describedby="add-a-comment-hint "></textarea>
             </div>
+        </div>
 
-            <div class="govuk-button-group">
-                {{ govukButton({
-                      text: "Save remark",
-                      href: "analyse-hereditaments-add-remark-confirm"
-                }) }}
 
-                <a class="govuk-link" href="/analyse-hereditaments">Cancel</a>
-            </div>
-
-        </form>
 
         <!--------------------- START OF TABLE ----------------------------->
 
@@ -111,6 +111,7 @@
             }) }}
 
         <!-- END OF TABLE  -->
+
 
 
     </main>
