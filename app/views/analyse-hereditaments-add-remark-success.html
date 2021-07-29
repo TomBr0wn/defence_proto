@@ -16,7 +16,7 @@
 
 
 
-<a class="govuk-back-link" href="/analyse-hereditaments-add-remark">Back</a>
+<a class="govuk-back-link" href="/analyse-hereditaments">Back</a>
 {% endblock %}
 
 
@@ -28,6 +28,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">Success - Add remark</h1>
+                <h3 class="govuk-heading-m">User ID: abcd1234</h3>
 
                 {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
@@ -37,14 +38,7 @@
                 iconFallbackText: 'Success'
                 }) }}
 
-                <div class="govuk-button-group">
-                    {{ govukButton({
-                              text: "Continue",
-                              href: "analyse-hereditaments-add-remark-success"
-                        }) }}
-
-                    <a class="govuk-link" href="/analyse-hereditaments-add-remark">Cancel</a>
-                </div>
+                
 
             </div>
         </div>
@@ -89,8 +83,7 @@
                         text: "22 Some Street XXX 1X3"
                     },
                     {
-                        text: 'I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing.
-                        "<b>Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and will tell you what can be done.</b>"' 
+                        html: "I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing. <span><b>Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and will tell you what can be done.</b></span>"
                     },
                     {
                         text: "Date here"
@@ -99,10 +92,10 @@
                         text: "User ID here"
                     },
                     {
-                        html: "<a href='/edit-existing-remark'>Edit</a>"
+                        text: " "
                     },
                     {
-                        html: "<a href='/delete-existing-remark'>Delete</a>"
+                        text: " "
                     }
                 ]
                 

@@ -28,6 +28,7 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">Confirm - Add remark</h1>
+                <h3 class="govuk-heading-m">User ID: abcd1234</h3>
                 
                 {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
@@ -44,7 +45,7 @@
                     will tell you what can be done.</p>
                 <div class="govuk-button-group">
                     {{ govukButton({
-                              text: "Continue",
+                              text: "Save and Continue",
                               href: "analyse-hereditaments-add-remark-success"
                         }) }}
 
