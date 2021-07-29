@@ -24,7 +24,23 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">Analyse Hereditaments</h1>
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+        {{ mojPageHeaderActions({
+                heading: {
+                    text: 'Analyse Hereditaments'
+                },
+                items: [{
+                    text: "Add remark",
+                    classes: "govuk-button--primary",
+                    href: "analyse-hereditaments-add-remark"
+                }, {
+                    text: "Create Schedule",
+                    classes: "govuk-button--secondary",
+                    href: "analyse-hereditaments-create-schedule"
+                }]
+        }) }}
+
 
         <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
             <thead class="govuk-table__head">
@@ -155,19 +171,7 @@
             </tbody>
         </table>
 
-        <div class="govuk-button-group">
-            {{ govukButton({
-                text: "Add remark",
-                classes: "govuk-button--primary",
-                href: "analyse-hereditaments-add-remark"
-            }) }}
 
-            {{ govukButton({
-                text: "Preview Schedule",
-                classes: "govuk-button--primary",
-                href: "analyse-hereditaments-create-schedule"
-            }) }}
-        </div>
     </div>
 </div>
 {% endblock %}
