@@ -27,18 +27,16 @@
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Confirm - Add remark</h1>
-                
+                <h1 class="govuk-heading-xl">Success - Add remark</h1>
+
                 {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
-{{ mojBanner({
-  type: 'success',
-  text: 'You have successfully added 1 question.',
-  iconFallbackText: 'Success'
-}) }}
+                {{ mojBanner({
+                type: 'success',
+                text: 'You have successfully added your remark.',
+                iconFallbackText: 'Success'
+                }) }}
 
-                <p class="govuk-body-l">Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and
-                    will tell you what can be done.</p>
                 <div class="govuk-button-group">
                     {{ govukButton({
                               text: "Continue",
@@ -91,7 +89,8 @@
                         text: "22 Some Street XXX 1X3"
                     },
                     {
-                        text: "I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing."
+                        text: 'I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing.
+                        "<b>Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and will tell you what can be done.</b>"' 
                     },
                     {
                         text: "Date here"
