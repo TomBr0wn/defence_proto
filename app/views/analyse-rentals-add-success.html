@@ -27,7 +27,7 @@
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                
+
                 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
                 {{ mojPageHeaderActions({
@@ -35,22 +35,12 @@
                             text: 'Success - Added to matrix'
                         },
                         items: [{
-                            text: "Add to matrix",
+                            text: "Repeat process",
                             classes: "govuk-button--primary",
-                            href: "analyse-rentals-add-matrix"
-                        },
-                        {
-                            text: "Exclude from matrix",
-                            classes: "govuk-button--primary",
-                            href: "analyse-rentals-exclude-matrix"
-                        },
-                        {
-                            text: "Add Remark",
-                            classes: "govuk-button--secondary",
-                            href: "analyse-rentals-add-remark"
+                            href: "analyse-rentals"
                         }]
                 }) }}
-                
+
                 <h3 class="govuk-heading-m">User ID: abcd1234</h3>
 
                 {%- from "moj/components/banner/macro.njk" import mojBanner -%}
@@ -61,7 +51,7 @@
                 iconFallbackText: 'Success'
                 }) }}
 
-                
+
 
             </div>
         </div>
@@ -71,7 +61,7 @@
         <!--------------------- START OF TABLE ----------------------------->
 
 
-        
+
 
         <!-- END OF TABLE  -->
 
