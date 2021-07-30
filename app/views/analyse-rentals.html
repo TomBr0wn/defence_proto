@@ -24,29 +24,54 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl">Analyse Rentals</h1>
+
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+        {{ mojPageHeaderActions({
+                heading: {
+                    text: 'Analyse: Rentals'
+                },
+                items: [{
+                    text: "Add to matrix",
+                    classes: "govuk-button--primary",
+                    href: "analyse-rentals-add-matrix"
+                },
+                {
+                    text: "Exclude from matrix",
+                    classes: "govuk-button--primary",
+                    href: "analyse-rentals-exclude-matrix"
+                },
+                {
+                    text: "Add Remark",
+                    classes: "govuk-button--secondary",
+                    href: "analyse-rentals-add-remark"
+                }]
+        }) }}
+
+
 
         <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="col" id="select-all"></th>
-                    <th class="govuk-table__header" scope="col">Address</th>
-                    <th class="govuk-table__header" scope="col">Rent Useful</th>
-                    <th class="govuk-table__header" scope="col">UARN ID</th>
-                    <th class="govuk-table__header" scope="col">Rental ID</th>
-                    <th class="govuk-table__header" scope="col">Type</th>
-                    <th class="govuk-table__header" scope="col">Adjustment data</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">Address</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">Rent Useful</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">UARN ID</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">Rental ID</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">Type</th>
+                    <th class="govuk-table__header col-one-sixth" scope="col">Adjustment data</th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row govuk-table__row--selected">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                                <span class="govuk-visually-hidden">Select Aconcagua</span>
-                            </label>
-                        </div>
+                    <td class="govuk-table__cell">To come</td>
+                    <td class="govuk-table__cell">To come</td>
+                    <td class="govuk-table__cell">To come</td>
+                    <td class="govuk-table__cell">To come</td>
+                    <td class="govuk-table__cell">To come</td>
+                    <td class="govuk-table__cell">To come</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    
                     </td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -56,15 +81,7 @@
                     <td class="govuk-table__cell">To come</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
-                                <span class="govuk-visually-hidden">Select Denali</span>
-                            </label>
-                        </div>
-                    </td>
-                    </td>
+                    
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -73,14 +90,7 @@
                     <td class="govuk-table__cell">To come</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-elbrus" value="elbrus">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-elbrus">
-                                <span class="govuk-visually-hidden">Select Elbrus</span>
-                            </label>
-                        </div>
-                    </td>
+                    
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -89,14 +99,7 @@
                     <td class="govuk-table__cell">To come</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-everest" value="everest">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-everest">
-                                <span class="govuk-visually-hidden">Select Everest</span>
-                            </label>
-                        </div>
-                    </td>
+                    
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -105,14 +108,7 @@
                     <td class="govuk-table__cell">To come</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
-                                <span class="govuk-visually-hidden">Select Kilimanjaro</span>
-                            </label>
-                        </div>
-                    </td>
+                    
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -121,30 +117,7 @@
                     <td class="govuk-table__cell">To come</td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
-                                <span class="govuk-visually-hidden">Select Puncak Jaya</span>
-                            </label>
-                        </div>
-                    </td>
-                    <td class="govuk-table__cell">To come</td>
-                    <td class="govuk-table__cell">To come</td>
-                    <td class="govuk-table__cell">To come</td>
-                    <td class="govuk-table__cell">To come</td>
-                    <td class="govuk-table__cell">To come</td>
-                    <td class="govuk-table__cell">To come</td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
-                            <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
-                                <span class="govuk-visually-hidden">Select Vinson</span>
-                            </label>
-                        </div>
-                    </td>
+                    
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
                     <td class="govuk-table__cell">To come</td>
@@ -155,19 +128,7 @@
             </tbody>
         </table>
 
-        <div class="govuk-button-group">
-            {{ govukButton({
-                text: "Add remark",
-                classes: "govuk-button--primary",
-                href: "analyse-hereditaments-add-remark"
-            }) }}
 
-            {{ govukButton({
-                text: "Create Schedule",
-                classes: "govuk-button--primary",
-                href: "analyse-hereditaments-create-schedule"
-            }) }}
-        </div>
     </div>
 </div>
 {% endblock %}
