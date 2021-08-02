@@ -26,30 +26,56 @@
 
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Add remark to hereditament(s)</h1>
-                <h3 class="govuk-heading-m">User ID: abcd1234</h3>
+            <div class="govuk-grid-column-one-third">
+                {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
-                <form>
+                {{ govukErrorSummary({
+                titleText: "There is a problem",
+                errorList: [
+                    {
+                    text: "You never added a remark to the text box",
+                    href: "#make-remark"
+                    }
+                ]
+                }) }}
+                
+                <!-------------------------- FORM ------------------------->
+        <form>
 
-                    <div class="govuk-form-group">
-                        <textarea class="govuk-textarea govuk-!-width-one-half " id="add-a-comment " name="add-a-comment " rows="8 " aria-describedby="add-a-comment-hint "></textarea>
-                    </div>
+            <div class="govuk-form-group">
+                {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
-                    <div class="govuk-button-group">
-                        {{ govukButton({
-                        text: "Save remark",
-                        href: "analyse-hereditaments-add-remark-confirm"
-                        }) }}
+                {{ govukTextarea({
+                name: "more-detail",
+                id: "make-remark",
+                label: {
+                    text: "Add remark to hereditament",
+                    classes: "govuk-label--l",
+                    isPageHeading: true
+                },
+                errorMessage: {
+                    text: "Enter a remark in the box below"
+                }
+                }) }}
+                
+            </div>
 
-                        <a class="govuk-link" href="/analyse-hereditaments">Cancel</a>
-                        <a class="govuk-link" href="/analyse-hereditaments-add-remark-error">Show Error State</a>
-                    </div>
+            <div class="govuk-button-group">
+                {{ govukButton({
+                      text: "Save remark",
+                      href: "analyse-hereditaments-add-remark-confirm"
+                }) }}
 
-                </form>
+                <a class="govuk-link" href="/analyse-hereditaments">Cancel</a>
+            </div>
+
+        </form>
+                
             </div>
         </div>
-
+        
+        <!-------------------------- FORM ------------------------->
+        
 
         <!--------------------- START OF TABLE ----------------------------->
 
