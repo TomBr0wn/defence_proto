@@ -17,8 +17,25 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %} {{ mojPageHeaderActions({ heading: { text: 'Exclude Rents from matrix' }, items: [{ text: "Exclude and Continue", classes: "govuk-button--primary", href: "analyse-rentals-add-matrix-confirm"
-        }, { text: "Cancel", classes: "govuk-button--secondary", href: "analyse-rentals" }] }) }}
+      
+        
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+        {{ mojPageHeaderActions({
+                heading: {
+                    text: 'Exclude Rents from matrix'
+                },
+                items: [{
+                    text: "Exclude and Continue",
+                    classes: "govuk-button--primary",
+                    href: "analyse-rentals-exclude-matrix-confirm"
+                },
+                {
+                    text: "Cancel",
+                    classes: "govuk-button--secondary",
+                    href: "analyse-rentals"
+                }]
+        }) }}
 
 
 

@@ -16,7 +16,7 @@
 
 
 
-<a class="govuk-back-link" href="/analyse-rentals-add-matrix">Back</a>
+<a class="govuk-back-link" href="/analyse-rentals-exclude-matrix">Back</a>
 {% endblock %}
 
 
@@ -27,13 +27,13 @@
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Confirm - Add to Matrix</h1>
+                <h1 class="govuk-heading-xl">Confirm - Exclude from Matrix</h1>
                 <h3 class="govuk-heading-m">User ID: abcd1234</h3>
 
                 {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
                 {% set bannerHtml %}
-                <h2 class="govuk-heading-m">WARNING. You are about to add the addresses below to the matrix.</h2>
+                <h2 class="govuk-heading-m">WARNING. You are about to EXCLUDE the addresses below FROM the matrix.</h2>
                 {% endset %}
 
                 {{ mojBanner({
@@ -43,11 +43,11 @@
 
                 <div class="govuk-button-group">
                     {{ govukButton({
-                              text: "Confirm add to matrix",
-                              href: "analyse-rentals-add-success"
+                              text: "Confirm Exclude from matrix",
+                              href: "analyse-rentals-exclude-success"
                         }) }}
 
-                    <a class="govuk-link" href="/analyse-rentals-add-matrix">Cancel</a>
+                    <a class="govuk-link" href="/analyse-rentals-exclude-matrix">Cancel</a>
                 </div>
 
             </div>
