@@ -5,10 +5,10 @@ const router = express.Router()
 
 
 // Start folder specific routes
+router.use("/v1", require("./views/v2/routes"))
 router.use("/v2", require("./views/v2/routes"))
 
 
 
 
 module.exports = router
-
