@@ -12,7 +12,8 @@
 
 
 
-<a class="govuk-back-link" href="/analyse-hereditaments-add-remark">Back</a> {% endblock %} {% block content %}
+<a class="govuk-back-link" href="analyse-hereditaments-add-remark">Back</a> {% endblock %}
+{% block content %}
 
 <div class="govuk-width-container">
 
@@ -33,7 +34,7 @@
                     <div class="govuk-button-group">
                         {{ govukButton({ text: "Save remark", href: "analyse-hereditaments-add-remark-confirm" }) }}
 
-                        <a class="govuk-link" href="/analyse-hereditaments">Cancel</a>
+                        <a class="govuk-link" href="analyse-hereditaments">Cancel</a>
                     </div>
 
                 </form>
@@ -49,7 +50,7 @@
 
         {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false, head: [ { text: "Address", classes: 'col-one-sixth' }, { text: "Existing Remark", classes: 'col-two-sixth' }, { text: "Created on", classes: 'col-one-sixth' }, { text:
         "Written by", classes: 'col-one-sixth' }, { text: " ", classes: 'col-one-sixth' }, { text: " ", classes: 'col-one-sixth' } ], rows: [ [ { text: "22 Some Street XXX 1X3" }, { text: "I love music theme of Howling Fjord, it is so peaceful, filled
-        with ambient elements and sounds of nature, very relaxing." }, { text: "Date here" }, { text: "User ID here" }, { html: "<a href='v2/edit-existing-remark'>Edit</a>" }, { html: "<a href='v2/delete-existing-remark'>Delete</a>" } ] ] }) }}
+        with ambient elements and sounds of nature, very relaxing." }, { text: "Date here" }, { text: "User ID here" }, { html: "<a href='edit-existing-remark'>Edit</a>" }, { html: "<a href='delete-existing-remark'>Delete</a>" } ] ] }) }}
 
         <!-- END OF TABLE  -->
 

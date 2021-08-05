@@ -1,8 +1,4 @@
-{% extends "layout.html" %}
-
-
-
-{% block beforeContent %}
+{% extends "layout.html" %} {% block beforeContent %}
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -16,11 +12,7 @@
 
 
 
-<a class="govuk-back-link" href="/analyse-hereditaments">Back</a>
-{% endblock %}
-
-
-{% block content %}
+<a class="govuk-back-link" href="analyse-hereditaments">Back</a> {% endblock %} {% block content %}
 
 <div class="govuk-width-container">
 
@@ -30,15 +22,9 @@
                 <h1 class="govuk-heading-xl">Success - Add remark</h1>
                 <h3 class="govuk-heading-m">User ID: abcd1234</h3>
 
-                {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'You have successfully added your remark.', iconFallbackText: 'Success' }) }}
 
-                {{ mojBanner({
-                type: 'success',
-                text: 'You have successfully added your remark.',
-                iconFallbackText: 'Success'
-                }) }}
 
-                
 
             </div>
         </div>
@@ -48,65 +34,19 @@
         <!--------------------- START OF TABLE ----------------------------->
 
 
-        {{ govukTable({
-            captionClasses: "govuk-table__caption--m",
-            firstCellIsHeader: false,
-            head: [
-                {
-                    text: "Address",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Existing Remark",
-                    classes: 'col-two-sixth'
-                },
-                {
-                    text: "Created on",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Written by",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: " ",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: " ",
-                    classes: 'col-one-sixth'
-                }
-            ],
-            rows: [
-                [
-                    {
-                        text: "22 Some Street XXX 1X3"
-                    },
-                    {
-                        html: "I love music theme of Howling Fjord, it is so peaceful, filled with ambient elements and sounds of nature, very relaxing. <span><b>Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and will tell you what can be done.</b></span>"
-                    },
-                    {
-                        text: "Date here"
-                    },
-                    {
-                        text: "User ID here"
-                    },
-                    {
-                        text: " "
-                    },
-                    {
-                        text: " "
-                    }
-                ]
-                
-            ]
-            }) }}
+        {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false, head: [ { text: "Address", classes: 'col-one-sixth' }, { text: "Existing Remark", classes: 'col-two-sixth' }, { text: "Created on", classes: 'col-one-sixth' }, { text:
+        "Written by", classes: 'col-one-sixth' }, { text: " ", classes: 'col-one-sixth' }, { text: " ", classes: 'col-one-sixth' } ], rows: [ [ { text: "22 Some Street XXX 1X3" }, { html: "I love music theme of Howling Fjord, it is so peaceful, filled
+        with ambient elements and sounds of nature, very relaxing. <span><b>Vast majority of readers here have no idea how to handle different problems, they just repeat same old methods, zero improvisation. There is no perfect solution to your problem, I have to check it myself and will tell you what can be done.</b></span>"
+        }, { text: "Date here" }, { text: "User ID here" }, { text: " " }, { text: " " } ] ] }) }}
 
         <!-- END OF TABLE  -->
 
 
 
     </main>
-</div> {% endblock %} </body>
+</div>
+{% endblock %}
+
+</body>
 
 </html>
