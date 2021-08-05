@@ -11,7 +11,7 @@
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="/v2/create-new-dataset">Back</a>
+<a class="govuk-back-link" href="create-new-dataset">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/v2/create-new-dataset" method="post" novalidate>
+    <form action="create-new-dataset" method="post" novalidate>
       {{ govukInput({
         label: {
           text: "Set Dataset ID",

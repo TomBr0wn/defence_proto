@@ -11,7 +11,7 @@
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="/v2/defence-home">Back</a>
+<a class="govuk-back-link" href="defence-home">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -32,7 +32,7 @@
           {{ data['dataset-id'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/v2/create-dataset-id">
+          <a href="create-dataset-id">
             Change
             <span class="govuk-visually-hidden"> dataset id</span>
           </a>
@@ -47,7 +47,7 @@
           {{ data['cca-ref'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/v2/create-cca-ref">
+          <a href="create-cca-ref">
             Change
             <span class="govuk-visually-hidden"> cca reference</span>
           </a>
@@ -62,7 +62,7 @@
           {{ data['cdb-case-num'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/v2/create-cdb-case">
+          <a href="create-cdb-case">
             Change
             <span class="govuk-visually-hidden"> cdb case</span>
           </a>
@@ -77,7 +77,7 @@
           {{ data['matrix-ref'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="/v2/create-matrix-ref">
+          <a href="create-matrix-ref">
             Change
             <span class="govuk-visually-hidden"> matrix reference</span>
           </a>
@@ -103,7 +103,7 @@
 
 
 
-    <form action="/v2/defence-home" method="post" novalidate>
+    <form action="/form-handler" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
