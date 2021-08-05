@@ -1,0 +1,35 @@
+ {% extends "layout.html" %} {% block beforeContent %}
+ <div class="govuk-phase-banner">
+     <p class="govuk-phase-banner__content">
+         <strong class="govuk-tag govuk-phase-banner__content__tag">
+             alpha
+         </strong>
+         <span class="govuk-phase-banner__text">
+             This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+         </span>
+     </p>
+ </div>
+ <a class="govuk-back-link" href="/">Back</a> {% endblock %} {% block content %}
+
+
+ <div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+         {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+         {{ mojPageHeaderActions({ heading: { text: 'Defence Home' },
+            items: [{
+                text: "Create new dataset",
+                href: "create-new-dataset",
+                classes: "govuk-button--primary"
+            }]
+        }) }}
+
+         <h2 class="govuk-heading-m">Your Current Datasets</h2>
+
+         {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false, head: [ { text: "Dataset ID", classes: 'col-one-ninth' }, { text: "Matrix Ref", classes: 'col-one-ninth' }, { text: "Martix ID", classes: 'col-one-ninth' }, { text: "User
+        ID", classes: 'col-one-ninth' }, { text: "Created on", classes: 'col-one-ninth' }, { text: "Reval Text File", classes: 'col-one-ninth' }, { text: "Defence Text File", classes: 'col-one-ninth' }, { text: "Status", classes: 'col-one-ninth' }, {
+        text: " ", classes: 'col-one-ninth' } ], rows: [ [ { text: "abc_123" }, { text: "Mat ref here" }, { text: "Mat ID here" }, { text: "User ID here" }, { text: "Date here" }, { text: "Y/N" }, { text: "Y/N" }, { html:"
+        <strong class='govuk-tag'>Status here</strong>" }, { html: "<a href='v2/existing-dataset'>Open</a>" } ] ] }) }}
+     </div>
+ </div>
+ {% endblock %}
+ <div class=""></div>
