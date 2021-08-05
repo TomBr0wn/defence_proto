@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="existing-dataset">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+                {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+                {{ mojPageHeaderActions({
+                heading: {
+                    text: 'Analyse Dataset'
+                },
+                items: [{
+                    text: 'Filter Dataset',
+                    classes: 'govuk-button--primary',
+                    href: "filters"
+                }, {
+                    text: 'Something Else',
+                    classes: 'govuk-button--secondary',
+                    href: "#"
+                }]
+                }) }}
+            </div>
+        </div>
+
+        {%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+                <!-- <h3 class="govuk-heading-m">Categories</h3> -->
+
+
+                {{ mojSideNavigation({
+                    label: 'Side navigation',
+                    sections: [
+                      {
+                        heading: {
+                          text: 'Check for',
+                          html: "<h4 class='moj-side-navigation__title'>Check dataset for:</h4><hr class='govuk-section-break govuk-section-break--m govuk-section-break--visible'>"
+                        },
+                        items: [{
+                            text: 'Hereditaments',
+                            href: 'analyse-hereditaments.html'
+                            
+                        }, {
+                            text: 'Rentals',
+                            href: 'analyse-rentals.html'
+                        }, {
+                            text: 'Cases',
+                            href: 'analyse-cases.html'
+                        }]
+                      }
+                    ]
+                  }) }}
+
+            </div>
+
+
+
+
+            <!-- End of Nav -->
+
+
+            <div class="govuk-grid-column-three-quarters">
+
+                <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">Filters Selected:</p>
+                <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-2">None</p>
+
+                <!---------- START OF TABS ----------->
+                <div class="govuk-tabs govuk-!-margin-top-6" data-module="govuk-tabs">
+                    <h2 class="govuk-tabs__title">Contents</h2>
+                    <ul class="govuk-tabs__list">
+                        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                            <a class="govuk-tabs__tab" href="#properties-dash">Report 1</a>
+                        </li>
+                        <li class="govuk-tabs__list-item">
+                            <a class="govuk-tabs__tab" href="#properties-map">Report 2</a>
+                        </li>
+                        <li class="govuk-tabs__list-item">
+                            <a class="govuk-tabs__tab" href="#mixed-map">Report 3</a>
+                        </li>
+                        <li class="govuk-tabs__list-item">
+                            <a class="govuk-tabs__tab" href="#mixed-table">Report 4</a>
+                        </li>
+                    </ul>
+                    <div class="govuk-tabs__panel" id="properties-dash">
+                        <!-- <h2 class="govuk-heading-l">Overview</h2> -->
+                        <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
+                    </div>
+                    <div class="govuk-tabs__panel" id="properties-map">
+                        <!-- <h2 class="govuk-heading-l">Properties</h2> -->
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
+                    </div>
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-map">
+                        <!-- <h2 class="govuk-heading-l">Properties & Rentals</h2> -->
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
+                    </div>
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="mixed-table">
+                        <!-- <h2 class="govuk-heading-l">Assessment Data & Rental Evidence</h2> -->
+                        <img alt="power bi dashboard" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
+                    </div>
+                </div>
+                <!---------- END OF TABS ----------->
+            </div>
+        </div>
+    </main>
+</div>
+
+</div>
+{% endblock %}
