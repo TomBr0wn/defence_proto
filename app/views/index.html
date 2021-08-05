@@ -21,11 +21,38 @@
       <h1 class="govuk-heading-xl">
         Defence Prototype
       </h1>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/defence-home">Defence Prototype</a>
-        </li>
-      </ul>
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: " "
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Initial Version - Defence Prototype 1.1"
+            },
+            {
+              html: "<a href='/defence-home'>Open</a>"
+            }
+          ],
+          [
+            {
+              text: "Defence Prototype 2.1 - Changes to Table data and headers"
+            },
+            {
+              html: "<a href='/v2/defence-home'>Open</a>"
+            }
+          ]
+        ]
+      }) }}
+      
     </div>
   </div>
 

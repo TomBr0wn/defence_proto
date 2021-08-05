@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="/existing-dataset">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Compare with Dataset abc_123</h1>
+    <h2 class="govuk-heading-m">Current Dataset</h2>
+
+    {{ govukTable({
+                captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: false,
+                head: [
+                    {
+                        text: "Dataset ID",
+                        classes: 'col-one-sixth'
+                    },
+                    {
+                        text: "Matrix Ref",
+                        classes: 'col-one-sixth'
+                    },
+                    {
+                        text: "Martix ID",
+                        classes: 'col-one-sixth'
+                    },
+                    {
+                        text: "User ID",
+                        classes: 'col-one-sixth'
+                    },
+                    {
+                        text: "User ID",
+                        classes: 'col-one-sixth'
+                    },
+                    {
+                        text: "Status",
+                        classes: 'col-one-sixth'
+                    }
+                ],
+                rows: [
+                    [
+                        {
+                            text: "abc_123"
+                        },
+                        {
+                            text: "Mat ref here"
+                        },
+                        {
+                            text: "Mat ID here"
+                        },
+                        {
+                            text: "User ID here"
+                        },
+                        {
+                            text: "Date here"
+                        },
+                        {
+                          html:"<strong class='govuk-tag'>Status here</strong>"
+                        }
+                    ]
+                    
+                ]
+                }) }}
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-m">Criteria</h3>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-date'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-date">
+            Change
+            <span class="govuk-visually-hidden"> date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Postcode
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-postcode'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-postcode">
+            Change
+            <span class="govuk-visually-hidden"> postcode</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Street
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-street'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-street">
+            Change
+            <span class="govuk-visually-hidden"> street</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Dataset ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-dataset-id'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-dataset-id">
+            Change
+            <span class="govuk-visually-hidden"> dataset id</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Value
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-value'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-value">
+            Change
+            <span class="govuk-visually-hidden"> value</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          CCA Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-cca-ref'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-cca-reference">
+            Change
+            <span class="govuk-visually-hidden"> cca reference</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Matrix Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-matrix-ref'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-matrix-reference">
+            Change
+            <span class="govuk-visually-hidden"> matrix reference</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <form action="/confirmation" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+                      text: "Continue",
+                      href: "existing-and-comparable"
+                      }) }}
+
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
