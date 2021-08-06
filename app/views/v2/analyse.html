@@ -20,20 +20,22 @@
 
                 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-                {{ mojPageHeaderActions({
-                heading: {
-                    text: 'Analyse Dataset'
-                },
-                items: [{
-                    text: 'Filter Dataset',
-                    classes: 'govuk-button--primary',
-                    href: "filters"
-                }, {
-                    text: 'Something Else',
-                    classes: 'govuk-button--secondary',
-                    href: "#"
-                }]
-                }) }}
+                {{
+                    mojPageHeaderActions
+                    ({heading:
+                        {
+                            text: 'Analyse Dataset'
+                        },
+                        items:
+                        [
+                            {
+                                text: 'Show Filters',
+                                classes: 'govuk-button--primary',
+                                href: "filters"
+                            }
+                        ]
+                    })
+                }}
             </div>
         </div>
 
