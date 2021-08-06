@@ -16,40 +16,44 @@
      <div class="govuk-grid-column-full">
 
          {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-         {{ mojPageHeaderActions({ heading: { text: 'Existing Dataset abc_123' },
+         {{ mojPageHeaderActions({ heading: { text: 'Dataset abc_123' },
             items:
-            [{
-                text: "Get Comparable Data",
-                href: "get-comparable-data",
-                classes: "govuk-button--primary"
-            },
-            {
-                text: "Another action",
-                classes: "govuk-button--secondary",
-                href: "#"
-            }]
+            [
+                {
+                    text: "Get Comparable Data",
+                    href: "get-comparable-data",
+                    classes: "govuk-button--primary"
+                }
+            ]
         }) }}
          <h2 class="govuk-heading-m">Details</h2>
 
          {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false,
          head:
-         [{
-                text: "Dataset ID", classes: 'col-one-ninth'
+         [  
+         {
+            text: "Matrix Ref",
+            classes: 'col-one-eighth'
             },
             {
-                text: "Matrix Ref", classes: 'col-one-ninth'
+                text: "Challenge Case Number",
+                classes: 'col-one-eighth'
             },
             {
-                text: "Martix ID", classes: 'col-one-ninth'
+                text: "Created on",
+                classes: 'col-one-eighth'
             },
-            { 
-                text: "User ID", classes: 'col-one-ninth'
+            {
+                text: "Reval Text File",
+                classes: 'col-one-eighth'
             },
-            { 
-                text: "Created on", classes: 'col-one-ninth'
+            {
+                text: "Defence Text File",
+                classes: 'col-one-eighth'
             },
-            { 
-                text: "Status", classes: 'col-one-ninth'
+            {
+                text: "Data Status",
+                classes: 'col-one-eighth'
             },
             { 
                 text: " ", classes: 'col-one-ninth'
@@ -59,7 +63,8 @@
             },
             { 
                 text: " ", classes: 'col-one-eighth'
-        } ],
+            } 
+        ],
         rows:[
             [ {
                 text: "abc_123"
