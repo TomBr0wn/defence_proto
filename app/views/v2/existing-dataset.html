@@ -31,9 +31,9 @@
          {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false,
          head:
          [  
-         {
-            text: "Matrix Ref",
-            classes: 'col-one-eighth'
+            {
+                text: "Matrix Ref",
+                classes: 'col-one-eighth'
             },
             {
                 text: "Challenge Case Number",
@@ -44,56 +44,59 @@
                 classes: 'col-one-eighth'
             },
             {
-                text: "Reval Text File",
+                text: "Sub Location",
                 classes: 'col-one-eighth'
             },
             {
-                text: "Defence Text File",
+                text: "Text File",
                 classes: 'col-one-eighth'
             },
             {
                 text: "Data Status",
                 classes: 'col-one-eighth'
             },
-            { 
-                text: " ", classes: 'col-one-ninth'
+            {
+                text: "Action",
+                classes: 'col-one-eighth'
             },
             { 
-                text: " ", classes: 'col-one-ninth'
+                text: " ", classes: 'col-one-eighth'
             },
             { 
                 text: " ", classes: 'col-one-eighth'
             } 
         ],
         rows:[
-            [ {
-                text: "abc_123"
-            },
-            {
-                text: "Mat ref here"
-            },
-            { 
-                text: "Mat ID here"
-            },
-            {
-                text: "User ID here"
-            },
-            {
-                text: "Date here"
-            },
-            {
-                html:"<strong class='govuk-tag'>Status here</strong>"
-            },
-            {
-                html: "<a href='analyse'>Analyse Data</a>"
-            },
-            {
-                html: "<a href='v2#'>Refresh Data</a>"
-            },
-            {
-                html: "<a href='complete-process'>Complete Process</a>"
-            }
-            ] ]
+                [ 
+                    { 
+                        text: "MATR_123XYZ" 
+                    },
+                    { 
+                        text: "CHALL_123"
+                    },
+                    {
+                        text: "9/9/99"
+                    },
+                    {
+                        text: "SubLoc"
+                    },
+                    {
+                        text: "Y/N"
+                    },
+                    {
+                        html:" <strong class='govuk-tag'>READY</strong>"
+                    },
+                    {
+                        html: "<a href='analyse'>Analyse Data</a>"
+                    },
+                    {
+                        html: "<a href='v2#'>Refresh Data</a>"
+                    },
+                    {
+                        html: "<a href='complete-process'>Complete Process</a>"
+                    }
+                ] 
+            ]
         }) }}
 
 
