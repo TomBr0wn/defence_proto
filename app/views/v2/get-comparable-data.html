@@ -88,15 +88,90 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Date
+          Billing Authority
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['compare-date'] }}
+          {{ data['compare-billing-auth'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="compare-date">
             Change
-            <span class="govuk-visually-hidden"> date</span>
+            <span class="govuk-visually-hidden"> billing authority</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sub Location
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-sub-location'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-postcode">
+            Change
+            <span class="govuk-visually-hidden"> sub location</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Size Range
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-size-range'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-street">
+            Change
+            <span class="govuk-visually-hidden"> size range</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Rateable Value
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-rateable-val'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-dataset-id">
+            Change
+            <span class="govuk-visually-hidden"> rateable value</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bulk Class
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-bulk-class'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-value">
+            Change
+            <span class="govuk-visually-hidden"> bulk class</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Scat Code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['compare-scat-code'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="compare-cca-reference">
+            Change
+            <span class="govuk-visually-hidden"> scat code</span>
           </a>
         </dd>
       </div>
@@ -109,84 +184,9 @@
           {{ data['compare-postcode'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="compare-postcode">
-            Change
-            <span class="govuk-visually-hidden"> postcode</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Street
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['compare-street'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="compare-street">
-            Change
-            <span class="govuk-visually-hidden"> street</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Dataset ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['compare-dataset-id'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="compare-dataset-id">
-            Change
-            <span class="govuk-visually-hidden"> dataset id</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Value
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['compare-value'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="compare-value">
-            Change
-            <span class="govuk-visually-hidden"> value</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          CCA Reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['compare-cca-ref'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="compare-cca-reference">
-            Change
-            <span class="govuk-visually-hidden"> cca reference</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Matrix Reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['compare-matrix-ref'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
           <a href="compare-matrix-reference">
             Change
-            <span class="govuk-visually-hidden"> matrix reference</span>
+            <span class="govuk-visually-hidden"> postcode</span>
           </a>
         </dd>
       </div>
