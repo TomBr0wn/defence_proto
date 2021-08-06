@@ -20,36 +20,16 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="/form-handler" method="post" novalidate>
-      {{ govukDateInput({
-        id: "compare-date",
-        namePrefix: "compare-date",
-        fieldset: {
-          legend: {
-            text: "Compare Dataset abc_123: Date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
+      
+      {{ govukInput({
+        label: {
+          text: "Set Billing Authority",
+          classes: "govuk-label--l",
+          isPageHeading: true
         },
-        hint: {
-          text: "For example, 31 3 1980"
-        },
-        items: [
-          {
-            name: "day",
-            classes: "govuk-input--width-2",
-            autocomplete: "bday-day"
-          },
-          {
-            name: "month",
-            classes: "govuk-input--width-2",
-            autocomplete: "bday-month"
-          },
-          {
-            name: "year",
-            classes: "govuk-input--width-4",
-            autocomplete: "bday-year"
-          }
-        ]
+        classes: "govuk-input--width-20",
+        id: "compare-billing-auth",
+        name: "width-20"
       }) }}
 
       {{ govukButton({
