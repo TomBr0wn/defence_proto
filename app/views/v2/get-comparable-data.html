@@ -121,7 +121,7 @@
           Size Range
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['compare-size-range'] }}
+          {{ data['size'] }} {{ data['compare-size-range'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a href="compare-size">
@@ -136,10 +136,10 @@
           Rateable Value
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['compare-rateable-val'] }}
+          {{ data['rateable'] }} {{ data['compare-rateable-value'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="compare-dataset-id">
+          <a href="compare-rateable-value">
             Change
             <span class="govuk-visually-hidden"> rateable value</span>
           </a>
@@ -154,7 +154,7 @@
           {{ data['compare-bulk-class'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="compare-value">
+          <a href="compare-bulk-class">
             Change
             <span class="govuk-visually-hidden"> bulk class</span>
           </a>

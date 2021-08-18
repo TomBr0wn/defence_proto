@@ -23,23 +23,23 @@
       {% from "govuk/components/select/macro.njk" import govukSelect %}
 
       {{ govukSelect({
-        id: "sort",
-        name: "sort",
+        id: "size",
+        name: "size",
         label: {
           text: "Size is"
         },
         items: [
           {
-            value: "more",
+            value: "More than",
             text: "More than",
             selected: true
           },
           {
-            value: "less",
+            value: "Less than",
             text: "Less than"
           },
           {
-            value: "between",
+            value: "Between",
             text: "Between"
           }
         ]

@@ -18,17 +18,44 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Set Rateable Value</h1>
+    <form action="get-comparable-data" method="post" novalidate>
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
 
-    <form action="/form-handler" method="post" novalidate>
-      {{ govukInput({
+      {{ govukSelect({
+        id: "rateable",
+        name: "rateable",
         label: {
-          text: "Compare Dataset abc_123: Dataset ID",
-          isPageHeading: true,
-          classes: "govuk-label--l"
+          text: "Value is"
         },
-        classes: "govuk-input--width-10",
-        id: "compare-dataset-id",
-        name: "compare-dataset-id"
+        items: [
+          {
+            value: "More than",
+            text: "More than",
+            selected: true
+          },
+          {
+            value: "Less than",
+            text: "Less than"
+          },
+          {
+            value: "Between",
+            text: "Between"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        id: "compare-rateable-value",
+        name: "compare-rateable-value",
+        label: {
+          text: "Size"
+        },
+        prefix: {
+          text: "£"
+        },
+        classes: "govuk-input--width-5",
+        spellcheck: false
       }) }}
 
       {{ govukButton({
