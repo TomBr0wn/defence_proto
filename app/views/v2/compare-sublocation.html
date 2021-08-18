@@ -19,16 +19,16 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/form-handler" method="post" novalidate>
+    <form action="get-comparable-data" method="post" novalidate>
       {{ govukInput({
         label: {
-          text: "Compare Dataset abc_123: Postcode",
+          text: "Set Sublocation",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
         classes: "govuk-input--width-10",
-        id: "compare-postcode",
-        name: "compare-postcode"
+        id: "compare-sublocation",
+        name: "compare-sublocation"
       }) }}
 
       {{ govukButton({
