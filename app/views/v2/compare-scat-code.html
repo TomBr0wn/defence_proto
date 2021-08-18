@@ -19,16 +19,16 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/form-handler" method="post" novalidate>
+    <form action="get-comparable-data" method="post" novalidate>
       {{ govukInput({
         label: {
-          text: "Compare Dataset abc_123: CCA reference",
+          text: "Set Scat Code",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
         classes: "govuk-input--width-10",
-        id: "compare-cca-reference",
-        name: "compare-cca-reference"
+        id: "compare-scat-code",
+        name: "compare-scat-code"
       }) }}
 
       {{ govukButton({
