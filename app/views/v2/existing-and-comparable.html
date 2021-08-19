@@ -17,18 +17,80 @@
         <h1 class="govuk-heading-xl">Compare Datasets</h1>
         <h2 class="govuk-heading-m">Compare</h2>
 
-        {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false, head: [ { text: "Dataset ID", classes: 'col-one-tenth' }, { text: "Matrix Ref", classes: 'col-one-tenth' }, { text: "Postcode", classes: 'col-one-tenth' }, { text: "Street",
-        classes: 'col-one-tenth' }, { text: "Value", classes: 'col-one-tenth' }, { text: "Status", classes: 'col-one-tenth' }, { text: "Created on", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth'
-        }, { text: " ", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth' } ], rows: [ [ { text: "abc_123" }, { text: "Mat ref here" }, { text: "Postcode here" }, { text: "Street here" }, { text: "Value here" }, { html:"
-        <strong class='govuk-tag'>Status here</strong>" }, { text: "Date here" }, { html: "<a href='analyse'>Analyse Data</a>" }, { html: "<a href='v2#'>Refresh Data</a>" }, { html: "<a href='complete-process'>Complete Process</a>" } ] ] }) }}
+        {{ govukTable
+            ({ captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: false, head: 
+                [
+                    { text: "Dataset ID", classes: 'col-one-tenth' }, 
+                    { text: "Matrix Ref", classes: 'col-one-tenth' },
+                    { text: "Postcode", classes: 'col-one-tenth' },
+                    { text: "Street", classes: 'col-one-tenth' },
+                    { text: "Value", classes: 'col-one-tenth' },
+                    { text: "Status", classes: 'col-one-tenth' },
+                    { text: "Created on", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' }
+                ],
+                rows:
+                [
+                    [
+                        { text: "abc_123" },
+                        { text: "Mat ref here" },
+                        { text: "Postcode here" },
+                        { text: "Street here" },
+                        { text: "Value here" },
+                        { html:"<strong class='govuk-tag'>Status here</strong>" },
+                        { text: "Date here" },
+                        { html: "<a href='analyse'>Analyse Data</a>" },
+                        { html: "<a href='v2#'>Refresh Data</a>" },
+                        { html: "<a href='complete-process'>Complete Process</a>"} 
+                    ]
+                ]
+            })
+        }}
 
         <h3 class="govuk-heading-m">With</h3>
 
-        {{ govukTable({ captionClasses: "govuk-table__caption--m", firstCellIsHeader: false, head: [ { text: "Dataset ID", classes: 'col-one-tenth' }, { text: "Matrix Ref", classes: 'col-one-tenth' }, { text: "Postcode", classes: 'col-one-tenth' }, { text: "Street",
-        classes: 'col-one-tenth' }, { text: "Value", classes: 'col-one-tenth' }, { text: "Status", classes: 'col-one-tenth' }, { text: "Created on", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth'
-        }, { text: " ", classes: 'col-one-tenth' }, { text: " ", classes: 'col-one-tenth' } ], rows: [ [ { text: "abc_123" }, { text: "Mat ref here" }, { text: "Postcode here" }, { text: "Street here" }, { text: "Value here" }, { html:"
-        <strong class='govuk-tag'>Status here</strong>" }, { text: "Date here" }, { html: "<a href='analyse'>Analyse Data</a>" }, { html: "<a href='v2#'>Refresh Data</a>" }, { html: "<a href='complete-process'>Complete Process</a>" } ] ] }) }} {{ govukButton({ text:
-        "Add another dataset", href: "get-comparable-data" }) }}
+        {{ govukTable
+            ({ captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: false, head: 
+                [
+                    { text: "Dataset ID", classes: 'col-one-tenth' }, 
+                    { text: "Matrix Ref", classes: 'col-one-tenth' },
+                    { text: "Postcode", classes: 'col-one-tenth' },
+                    { text: "Street", classes: 'col-one-tenth' },
+                    { text: "Value", classes: 'col-one-tenth' },
+                    { text: "Status", classes: 'col-one-tenth' },
+                    { text: "Created on", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' },
+                    { text: " ", classes: 'col-one-tenth' }
+                ],
+                rows:
+                [
+                    [
+                        { text: "abc_123" },
+                        { text: "Mat ref here" },
+                        { text: "Postcode here" },
+                        { text: "Street here" },
+                        { text: "Value here" },
+                        { html:"<strong class='govuk-tag'>Status here</strong>" },
+                        { text: "Date here" },
+                        { html: "<a href='analyse'>Analyse Data</a>" },
+                        { html: "<a href='v2#'>Refresh Data</a>" },
+                        { html: "<a href='complete-process'>Complete Process</a>"} 
+                    ]
+                ]
+            })
+        }}
+
+        {{ govukButton({
+            text: "Add another dataset",
+            href: "get-comparable-data"
+        }) }}
     </div>
 </div>
 {% endblock %}
