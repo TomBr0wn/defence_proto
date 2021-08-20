@@ -10,39 +10,41 @@
         </span>
     </p>
 </div>
-<a class="govuk-back-link" href="existing-dataset">Back</a>
+<a class="govuk-back-link" href="analyse-home.html">Back</a>
 {% endblock %}
 {% block content %}
 <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters">
-                
-                
+
+
 
 
                 {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-                {{
-                    mojPageHeaderActions
-                    ({heading:
-                        {
-                            text: 'Analyse Dataset'
-                        },
-                        items:
+                {{ mojPageHeaderActions({
+                            heading: {
+                                text: 'Analyse Hereditaments: Cases'
+                            },
+                            items:
                         [
                             {
                                 text: 'Show Filters',
                                 classes: 'govuk-button--primary',
                                 href: "filters"
+                            },
+                            {
+                                text: 'View dataset as table',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
                             }
                         ]
-                    })
-                }}
+                    }) }}
             </div>
-        
 
-       
+
+
 
 
 
@@ -53,7 +55,7 @@
             <div class="govuk-grid-column-three-quarters">
 
                 <!---------- START OF POWER BI ----------->
-                
+
                 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
                 {{ mojPrimaryNavigation({
@@ -61,16 +63,16 @@
                 items: [
                     {
                     text: 'Hereditaments',
-                    href: 'analyse-hereditaments',
-                    active: true
+                    href: 'analyse-home-hereditaments'
                     },
                     {
                     text: 'Rentals',
-                    href: 'analyse-rentals'
+                    href: 'analyse-home-rentals'
                     },
                     {
                     text: 'Cases',
-                    href: '#'
+                    href: '#',
+                    active: true
                     }
                 ]
                 }) }}
