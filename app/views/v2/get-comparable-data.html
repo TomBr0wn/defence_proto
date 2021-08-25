@@ -25,58 +25,71 @@
     <h1 class="govuk-heading-xl">Compare with Dataset abc_123</h1>
     <h2 class="govuk-heading-m">Current Dataset</h2>
 
-    {{ govukTable({
-                captionClasses: "govuk-table__caption--m",
-                firstCellIsHeader: false,
-                head: [
-                {
-                    text: "Matrix Ref",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Challenge Case Number",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Created on",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Sub Location",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Text File",
-                    classes: 'col-one-sixth'
-                },
-                {
-                    text: "Data Status",
-                    classes: 'col-one-sixth'
-                }
-                ],
-                rows: [
-                    [
-                    { 
-                      text: "MATR_123XYZ" 
-                  },
-                  { 
-                      text: "CHALL_123"
-                  },
-                  {
-                      text: "9/9/99"
-                  },
-                  {
-                      text: "SubLoc"
-                  },
-                  {
-                      text: "Y/N"
-                  },
-                  {
-                      html:" <strong class='govuk-tag'>READY</strong>"
-                  }
-                    ]
-                    
-                ]
+    {{ govukTable
+      ({ captionClasses:
+          "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          head: [
+              {
+                  text: "Dataset ID",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Matrix Reference",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Challenge Case Number",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "CDB Case Number",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Sub Location",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Text File Type",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Created on",
+                  classes: 'col-one-eighth'
+              },
+              {
+                  text: "Data Status",
+                  classes: 'col-one-eighth'
+              }
+          ],
+          rows:
+          [ [
+              { 
+                  text: data['dataset-id']
+              },
+              { 
+                  text: data['matrix-ref'] 
+              },
+              { 
+                  text: data['cca-ref']
+              },
+              {
+                  text: data['cdb-case-num']
+              },
+              {
+                  text: data['sub-location']
+              },
+              {
+                  text: data['text-file-type']
+              },
+              {
+                  text: "01/01/2021"
+              },
+              {
+                  html:" <strong class='govuk-tag'>READY</strong>"
+              }
+          ] ]
                 }) }}
   </div>
 </div>

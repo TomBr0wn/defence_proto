@@ -41,7 +41,22 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          CCA Reference
+          Matrix Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['matrix-ref'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-matrix-ref">
+            Change
+            <span class="govuk-visually-hidden"> matrix reference</span>
+          </a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Challenge Case Number
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['cca-ref'] }}
@@ -49,7 +64,7 @@
         <dd class="govuk-summary-list__actions">
           <a href="create-cca-ref">
             Change
-            <span class="govuk-visually-hidden"> cca reference</span>
+            <span class="govuk-visually-hidden"> challenge Case Number</span>
           </a>
         </dd>
       </div>
@@ -71,15 +86,15 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Matrix Reference
+          Sub Location
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['matrix-ref'] }}
+          {{ data['sub-location'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="create-matrix-ref">
+          <a href="create-sub-location">
             Change
-            <span class="govuk-visually-hidden"> matrix reference</span>
+            <span class="govuk-visually-hidden"> cdb case</span>
           </a>
         </dd>
       </div>

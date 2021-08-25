@@ -22,14 +22,14 @@
     <form action="create-new-dataset" method="post" novalidate>
       {{ govukInput({
         label: {
-          text: "Set Challenge Case Number",
+          text: "Set Sub Location",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
         classes: "govuk-input--width-20",
-        id: "cca-ref",
-        name: "cca-ref",
-        text: data['cca-ref']
+        text: data['sub-location'],
+        name: "sub-location",
+        id: "sub-location"
       }) }}
 
       {{ govukButton({
