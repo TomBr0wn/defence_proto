@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="create-new-dataset" method="post" novalidate>
+    <form action="create-new-dataset-route" method="post" novalidate>
       {{ govukInput({
         label: {
           text: "Set Dataset ID",
@@ -28,6 +28,7 @@
         },
         classes: "govuk-input--width-20",
         text: data['dataset-id'],
+        value: data['dataset-id'],
         name: "dataset-id",
         id: "dataset-id"
       }) }}

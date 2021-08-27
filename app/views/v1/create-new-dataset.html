@@ -23,7 +23,7 @@
     <h2 class="govuk-heading-m">Criteria</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Dataset ID
@@ -38,7 +38,7 @@
           </a>
         </dd>
       </div>
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           CCA Reference
@@ -53,7 +53,7 @@
           </a>
         </dd>
       </div>
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           CDB Case Number
@@ -68,7 +68,7 @@
           </a>
         </dd>
       </div>
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Matrix Reference
@@ -83,7 +83,7 @@
           </a>
         </dd>
       </div>
-      
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Reval or Defence Text File
@@ -98,19 +98,18 @@
           </a>
         </dd>
       </div>
-      
+
     </dl>
 
 
 
-    <form action="/defence-home" method="post" novalidate>
+    <form action="create-new-dataset-answers" method="post" novalidate>
 
       <input type="hidden" name="answers-checked" value="true">
 
       {{ govukButton({
-        text: "Submit and download as text file",
-        href: "defence-home"
-        }) }}
+        text: "Submit and download as text file"
+      }) }}
 
     </form>
 
