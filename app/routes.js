@@ -31,6 +31,18 @@ router.post('/v2/create-new-dataset-route', function (req, res) {
 	
 })
 
+router.post('/v2/defence-home-add-row', function (req, res) {
+
+  console.log('res');
+  console.log(req.session.data);
+  // this also works as long as the variable doesn't have a - in the name
+  formData.push(req.session.data);
+  res.render("defence-home", {
+    results:formData
+  });
+
+})
+
  
 module.exports = router
 
