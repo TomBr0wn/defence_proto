@@ -42,7 +42,7 @@ router.post("/v2/compare-with-another-dataset", function (req, res) {
 	// this also works as long as the variable doesn't have a - in the name
 	formData.push(req.session.data);
   //res.render("defence-home", { results: formData });
-  res.redirect("existing-and-comparable");
+  res.redirect("existing-and-comparable-new");
 });
 
 module.exports = router;

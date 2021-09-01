@@ -17,7 +17,7 @@ Example usage:
 
 */
 
-var datasetID = req.session.data['dataset-id']
+const formData = [];
 
 module.exports = {
 
