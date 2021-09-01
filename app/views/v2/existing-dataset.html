@@ -16,7 +16,7 @@
      <div class="govuk-grid-column-full">
 
          {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-         {{ mojPageHeaderActions({ heading: { text: 'Dataset abc_123' },
+         {{ mojPageHeaderActions({ heading: {  text: data['dataset-id'] },
             items:
             [
                 {

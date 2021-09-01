@@ -1,5 +1,26 @@
 {% extends "layout.html" %}
+
 {% block beforeContent %}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+    {{ mojPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [
+        {
+        text: 'Hereditaments',
+        href: 'analyse-home-hereditaments'
+        },
+        {
+        text: 'Rentals',
+        href: 'analyse-home-rentals'
+        },
+        {
+        text: 'Cases',
+        href: 'analyse-home-cas'
+        }
+    ]
+    }) }}
+    
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -12,6 +33,8 @@
 </div>
 <a class="govuk-back-link" href="existing-dataset">Back</a>
 {% endblock %}
+
+
 {% block content %}
 <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
