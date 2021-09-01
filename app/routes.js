@@ -36,16 +36,13 @@ router.post("/v2/defence-home-add-row", function (req, res) {
   res.redirect("defence-home");
 });
 
+router.post("/v2/compare-with-another-dataset", function (req, res) {
+	console.log("res");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
+  //res.render("defence-home", { results: formData });
+  res.redirect("existing-and-comparable");
+});
+
 module.exports = router;
-
-//router.post("create-new-dataset-answers", function (req, res) {
-// Make a variable and give it the value from 'how-many-balls'
-// var datasetId = req.session.data['dataset-id'];
-// var matrixRef = req.session.data['matrix-ref'];
-// var chalCaseNum = req.session.data['cca-ref'];
-// var cbdCaseNum = req.session.data['cbd-case-num'];
-// var subLocation = req.session.data['sub-location'];
-// var textFile = req.session.data['text-file-type'];
-//res.redirect("");
-
-//});
