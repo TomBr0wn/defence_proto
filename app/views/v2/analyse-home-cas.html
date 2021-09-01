@@ -10,49 +10,8 @@
         </span>
     </p>
 </div>
-<a class="govuk-back-link" href="analyse-home.html">Back</a>
-{% endblock %}
-{% block content %}
-<div class="govuk-width-container">
-    <main class="govuk-main-wrapper">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
 
-
-
-
-                {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-
-                {{ mojPageHeaderActions({
-                            heading: {
-                                text: 'Analyse Hereditaments: Cases'
-                            },
-                            items:
-                        [
-                            
-                            {
-                                text: 'View dataset as table',
-                                classes: 'govuk-button--primary',
-                                href: "#"
-                            }
-                        ]
-                    }) }}
-            </div>
-
-
-
-
-
-
-
-            <!-- End of Nav -->
-
-
-            <div class="govuk-grid-column-three-quarters">
-
-                <!---------- START OF POWER BI ----------->
-
-                {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
                 {{ mojPrimaryNavigation({
                 label: 'Primary navigation',
@@ -90,6 +49,50 @@
                         href: '#3'
                     }]
                 }) }}
+
+<a class="govuk-back-link" href="analyse-home.html">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+
+
+
+
+                {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+                {{ mojPageHeaderActions({
+                            heading: {
+                                text: 'Analyse: Cases'
+                            },
+                            items:
+                        [
+                            
+                            {
+                                text: 'View dataset as table',
+                                classes: 'govuk-button--primary',
+                                href: "#"
+                            }
+                        ]
+                    }) }}
+            </div>
+
+
+
+
+
+
+
+            <!-- End of Nav -->
+
+
+            <div class="govuk-grid-column-three-quarters">
+
+                <!---------- START OF POWER BI ----------->
+
+                
 
                 <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
 
