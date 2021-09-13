@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+
+
+<a class="govuk-back-link" href="analyse-home-hereditaments">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+        {{ mojPageHeaderActions({
+                heading: {
+                    text: 'Analyse Hereditaments'
+                },
+                items: [{
+                    text: "Add remark",
+                    classes: "govuk-button--primary",
+                    href: "analyse-hereditaments-add-remark"
+                }, {
+                    text: "Create Schedule",
+                    classes: "govuk-button--secondary",
+                    href: "analyse-hereditaments-preview-schedule"
+                }]
+        }) }}
+
+
+        <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col" id="select-all"></th>
+                    <th class="govuk-table__header col-two-twelfth" scope="col">Address</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Rent Useful</th>
+                    <th class="govuk-table__header col-one-twelfth" scope="col">UARN ID</th>
+                    <th class="govuk-table__header col-one-twelfth" scope="col">Total Significant Area</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Price per m2</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Subject to Challenge</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Had Check</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Had Challenge</th>
+                    <th class="govuk-table__header col-one-twenty-fourth" scope="col">Has Remarks</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row govuk-table__row--selected">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="hereditaments-address" value="hereditaments-address">
+                            <label class="govuk-label govuk-checkboxes__label" for="hereditaments-address">
+                                <span class="govuk-visually-hidden">Address</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">1 Florence Street, Leeds, LS9 7AW</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="hereditaments-rent-useful" value="hereditaments-rent-useful">
+                            <label class="govuk-label govuk-checkboxes__label" for="hereditaments-rent-useful">
+                                <span class="govuk-visually-hidden">Rent Useful</span>
+                            </label>
+                        </div>
+                    </td>
+                    </td>
+                    <td class="govuk-table__cell">121 Woodhouse Street, Leeds, LS6 2PY</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="hereditaments-uarn" value="hereditaments-uarn">
+                            <label class="govuk-label govuk-checkboxes__label" for="hered">
+                                <span class="govuk-visually-hidden">UARN ID</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">2 Chester Street, Leeds, LS12 2NW</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="hereditaments-subject-to-challenge" value="hereditaments-subject-to-challenge">
+                            <label class="govuk-label govuk-checkboxes__label" for="hereditaments-subject-to-challenge">
+                                <span class="govuk-visually-hidden">Subject to Challenge</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">60 Hansby Close, Leeds, LS14 6JX</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-kilimanjaro" value="kilimanjaro">
+                            <label class="govuk-label govuk-checkboxes__label" for="mountain-kilimanjaro">
+                                <span class="govuk-visually-hidden">Select Kilimanjaro</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">4 Chatswood Drive, Leeds, LS11 7AH</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-puncak-jaya" value="puncak-jaya">
+                            <label class="govuk-label govuk-checkboxes__label" for="mountain-puncak-jaya">
+                                <span class="govuk-visually-hidden">Select Puncak Jaya</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">67 Lawns Crescent, Leeds, LS12 5RW</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-vinson" value="vinson">
+                            <label class="govuk-label govuk-checkboxes__label" for="mountain-vinson">
+                                <span class="govuk-visually-hidden">Select Vinson</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">44 West Park Chase, Leeds, LS8 2FD</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">123_UARN</td>
+                    <td class="govuk-table__cell">995.00</td>
+                    <td class="govuk-table__cell">£160</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+{% endblock %}

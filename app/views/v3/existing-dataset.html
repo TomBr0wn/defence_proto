@@ -1,0 +1,123 @@
+ {% extends "layout.html" %} {% block beforeContent %}
+ <div class="govuk-phase-banner">
+     <p class="govuk-phase-banner__content">
+         <strong class="govuk-tag govuk-phase-banner__content__tag">
+             alpha
+         </strong>
+         <span class="govuk-phase-banner__text">
+             This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+         </span>
+     </p>
+ </div>
+ <a class="govuk-back-link" href="defence-home">Back</a> {% endblock %} {% block content %}
+
+
+ <div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+
+         {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+         {{ mojPageHeaderActions({ heading: {  text: data['dataset-id'] },
+            items:
+            [
+                {
+                    text: "Get Comparable Data",
+                    href: "get-comparable-data",
+                    classes: "govuk-button--primary"
+                }
+            ]
+        }) }}
+         <h2 class="govuk-heading-m">Details</h2>
+
+         {{ govukTable
+            ({ captionClasses:
+                "govuk-table__caption--m",
+                firstCellIsHeader: false,
+                head: [
+                    {
+                        text: "Dataset ID",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Matrix Reference",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Challenge Case Number",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "CDB Case Number",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Sub Location",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Text File Type",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Created on",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Data Status",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Actions",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "",
+                        classes: 'col-one-twelfth'
+                    }
+                ],
+                rows:
+                [ [
+                    { 
+                        text: data['dataset-id']
+                    },
+                    { 
+                        text: data['matrix-ref'] 
+                    },
+                    { 
+                        text: data['cca-ref']
+                    },
+                    {
+                        text: data['cdb-case-num']
+                    },
+                    {
+                        text: data['sub-location']
+                    },
+                    {
+                        text: data['text-file-type']
+                    },
+                    {
+                        classes: "lastUpdateTime"
+                    },
+                    {
+                        html:" <strong class='govuk-tag'>**Advise</strong>"
+                    },
+                    {
+                        html: "<a href='analyse-home'>Analyse Data</a>"
+                    },
+                    {
+                        html: "<a href='v2#'>Refresh Data</a>"
+                    },
+                    {
+                        html: "<a href='complete-process'>Complete Process</a>"
+                    }
+                ] 
+            ]
+        }) }}
+
+
+     </div>
+ </div>
+ {% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %} {% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="get-comparable-data">Back</a> {% endblock %} {% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+        {{ mojPageHeaderActions
+            ({ heading:
+                { text: 'Comparable assessments' },
+                items: [
+                {
+                    text: "Print Schedule",
+                    href: "print-comparable-assessments",
+                    classes: "govuk-button--primary"
+                },
+                {
+                    text: "Compare Again",
+                    href: "get-comparable-data",
+                    classes: "govuk-button--secondary"
+                }
+                ]
+                
+            })
+        }}
+
+        {{ govukTable
+            ({ captionClasses: "govuk-table__caption--m",
+                firstCellIsHeader: false, head: 
+                [
+                    { text: "Address", classes: 'col-one-tenth' }, 
+                    { text: "Description", classes: 'col-one-tenth' },
+                    { text: "Actual Area m2", classes: 'col-one-tenth' },
+                    { text: "Total Significant Area m2", classes: 'col-one-tenth' },
+                    { text: "Survey Unit Value", classes: 'col-one-tenth' },
+                    { text: "Other Additions", classes: 'col-one-tenth' },
+                    { text: "Parking", classes: 'col-one-tenth' },
+                    { text: "Plant and Machinery", classes: 'col-one-tenth' },
+                    { text: "End Adj Factor", classes: 'col-one-tenth' },
+                    { text: "Rateable Value", classes: 'col-one-tenth' }
+                ],
+                rows:
+                [
+                    [
+                        { text: "20 Some street, Manchester, M2 XXX" },
+                        { text: "Shop and Premises" },
+                        { text: "74.80" },
+                        { text: "74.80" },
+                        { text: "£55,000" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "1.0" },
+                        { text: "£55,000" }
+                    ],
+                    [
+                        { text: "24 Some street, Manchester, M2 XXX" },
+                        { text: "Restaurant and Premises" },
+                        { text: "12.20" },
+                        { text: "12.20" },
+                        { text: "£87,000" },
+                        { text: "£1000" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "0.95" },
+                        { text: "£55,000" }
+                    ],
+                    [
+                        { text: "20 Some street, Manchester, M2 XXX" },
+                        { text: "Cafe and Premises" },
+                        { text: "74.80" },
+                        { text: "74.80" },
+                        { text: "£55,000" },
+                        { text: "£500" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "1.0" },
+                        { text: "£55,000" }
+                    ],
+                    [
+                        { text: "20 Some street, Manchester, M2 XXX" },
+                        { text: "Shop and Premises" },
+                        { text: "74.80" },
+                        { text: "74.80" },
+                        { text: "£55,000" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "£0" },
+                        { text: "0.95" },
+                        { text: "£55,000" }
+                    ]
+                ]
+            })
+        }}
+
+    </div>
+</div>
+{% endblock %}

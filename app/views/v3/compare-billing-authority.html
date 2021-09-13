@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="get-comparable-data">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="get-comparable-data" method="post" novalidate>
+      
+      {{ govukInput({
+        label: {
+          text: "Set Billing Authority",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-20",
+        text: data['compare-billing-auth'],
+        value: data['compare-billing-auth'],
+        name: "compare-billing-auth",
+        id: "compare-billing-auth"
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

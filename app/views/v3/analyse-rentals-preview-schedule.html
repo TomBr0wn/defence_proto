@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="analyse-rentals">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+        {{ mojPageHeaderActions({
+                heading: {
+                text: 'Preview Schedule'
+                },
+                items: [{
+                    text: "Print schedule",
+                    classes: "govuk-button--primary",
+                    href: "analyse-rentals-print-schedule"
+                },
+                {
+                    text: "Cancel",
+                    classes: "govuk-button--secondary",
+                    href: "analyse-rentals"
+                }]
+        }) }}
+
+
+
+
+
+        <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header col-one-twelth" scope="col">Address</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Description</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Actual Area m2</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Total Significant Area m2</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Adopted Value £pm2</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Adopted Value m2</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Survey Unit Value</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Other Additions</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Parking</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Plant and Machinery</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Rateable Value</th>
+                    <th class="govuk-table__header col-one-twelth" scope="col">Remarks</th>
+
+
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row govuk-table__row--selected">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">21 Greenfield Avenue, Leeds, LS20 8HG</td>
+                    <td class="govuk-table__cell">Shop and premises</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">99.99</td>
+                    <td class="govuk-table__cell">£1,000</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£0</td>
+                    <td class="govuk-table__cell">£53,400</td>
+                    <td class="govuk-table__cell">Y/N</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+{% endblock %}

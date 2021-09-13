@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+
+
+    
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+    {{ mojPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [
+        {
+        text: 'Hereditaments',
+        href: 'analyse-home-hereditaments'
+        },
+        {
+        text: 'Rentals',
+        href: 'analyse-home-rentals'
+        },
+        {
+        text: 'Cases',
+        href: 'analyse-home-cas'
+        }
+    ]
+    }) }}
+
+
+<a class="govuk-back-link" href="existing-dataset">Back</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                
+                
+
+
+                {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+
+                {{
+                    mojPageHeaderActions
+                    ({heading:
+                        {
+                            text: 'Analyse Landing/Homepage'
+                        },
+                        items:
+                        [
+                            {
+                                text: 'Show Filters',
+                                classes: 'govuk-button--primary',
+                                href: "filters"
+                            }
+                        ]
+                    })
+                }}
+            </div>
+        
+
+       
+
+
+
+
+            <!-- End of Nav -->
+
+
+            <div class="govuk-grid-column-three-quarters">
+
+                <!---------- START OF POWER BI ----------->
+                
+
+                <img alt="placeholder" class="govuk-!-width-full govuk-!-margin-top-3" src="/public/images/placeholder-img.png" />
+
+                <!---------- END OF POWER BI ----------->
+            </div>
+        </div>
+    </main>
+</div>
+
+</div>
+{% endblock %}
