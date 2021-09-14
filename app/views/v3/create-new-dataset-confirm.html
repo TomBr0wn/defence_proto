@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="defence-home" style="visibility: hidden;">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+{{ mojBanner({
+  type: 'success',
+  text: 'You have successfully submited your datset criteria.',
+  iconFallbackText: 'Success'
+}) }}
+    
+    <h1 class="govuk-heading-xl">Create New Dataset</h1>
+
+    <a href="defence-home-filled" class="govuk-link govuk-link--no-visited-state">Go to dataset homepage</a>
+
+  </div>
+</div>
+{% endblock %}
