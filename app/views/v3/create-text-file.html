@@ -20,13 +20,13 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="create-new-dataset-route" method="post" novalidate>
-      {{ govukRadios({
+      <!-- {{ govukRadios({
         classes: "govuk-radios--inline",
         idPrefix: "text-file-type",
         name: "text-file-type",
         fieldset: {
           legend: {
-            text: "Set Reval or Defence Text File",
+            text: "Choose Reval, Defence or both text files",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -46,7 +46,34 @@
             checked: checked("text-file-type", "Defence")
           }
         ]
-      }) }}
+      }) }} -->
+      
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "text-file-type",
+          name: "text-file-type",
+          fieldset: {
+            legend: {
+              text: "Choose Reval, Defence or both text files",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: " Reval",
+              text: "Reval"
+            },
+            {
+              value: " Defence",
+              text: "Defence"
+            }
+          ]
+        }) }}
       
       {{ govukButton({
         text: "Continue"
