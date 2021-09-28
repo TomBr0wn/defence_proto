@@ -99,3 +99,45 @@ $govuk-assets-path: "/govuk/assets/";
 .second-grid-col {
 	-ms-grid-column: 2;
 }
+
+.flexServiceContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+	align-items: center;
+	
+}
+.flexServiceItem {
+	background-color: white;
+	border: 4px solid #b1b4b6;
+	color: #1d70b8;
+	margin-right: 32px;
+	width: 240px;
+	height: 240px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	text-align: center;
+	
+}
+
+.linkSpan{ 
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+
+  /* fixes overlap error in IE7/8, 
+     make sure you have an empty gif */
+  background-image: url('empty.gif');
+} 
+
+.blueText{
+	color: #003078;
+}
