@@ -24,7 +24,8 @@
 
     {{ govukTable({
         firstCellIsHeader: false,
-        head: [
+        head:
+        [
           {
             text: "Version"
           },
@@ -35,7 +36,8 @@
             text: " "
           }
         ],
-        rows: [
+        rows:
+        [
           [
             {
               text: "1.1"
@@ -47,6 +49,7 @@
               html: "<a href='/v1/defence-home'>Open</a>"
             }
           ],
+    
           [
             {
               text: "2.1"
@@ -57,13 +60,31 @@
             {
               html: "<a href='/v2/defence-home'>Open</a>"
             }
-          ],
+          ]
+        ]
+      }) }}
+
+    {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Comments"
+          },
+          {
+            text: " "
+          }
+        ],
+        rows:
+        [
           [
             {
               text: "3.1"
             },
             {
-              text: "Choose Reval/Settlement page + updated Create Dataset Workflow "
+              text: "Added Choose app Rev/Sett UI selection screen"
             },
             {
               html: "<a href='/v3/choose-app'>Open</a>"
