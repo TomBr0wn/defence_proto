@@ -24,8 +24,8 @@
                     'Settlement Cases'
                 },
                 items: [{
-                    text: "Create new dataset",
-                    href: "create-new-dataset",
+                    text: "Create new case",
+                    href: "create-new-case",
                     classes: "govuk-button--primary"
                 }]
             })
@@ -39,41 +39,53 @@
                 firstCellIsHeader: false,
                 head: [
                     {
-                        text: "Dataset ID",
-                        classes: 'col-one-ninth'
+                        text: "Description",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Matrix Reference",
-                        classes: 'col-one-ninth'
+                        text: "Regional valluation units",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Challenge Case Number",
-                        classes: 'col-one-ninth'
+                        text: "Economic regions",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "CDB Case Number",
-                        classes: 'col-one-ninth'
+                        text: "Billing authority codes",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Sub Location",
-                        classes: 'col-one-ninth'
+                        text: "Bulk class indicators",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Text File Type",
-                        classes: 'col-one-ninth'
+                        text: "Sub locations",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Created on",
-                        classes: 'col-one-ninth'
+                        text: "Scat codes",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Scat suffixes",
+                        classes: 'col-one-twelfth'
                     },
                     {
                         text: "Data Status",
-                        classes: 'col-one-ninth'
+                        classes: 'col-one-twelfth'
                     },
                     {
                         text: "Action",
-                        classes: 'col-one-ninth'
-                    }
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Action",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Action",
+                        classes: 'col-one-twelfth'
+                    }                
                 ],
                 rows:
                 [ [
@@ -96,14 +108,23 @@
                         text: data['text-file-type']
                     },
                     {
-                        text: ""
+                        text: data['text-file-type']
                         
                     },
                     {
-                        text: ""
+                        text: data['text-file-type']
                     },
                     {
-                        text: ""
+                        text: data['text-file-type']
+                    },
+                    {
+                        html: "<a href='#'>Open</a>"
+                    },
+                    {
+                        html: "<a href='#'>Refresh</a>"
+                    },
+                    {
+                        html: "<a href='#'>Edit</a>"
                     }
                 ] ]
             })
