@@ -36,47 +36,42 @@ router.post("/v3/create-new-case-route", function (req, res) {
 
 	var createDescription = req.session.data["description"];
 	var createRegValUnit = req.session.data["reg-val-units"];
-	console.log("Your new " + createDescription);
 
-	console.log(createDescription);
-	console.log(createRegValUnit);
+	var createEconRegion = req.session.data["economic-region"];
+	var createbillAuthCodes = req.session.data["bill-auth-codes"];
+	var createBulkClassInd = req.session.data["bulk-class-ind"];
+
+	var createSubLocation = req.session.data["sub-location"];
+	var createScatCode = req.session.data["scat-code"];
+	var createScatSuffix = req.session.data["scat-suffix"];
 
 	console.log(formData);
 
 	res.redirect("create-new-case");
 });
 
-
 //////////////  Create V2 dataset home new record/row   ////////////////////////////////////
-router.post(
-	"/v2/defence-home-add-row",
-	function (req, res, next) {
-		console.log("res");
-		console.log(req.session.data);
-		// this also works as long as the variable doesn't have a - in the name
-		formData.push(req.session.data);
+router.post("/v2/defence-home-add-row", function (req, res, next) {
+	console.log("res");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
 
-		res.redirect("defence-home-filled");
-		
-	
-	});
-	
+	res.redirect("defence-home-filled");
+});
+
 //////////////  Create V3 dataset home new record/row   ////////////////////////////////////
-router.post(
-	"/v3/defence-home-add-row",
-	function (req, res, next) {
-		console.log("res");
-		console.log(req.session.data);
-		// this also works as long as the variable doesn't have a - in the name
-		formData.push(req.session.data);
+router.post("/v3/defence-home-add-row", function (req, res, next) {
+	console.log("res");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
 
-		res.redirect("defence-home-filled");
-		
-	
-	});
+	res.redirect("defence-home-filled");
+});
 
 //////////////  V2 comparable data   ////////////////////////////////////
-	
+
 router.post("/v2/compare-with-another-dataset", function (req, res) {
 	console.log("res");
 	console.log(req.session.data);
@@ -87,7 +82,7 @@ router.post("/v2/compare-with-another-dataset", function (req, res) {
 });
 
 //////////////  V3 comparable data   ////////////////////////////////////
-	
+
 router.post("/v3/compare-with-another-dataset", function (req, res) {
 	console.log("res");
 	console.log(req.session.data);
@@ -96,7 +91,6 @@ router.post("/v3/compare-with-another-dataset", function (req, res) {
 	//res.render("defence-home", { results: formData });
 	res.redirect("existing-and-comparable-new");
 });
-
 
 // // Run this code when a form is submitted to 'juggling-balls-answer'
 // router.post("/juggling-balls-answer", function (req, res) {
