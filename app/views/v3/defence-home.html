@@ -90,32 +90,32 @@
                 rows:
                 [ [
                     { 
-                        text: data['dataset-id']
+                        text: data['description']
                     },
                     { 
-                        text: data['matrix-ref'] 
+                        text: data['reg-val-units'] 
                     },
                     { 
-                        text: data['cca-ref']
+                        text: data['economic-region']
                     },
                     {
-                        text: data['cdb-case-num']
+                        text: data['bill-auth-codes']
+                    },
+                    {
+                        text: data['bulk-class-ind']
                     },
                     {
                         text: data['sub-location']
                     },
                     {
-                        text: data['text-file-type']
-                    },
-                    {
-                        text: data['text-file-type']
+                        text: data['scat-code']
                         
                     },
                     {
-                        text: data['text-file-type']
+                        text: data['scat-suffix']
                     },
                     {
-                        text: data['text-file-type']
+                        html:" <strong class='govuk-tag'>**Advise</strong>"
                     },
                     {
                         html: "<a href='#'>Open</a>"
@@ -124,7 +124,7 @@
                         html: "<a href='#'>Refresh</a>"
                     },
                     {
-                        html: "<a href='#'>Edit</a>"
+                        html: "<a href='create-new-case'>Edit</a>"
                     }
                 ] ]
             })
