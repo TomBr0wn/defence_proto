@@ -28,20 +28,22 @@ router.post("/v2/create-new-dataset-route", function (req, res) {
 });
 
 //////////////  Create V3 dataset route   ////////////////////////////////////
-router.post("/v3/create-new-dataset-route", function (req, res) {
+router.post("/v3/create-new-case-route", function (req, res) {
 	console.log("Here we go...");
 	console.log(req.session.data);
 	// this also works as long as the variable doesn't have a - in the name
 	formData.push(req.session.data);
 
-	var datasetId = req.session.data["dataset-id"];
-	console.log("Your new " + datasetId);
+	var createDescription = req.session.data["description"];
+	var createRegValUnit = req.session.data["reg-val-units"];
+	console.log("Your new " + createDescription);
 
-	console.log(datasetId);
+	console.log(createDescription);
+	console.log(createRegValUnit);
 
 	console.log(formData);
 
-	res.redirect("create-new-dataset");
+	res.redirect("create-new-case");
 });
 
 
