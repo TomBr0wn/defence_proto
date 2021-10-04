@@ -28,26 +28,26 @@
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">A</a>
+                <a class="govuk-link" href="#A">A</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">B</a>
+                <a class="govuk-link" href="#B">B</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">C</a>
+                <a class="govuk-link" href="#C">C</a>
               </li>
             </ul>
           </div>
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">D</a>
+                <a class="govuk-link" href="#D">D</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">E</a>
+                <a class="govuk-link" href="#E">E</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">F</a>
+                <a class="govuk-link" href="#F">F</a>
               </li>
             </ul>
           </div>
@@ -60,57 +60,26 @@
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">G</a>
+                <a class="govuk-link" href="#G">G</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">H</a>
+                <a class="govuk-link" href="#H">H</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">I</a>
-              </li>
-            </ul>
-          </div>
-          <div class="govuk-grid-column-one-half">
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" href="#">J</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="#">K</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="#">L</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="govuk-grid-column-one-quarter">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-half">
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" href="#">M</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="#">N</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="#">O</a>
+                <a class="govuk-link" href="#I">I</a>
               </li>
             </ul>
           </div>
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">P</a>
+                <a class="govuk-link" href="#J">J</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">Q</a>
+                <a class="govuk-link" href="#K">K</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">R</a>
+                <a class="govuk-link" href="#L">L</a>
               </li>
             </ul>
           </div>
@@ -122,23 +91,54 @@
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">T</a>
+                <a class="govuk-link" href="#M">M</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">U</a>
+                <a class="govuk-link" href="#N">N</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">V</a>
+                <a class="govuk-link" href="#O">O</a>
               </li>
             </ul>
           </div>
           <div class="govuk-grid-column-one-half">
             <ul class="govuk-list">
               <li>
-                <a class="govuk-link" href="#">W</a>
+                <a class="govuk-link" href="#P">P</a>
               </li>
               <li>
-                <a class="govuk-link" href="#">Y</a>
+                <a class="govuk-link" href="#Q">Q</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#R">R</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#T">T</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#U">U</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#V">V</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#W">W</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#Y">Y</a>
               </li>
             </ul>
           </div>
@@ -147,7 +147,11 @@
     </div>
 
     <form action="create-new-case-route" method="post" novalidate>
-
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
@@ -156,7 +160,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>A</a>",
+                html: "<a href='#' id='A'>A</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -196,7 +200,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>B</a>",
+                html: "<a href='#' id='B'>B</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -236,7 +240,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>C</a>",
+                html: "<a href='#' id='C'>C</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -276,48 +280,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
-              }
-            ]
-          }) }}
-        </div>
-        
-        <div class="govuk-grid-column-one-quarter">
-          {{ govukCheckboxes({
-            idPrefix: "bill-auth-codes",
-            name: "bill-auth-codes",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='D'>D</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -358,7 +321,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='E'>E</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -399,7 +362,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='F'>F</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -440,7 +403,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='G'>G</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -481,7 +444,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='H'>H</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -522,7 +485,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='I'>I</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -563,7 +526,7 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='J'>J</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -604,7 +567,540 @@
             classes: "govuk-checkboxes--small",
             fieldset: {
               legend: {
-                html: "<a href='#'>D</a>",
+                html: "<a href='#' id='K'>K</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='L'>L</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='M'>M</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='N'>N</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='O'>O</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='P'>P</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='Q'>Q</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='R'>R</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='S'>S</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='T'>T</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='U'>U</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='V'>V</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='W'>W</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Cardiff",
+                text: "Cardiff"
+              }
+            ]
+          }) }}
+        </div>
+        
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='Y'>Y</a>",
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
@@ -639,8 +1135,6 @@
         </div>
         
       </div>
-
-
 
       {{ govukButton({
         text: "Continue"
