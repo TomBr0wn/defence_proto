@@ -22,20 +22,18 @@
     <form action="create-new-case-route" method="post" novalidate>
       {{ govukInput({
         label: {
-          text: "Set Sub Location",
+          text: "Set scat code",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
         hint: {
           html:
-          "<p>If selecting a specific sublocation code(s) type in exact sublocation code as it appears in CDB. If selecting a wildcard entering the characters a sublocation begins with followed by % will bring through all assessments with that prefix e.g. A% would bring through ABC1, ABC2, ABC3 etc.
-          <br>Multiple wildcard values are not permitted.
-          <br>When specifying a wildcard search the Bulk Class Indicator must also be selected.</p>"
+          "<p>Some hint/helper text about scat codes here</p>"
         },
         classes: "govuk-input--width-20",
-        text: data['sub-location'],
-        name: "sub-location",
-        id: "sub-location"
+        text: data['scat-code'],
+        name: "scat-code",
+        id: "scat-code"
       }) }}
 
       {{ govukButton({

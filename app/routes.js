@@ -39,7 +39,7 @@ router.post("/v3/create-new-case-route", function (req, res) {
 
 	var createEconRegion = req.session.data["economic-region"];
 	var createbillAuthCodes = req.session.data["bill-auth-codes"];
-	var createBulkClassInd = req.session.data["bulk-class-ind"];
+	var createBulkClassInd = req.session.data["bulk-class-indicator"];
 
 	var createSubLocation = req.session.data["sub-location"];
 	var createScatCode = req.session.data["scat-code"];
