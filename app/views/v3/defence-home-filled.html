@@ -10,7 +10,7 @@
         </span>
     </p>
 </div>
-<a class="govuk-back-link" href="/">Back</a>
+<a class="govuk-back-link" href="choose-app">Back</a>
 {% endblock %}
 {% block content %}
 
@@ -21,11 +21,11 @@
         {{ mojPageHeaderActions
             ({ heading:
                 { text:
-                    'Dataset Landing Page'
+                    'Settlement Cases'
                 },
                 items: [{
-                    text: "Create new dataset",
-                    href: "create-new-dataset",
+                    text: "Create new case",
+                    href: "create-new-case",
                     classes: "govuk-button--primary"
                 }]
             })
@@ -39,71 +39,92 @@
                 firstCellIsHeader: false,
                 head: [
                     {
-                        text: "Dataset ID",
-                        classes: 'col-one-ninth'
+                        text: "Description",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Matrix Reference",
-                        classes: 'col-one-ninth'
+                        text: "Regional valuation units",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Challenge Case Number",
-                        classes: 'col-one-ninth'
+                        text: "Economic regions",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "CDB Case Number",
-                        classes: 'col-one-ninth'
+                        text: "Billing authority codes",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Sub Location",
-                        classes: 'col-one-ninth'
+                        text: "Bulk class indicators",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Text File Type",
-                        classes: 'col-one-ninth'
+                        text: "Sub locations",
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Created on",
-                        classes: 'col-one-ninth'
+                        text: "Scat codes",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Scat suffixes",
+                        classes: 'col-one-twelfth'
                     },
                     {
                         text: "Data Status",
-                        classes: 'col-one-ninth'
+                        classes: 'col-one-twelfth'
                     },
                     {
-                        text: "Action",
-                        classes: 'col-one-ninth'
-                    }
+                        text: "Open case",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Refresh case",
+                        classes: 'col-one-twelfth'
+                    },
+                    {
+                        text: "Edit case",
+                        classes: 'col-one-twelfth'
+                    }                
                 ],
                 rows:
                 [ [
                     { 
-                        text: data['dataset-id']
+                        text: data['description']
                     },
                     { 
-                        text: data['matrix-ref'] 
+                        text: data['reg-val-units'] 
                     },
                     { 
-                        text: data['cca-ref']
+                        text: data['economic-region']
                     },
                     {
-                        text: data['cdb-case-num']
+                        text: data['bill-auth-codes']
+                    },
+                    {
+                        text: data['bulk-class-indicator']
                     },
                     {
                         text: data['sub-location']
                     },
                     {
-                        text: data['text-file-type']
-                    },
-                    {
-                        classes: "lastUpdateTime"
+                        text: data['scat-code']
                         
                     },
                     {
-                        html:" <strong class='govuk-tag'>**Advise</strong>"
+                        text: data['scat-suffix']
                     },
                     {
-                        html: "<a href='existing-dataset'>Open</a>"
+                        html:" <strong class='govuk-tag--yellow'>RETRIEVING DATA</strong>"
+                    },
+                    {
+                        html: "<a href='#'>Open</a>"
+                    },
+                    {
+                        html: "<a href='#'>Refresh</a>"
+                    },
+                    {
+                        html: "<a href='create-new-case'>Edit</a>"
                     }
                 ] ]
             })
