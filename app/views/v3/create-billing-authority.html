@@ -85,7 +85,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
@@ -116,7 +116,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="govuk-grid-column-one-quarter">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
@@ -147,12 +147,13 @@
     </div>
 
     <form action="create-new-case-route" method="post" novalidate>
-      
+
       {{ govukButton({
         text: "Continue"
       }) }}
-      
+
       <div class="govuk-grid-row">
+        <!-- A -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -175,24 +176,25 @@
                 text: "Allerdale"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Amber Valley",
+                text: "Amber Valley"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Arun",
+                text: "Arun"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Ashfield",
+                text: "Ashfield"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Aylesbury Vale",
+                text: "Aylesbury Vale"
               }
             ]
           }) }}
         </div>
+        <!-- B -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -207,32 +209,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
                 value: " Babergh",
                 text: "Babergh"
+              },
+              {
+                value: " Barking & Dagenham",
+                text: "Barking & Dagenham"
               },
               {
                 value: " Barnet",
                 text: "Barnet"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Barnsley",
+                text: "Barnsley"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Barrow-In-Furness",
+                text: "Barrow-In-Furness"
+              },
+              {
+                value: " Basildon",
+                text: "Basildon"
               }
             ]
           }) }}
         </div>
+        <!-- C -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -247,32 +250,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Caerphilly",
+                text: "Caerphilly"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Calderdale",
+                text: "Calderdale"
               },
               {
                 value: " Cambridge",
                 text: "Cambridge"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Camden",
+                text: "Camden"
+              },
+              {
+                value: " Cannock Chase",
+                text: "Cannock Chase"
+              },
+              {
+                value: " Canterbury",
+                text: "Canterbury"
               }
             ]
           }) }}
         </div>
+        <!-- D -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -287,33 +291,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Dacorum",
+                text: "Dacorum"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Darlington",
+                text: "Darlington"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Dartford",
+                text: "Dartford"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Daventry",
+                text: "Daventry"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Denbigshire",
+                text: "Denbigshire"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Derby",
+                text: "Derby"
               }
             ]
           }) }}
         </div>
-        
+        <!-- E -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -328,33 +332,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Ealing",
+                text: "Ealing"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " East Cambridgeshire",
+                text: "East Cambridgeshire"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " East Devon",
+                text: "East Devon"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " East Hampshire",
+                text: "East Hampshire"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " East Hertfordshire",
+                text: "East Hertfordshire"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " East Riding Of Yorkshire",
+                text: "East Riding Of Yorkshire"
               }
             ]
           }) }}
         </div>
-        
+        <!-- F -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -369,33 +373,25 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Fareham",
+                text: "Fareham"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Folkstone & Hythe",
+                text: "Folkstone & Hythe"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Forrest Of Dean",
+                text: "Forrest Of Dean"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Fylde",
+                text: "Fylde"
               }
             ]
           }) }}
         </div>
-        
+        <!-- G -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -410,33 +406,37 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Gateshead",
+                text: "Gateshead"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Gedling",
+                text: "Gedling"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Gloucester",
+                text: "Gloucester"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Great Yarmouth",
+                text: "Great Yarmouth"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Greenwich",
+                text: "Greenwich"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Guildford",
+                text: "Guildford"
+              },
+              {
+                value: " Gwynedd",
+                text: "Gwynedd"
               }
             ]
           }) }}
         </div>
-        
+        <!-- <!-- A -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -451,33 +451,45 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Hackney",
+                text: "Hackney"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Hammersmith & Fulham",
+                text: "Hammersmith & Fulham"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Hart",
+                text: "Hart"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Hartlepoole",
+                text: "Hartlepoole"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Hastings",
+                text: "Hastings"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Havant",
+                text: "Havant"
+              },
+              {
+                value: " Herefordshire",
+                text: "Herefordshire"
+              },
+              {
+                value: " Hinckley & Bosworth",
+                text: "Hinckley & Bosworth"
+              },
+              {
+                value: " Hyndburn",
+                text: "Hyndburn"
               }
             ]
           }) }}
         </div>
-        
+        <!-- I -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -492,74 +504,29 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Ipswich",
+                text: "Ipswich"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Isle Of Anglesey",
+                text: "Isle Of Anglesey"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Isle Of Wight",
+                text: "Isle Of Wight"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Isles of Scilly",
+                text: "Isles of Scilly"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Islington",
+                text: "Islington"
               }
             ]
           }) }}
         </div>
-        
-        <div class="govuk-grid-column-one-quarter">
-          {{ govukCheckboxes({
-            idPrefix: "bill-auth-codes",
-            name: "bill-auth-codes",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                html: "<a href='#' id='J'>J</a>",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
-              }
-            ]
-          }) }}
-        </div>
-        
+        <!-- K -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -574,33 +541,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Kensington & Chelsea",
+                text: "Kensington & Chelsea"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Kettering",
+                text: "Kettering"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Kings Lynn & West Norfolk",
+                text: "Kings Lynn & West Norfolk"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Kingston Upon Thames",
+                text: "Kingston Upon Thames"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Kirklees",
+                text: "Kirklees"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Knowsley",
+                text: "Knowsley"
               }
             ]
           }) }}
         </div>
-        
+        <!-- L -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -615,33 +582,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Lambeth",
+                text: "Lambeth"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Lancaster",
+                text: "Lancaster"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Leeds",
+                text: "Leeds"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Lewes",
+                text: "Lewes"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Liverpool",
+                text: "Liverpool"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Luton",
+                text: "Luton"
               }
             ]
           }) }}
         </div>
-        
+        <!-- M -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -656,33 +623,45 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Maidstone",
+                text: "Maidstone"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Maldon",
+                text: "Maldon"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Manchester",
+                text: "Manchester"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Mansfield",
+                text: "Mansfield"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Medway",
+                text: "Medway"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Melton",
+                text: "Melton"
+              },
+              {
+                value: " Merthyr Tydfil",
+                text: "Merthyr Tydfil"
+              },
+              {
+                value: " Milton Keynes",
+                text: "Milton Keynes"
+              },
+              {
+                value: " Monmouthshire",
+                text: "Monmouthshire"
               }
             ]
           }) }}
         </div>
-        
+        <!-- N -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -697,33 +676,49 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Neath and Port Talbot",
+                text: "Neath and Port Talbot"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " New Forest",
+                text: "New Forest"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Newcastle Upon Tyne",
+                text: "Newcastle Upon Tyne"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " North Devon",
+                text: "North Devon"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " North East Lincolnshire",
+                text: "North East Lincolnshire"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " North Hertfordshire",
+                text: "North Hertfordshire"
+              },
+              {
+                value: " North Norfolk",
+                text: "North Norfolk"
+              },
+              {
+                value: " North Tyneside",
+                text: "North Tyneside"
+              },
+              {
+                value: " North West Leicestershire",
+                text: "North West Leicestershire"
+              },
+              {
+                value: " Nuneaton & Bedworth",
+                text: "Nuneaton & Bedworth"
               }
             ]
           }) }}
         </div>
-        
+        <!-- O -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -738,33 +733,53 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Oadby & Wigston",
+                text: "Oadby & Wigston"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Oldham",
+                text: "Oldham"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Oxford",
+                text: "Oxford"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " O",
+                html: "<p> </p>"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " O",
+                html: "<p> </p>"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
               }
             ]
           }) }}
         </div>
-        
+        <!-- P -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -779,74 +794,53 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Pembrokeshire",
+                text: "Pembrokeshire"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Pendle",
+                text: "Pendle"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Peterborough",
+                text: "Peterborough"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Plymouth",
+                text: "Plymouth"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Powys 1 (Montgomerryshire)",
+                text: "Powys 1 (Montgomerryshire)"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Preston",
+                text: "Preston"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
               }
             ]
           }) }}
         </div>
-        
-        <div class="govuk-grid-column-one-quarter">
-          {{ govukCheckboxes({
-            idPrefix: "bill-auth-codes",
-            name: "bill-auth-codes",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                html: "<a href='#' id='Q'>Q</a>",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
-              }
-            ]
-          }) }}
-        </div>
-        
+        <!-- R -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -861,33 +855,57 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Reading",
+                text: "Reading"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Redcar and Cleveland",
+                text: "Redcar and Cleveland"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Rhondda Cynon Taff",
+                text: "Rhondda Cynon Taff"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Richmond Upon Thames",
+                text: "Richmond Upon Thames"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Rochdale",
+                text: "Rochdale"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Rossendale",
+                text: "Rossendale"
+              },
+              {
+                value: " Rotherham",
+                text: "Rotherham"
+              },
+              {
+                value: " Rugby",
+                text: "Rugby"
+              },
+              {
+                value: " Rushcliffe",
+                text: "Rushcliffe"
+              },
+              {
+                value: " Rutland",
+                text: "Rutland"
+              },
+              {
+                value: " Ryedale",
+                text: "Ryedale"
+              },
+              {
+                value: " Rossendale",
+                text: "Rossendale"
               }
             ]
           }) }}
         </div>
-        
+        <!-- S -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -902,33 +920,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Sandwell",
+                text: "Sandwell"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Selby",
+                text: "Selby"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Solihull",
+                text: "Solihull"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Somerset West & Taunton (West Somerset)",
+                text: "Somerset West & Taunton (West Somerset)"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " South Buckinghamshire",
+                text: "South Buckinghamshire"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Swansea",
+                text: "Swansea"
               }
             ]
           }) }}
         </div>
-        
+        <!-- T -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -943,33 +961,33 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Tameside",
+                text: "Tameside"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Telford and Wrekin",
+                text: "Telford and Wrekin"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Tewksbury",
+                text: "Tewksbury"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " Torbay",
+                text: "Torbay"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " Torafen",
+                text: "Torafen"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Tower Hamlets",
+                text: "Tower Hamlets"
               }
             ]
           }) }}
         </div>
-        
+        <!-- U -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -984,33 +1002,13 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Uttlesford",
+                text: "Uttlesford"
               }
             ]
           }) }}
         </div>
-        
+        <!-- V -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -1025,33 +1023,17 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Vale of Glamorgan",
+                text: "Vale of Glamorgan"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Vale of White Horse",
+                text: "Vale of White Horse"
               }
             ]
           }) }}
         </div>
-        
+        <!-- W -->
         <div class="govuk-grid-column-one-quarter">
           {{ govukCheckboxes({
             idPrefix: "bill-auth-codes",
@@ -1066,74 +1048,44 @@
             },
             items: [
               {
-                value: " Adur",
-                text: "Adur"
+                value: " Wakefield",
+                text: "Wakefield"
               },
               {
-                value: " Allerdale",
-                text: "Allerdale"
+                value: " Watford",
+                text: "Watford"
               },
               {
-                value: " Babergh",
-                text: "Babergh"
+                value: " Wellingborough",
+                text: "Wellingborough"
               },
               {
-                value: " Barnet",
-                text: "Barnet"
+                value: " West Berkshire",
+                text: "West Berkshire"
               },
               {
-                value: " Cambridge",
-                text: "Cambridge"
+                value: " West Oxfordshire",
+                text: "West Oxfordshire"
               },
               {
-                value: " Cardiff",
-                text: "Cardiff"
+                value: " Windsor and Maidenhead",
+                text: "Windsor and Maidenhead"
+              },
+              {
+                value: " Wolverhampton",
+                text: "Wolverhampton"
+              },
+              {
+                value: " Wrexham",
+                text: "Wrexham"
+              },
+              {
+                value: " Wyre Forest",
+                text: "Wyre Forest"
               }
             ]
           }) }}
         </div>
-        
-        <div class="govuk-grid-column-one-quarter">
-          {{ govukCheckboxes({
-            idPrefix: "bill-auth-codes",
-            name: "bill-auth-codes",
-            classes: "govuk-checkboxes--small",
-            fieldset: {
-              legend: {
-                html: "<a href='#' id='Y'>Y</a>",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: " Adur",
-                text: "Adur"
-              },
-              {
-                value: " Allerdale",
-                text: "Allerdale"
-              },
-              {
-                value: " Babergh",
-                text: "Babergh"
-              },
-              {
-                value: " Barnet",
-                text: "Barnet"
-              },
-              {
-                value: " Cambridge",
-                text: "Cambridge"
-              },
-              {
-                value: " Cardiff",
-                text: "Cardiff"
-              }
-            ]
-          }) }}
-        </div>
-        
       </div>
 
       {{ govukButton({
