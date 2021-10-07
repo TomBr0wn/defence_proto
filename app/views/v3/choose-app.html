@@ -17,39 +17,48 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-            {{ govukRadios({
-            classes: "govuk-radios--inline",
-            idPrefix: "changed-name",
-            name: "changed-name",
-            fieldset: {
-                legend: {
-                text: "Choose a service",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-                }
-            },
-            hint: {
-                text: "Select one of the below options."
-            },
-            items: [
-                {
-                value: "Reval",
-                text: "Reval"
-                },
-                {
-                value: "Settlement",
-                text: "Settlement"
-                }
-            ]
-            }) }}
+
+        <form action="choose-app-answer" method="post" novalidate>
+
+            <input type="hidden" name="answers-checked" value="true">
             
+            {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "pick-service",
+                name: "pick-service",
+                fieldset: {
+                    legend: {
+                    text: "Choose a service",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                    }
+                },
+                hint: {
+                    text: "Select one of the below options."
+                },
+                items: [
+                    {
+                    value: "reval",
+                    text: "Reval",
+                    checked: checked("pick-service", "reval")
+                    },
+                    {
+                    value: "settlement",
+                    text: "Settlement",
+                    checked: checked("pick-service", "settlement")
+                    }
+                ]
+                }) }}
+
             {{ govukButton({
-                text: "Continue"
-            }) }}
-        
+                  text: "Continue"
+                }) }}
+
+        </form>
+
     </div>
     {% endblock %}
     <div class=""></div>

@@ -92,19 +92,19 @@ router.post("/v3/compare-with-another-dataset", function (req, res) {
 	res.redirect("existing-and-comparable-new");
 });
 
-// // Run this code when a form is submitted to 'juggling-balls-answer'
-// router.post("/juggling-balls-answer", function (req, res) {
-// 	// Make a variable and give it the value from 'how-many-balls'
-// 	var howManyBalls = req.session.data["how-many-balls"];
+// // Run this code when a form is submitted to 'choose-app-answer'
+router.post("/v3/choose-app-answer", function (req, res) {
+	// Make a variable and give it the value from 'pick-service'
+	var whichService = req.session.data["pick-service"];
 
-// 	// Check whether the variable matches a condition
-// 	if (howManyBalls == "3 or more") {
-// 		// Send user to next page
-// 		res.redirect("/juggling-trick");
-// 	} else {
-// 		// Send user to ineligible page
-// 		res.redirect("/ineligible");
-// 	}
-// });
+	// Check whether the variable matches a condition
+	if (whichService == "settlement") {
+		// Send user to next page	
+		res.redirect("/v3/defence-home");
+	} else {
+		// Send user to other page
+		res.redirect("/v3/property-groups");
+	}
+});
 
 module.exports = router;
