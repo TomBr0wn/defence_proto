@@ -40,51 +40,27 @@
                 head: [
                     {
                         text: "Description",
-                        classes: 'col-one-twelfth'
+                        classes: 'col-one-sixth'
                     },
                     {
-                        text: "Regional valuation units",
-                        classes: 'col-one-twelfth'
+                        text: "Up to date as at",
+                        classes: 'col-one-sixth'
                     },
                     {
-                        text: "Economic regions",
-                        classes: 'col-one-twelfth'
+                        text: "Status",
+                        classes: 'col-one-sixth'
                     },
                     {
-                        text: "Billing authority codes",
-                        classes: 'col-one-twelfth'
+                        text: "Open case",
+                        classes: 'col-one-sixth govuk-visually-hidden'
                     },
                     {
-                        text: "Bulk class indicators",
-                        classes: 'col-one-twelfth'
+                        text: "Refresh case",
+                        classes: 'col-one-sixth govuk-visually-hidden'
                     },
                     {
-                        text: "Sub locations",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Scat codes",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Scat suffixes",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Data Status",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Open",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Refresh",
-                        classes: 'col-one-twelfth'
-                    },
-                    {
-                        text: "Edit",
-                        classes: 'col-one-twelfth'
+                        text: "Edit case",
+                        classes: 'col-one-sixth govuk-visually-hidden'
                     }                
                 ],
                 rows:
@@ -93,26 +69,7 @@
                         text: data['description']
                     },
                     { 
-                        text: data['reg-val-units'] 
-                    },
-                    { 
-                        text: data['economic-region']
-                    },
-                    {
-                        text: data['bill-auth-codes']
-                    },
-                    {
-                        text: data['bulk-class-indicator']
-                    },
-                    {
-                        text: data['sub-location']
-                    },
-                    {
-                        text: data['scat-code']
-                        
-                    },
-                    {
-                        text: data['scat-suffix']
+                        html: "<span class='lastUpdateTime'></span>"
                     },
                     {
                         html:" <strong class='govuk-tag--yellow'>RETRIEVING DATA</strong>"
@@ -132,4 +89,4 @@
     </div>
 </div>
 {% endblock %}
-<div class=""></div>heroku login
+<div class=""></div>

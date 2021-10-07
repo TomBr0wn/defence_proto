@@ -17,17 +17,39 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Choose service</h1>
-        <div class="flexServiceContainer">
-            <div class="flexServiceItem">
-                <h2 class="govuk-heading-m blueText">Reval<br>App<br></h2>
-                <a href="/v3/property-groups">Open<span class="linkSpan "></span></a>
-            </div>
-            <div class="flexServiceItem">
-                <h2 class="govuk-heading-m blueText">Settlement<br>App<br></h2>
-                <a href="/v3/defence-home">Open<span class="linkSpan"></span></a>
-            </div>
-        </div>
+        
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "changed-name",
+            name: "changed-name",
+            fieldset: {
+                legend: {
+                text: "Choose a service",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+                }
+            },
+            hint: {
+                text: "Select one of the below options."
+            },
+            items: [
+                {
+                value: "Reval",
+                text: "Reval"
+                },
+                {
+                value: "Settlement",
+                text: "Settlement"
+                }
+            ]
+            }) }}
+            
+            {{ govukButton({
+                text: "Continue"
+            }) }}
+        
     </div>
     {% endblock %}
     <div class=""></div>
