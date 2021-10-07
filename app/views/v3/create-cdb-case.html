@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="create-new-dataset-route" method="post" novalidate>
+    <form action="create-new-case-route" method="post" novalidate>
       {{ govukInput({
         label: {
           text: "Set CDB Case Number",
@@ -28,7 +28,8 @@
         },
         classes: "govuk-input--width-20",
         id: "cdb-case-num",
-        name: "cdb-case-num"
+        name: "cdb-case-num",
+        text: data['cdb-case-num']
       }) }}
 
       {{ govukButton({

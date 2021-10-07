@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="create-new-dataset-route" method="post" novalidate>
+    <form action="create-new-case-route" method="post" novalidate>
       {{ govukInput({
         label: {
           text: "Set Challenge Case Number",
@@ -27,9 +27,9 @@
           classes: "govuk-label--l"
         },
         classes: "govuk-input--width-20",
-        id: "cca-ref",
-        name: "cca-ref",
-        text: data['cca-ref']
+        id: "settle-case-ref",
+        name: "settle-case-ref",
+        text: data['settle-case-ref']
       }) }}
 
       {{ govukButton({

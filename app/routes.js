@@ -105,6 +105,9 @@ router.post("/v3/choose-app-answer", function (req, res) {
 		// Send user to other page
 		res.redirect("/v3/property-groups");
 	}
+	req.session.destroy();
 });
+
+
 
 module.exports = router;
