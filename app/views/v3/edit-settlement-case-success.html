@@ -23,6 +23,15 @@
         titleText: "Settlement group created",
         text: data["description"]
         }) }}
+        
+        <h3 class="govuk-heading-m">What happens next </h3>
+        <p class="govuk-body">Matching property records from CDB will be retrieved as soon as possible</p>
+        <p class="govuk-body">When the property records have been retrieved the status of your group will change to
+            {{ govukTag({
+                text: "Ready",
+                classes: "govuk-tag--green"
+            }) }}
+        </p>
     </div>
 </div>
 <p class="govuk-body-m"><a href="defence-home-filled" class="govuk-link">Go to settlement groups</a></p>
