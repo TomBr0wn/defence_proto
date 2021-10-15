@@ -21,10 +21,10 @@
         {{ mojPageHeaderActions
             ({ heading:
                 { text:
-                    'Settlement Cases'
+                    'Settlement groups'
                 },
                 items: [{
-                    text: "Create new case",
+                    text: "Create settlement case",
                     href: "create-new-case",
                     classes: "govuk-button--primary"
                 }]
@@ -38,30 +38,38 @@
                 "govuk-table__caption--m",
                 firstCellIsHeader: false,
                 head: [
-                    {
-                        text: "Description",
-                        classes: 'col-one-sixth'
-                    },
-                    {
-                        text: "Up to date as at",
-                        classes: 'col-one-sixth'
-                    },
-                    {
-                        text: "Status",
-                        classes: 'col-one-sixth'
-                    },
-                    {
-                        text: "Open case",
-                        classes: 'col-one-sixth govuk-visually-hidden'
-                    },
-                    {
-                        text: "Refresh case",
-                        classes: 'col-one-sixth govuk-visually-hidden'
-                    },
-                    {
-                        text: "Edit case",
-                        classes: 'col-one-sixth govuk-visually-hidden'
-                    }                
+                {
+                    text: "Description",
+                    classes: 'col-one-eighth'
+                },
+                {
+                    text: "Up to date as at",
+                    classes: 'col-one-eighth'
+                },
+                {
+                    text: "Status",
+                    classes: 'col-one-eighth'
+                },
+                {
+                    text: "Open case",
+                    classes: 'col-one-eighth govuk-visually-hidden'
+                },
+                {
+                    text: "Refresh case",
+                    classes: 'col-one-eighth govuk-visually-hidden'
+                },
+                {
+                    text: "Edit case",
+                    classes: 'col-one-eighth govuk-visually-hidden'
+                },
+                {
+                    text: "Edit case",
+                    classes: 'col-one-eighth govuk-visually-hidden'
+                },
+                {
+                    text: "Edit case",
+                    classes: 'col-one-eighth govuk-visually-hidden'
+                }                  
                 ],
                 rows:
                 [ [
@@ -80,6 +88,14 @@
                     {
                         html: "<a href='#'></a>"
                     },
+                    {
+                        html: "<a href='#'></a>"
+                    }
+                    ,
+                    {
+                        html: "<a href='#'></a>"
+                    }
+                    ,
                     {
                         html: "<a href='#'></a>"
                     }
