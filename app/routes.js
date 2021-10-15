@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 const router = express.Router();
 
 const formData = [];
@@ -106,6 +107,12 @@ router.post("/v3/choose-app-answer", function (req, res) {
 		res.redirect("/v3/property-groups");
 	}
 	req.session.destroy();
+});
+
+////////// Edit Case /////////////
+
+router.get('/edit-settlement-case', function(req, res){
+	res.sendFile(path.join(__dirname, '..', '/public/html/edit-settlemant-case'));
 });
 
 
