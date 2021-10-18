@@ -12,7 +12,11 @@
 
 
 
-<a class="govuk-back-link" href="analyse-hereditaments">Back</a> {% endblock %} {% block content %}
+<a class="govuk-back-link" href="supporting-rents.html">Back</a>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-width-container">
 
@@ -22,7 +26,7 @@
                 <h1 class="govuk-heading-xl">Add remark to supporting rent</h1>
                 <div id="add-a-comment-hint" class="govuk-hint">
                     Add remark here to append to survey units in the table.
-                  </div>
+                </div>
 
                 <form>
 
@@ -35,8 +39,8 @@
                             ({ text: "Save remark", href: "analyse-hereditaments-add-remark-confirm" })
                         }}
 
-                        <a class="govuk-link" href="analyse-hereditaments">Cancel</a>
-                        <a class="govuk-link" href="analyse-hereditaments-add-remark-error">Show Error State</a>
+                        <a class="govuk-link" href="supporting-rents">Cancel</a>
+                        <a class="govuk-link" href="#">Show Error State</a>
                     </div>
 
                 </form>
@@ -47,10 +51,10 @@
         <!--------------------- START OF TABLE ----------------------------->
 
 
-        
+
         {% from "govuk/components/table/macro.njk" import govukTable %}
 
-            {{ govukTable({
+        {{ govukTable({
             firstCellIsHeader: false,
             head: [
                 {
@@ -106,6 +110,9 @@
 
 
     </main>
-</div> {% endblock %} </body>
+</div>
+{% endblock %}
+
+</body>
 
 </html>
