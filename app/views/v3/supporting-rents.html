@@ -188,9 +188,11 @@
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
   
-            <button class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
-              Add to rents summary
-            </button>
+            {{ govukButton({
+              text: "Add to rents summary",
+              classes: "govuk-button moj-button-menu__item govuk-button--primary",
+              href: "supporting-rents-preview-schedule"
+            }) }}
   
           </div>
         </div>
@@ -216,6 +218,7 @@
                 <th class="govuk-table__header" scope="col">Effective date of rent</th>
                 <th class="govuk-table__header" scope="col">Adjusted rent</th>
                 <th class="govuk-table__header" scope="col">Analysed rent £/m2</th>
+                <th class="govuk-table__header" scope="col">Something else?</th>
                 <th class="govuk-table__header" scope="col">Action</th>
               </tr>
             </thead>
@@ -229,17 +232,18 @@
                     </label>
                   </div>
                 </td>
-                <td class="govuk-table__cell">Aconcagua</td>
-                <td class="govuk-table__cell">6,961 meters</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell">South America</td>
-                <td class="govuk-table__cell"><a href="#" class="govuk-link">View or add remark</a></td>
+                <td class="govuk-table__cell">36 CROSS STREET MANCHESTER M2 7AQ</td>
+                <td class="govuk-table__cell">311648639</td>
+                <td class="govuk-table__cell">108712349875</td>
+                <td class="govuk-table__cell">240.52</td>
+                <td class="govuk-table__cell">A/td>
+                <td class="govuk-table__cell">Useful</td>
+                <td class="govuk-table__cell">R</td>
+                <td class="govuk-table__cell">N</td>
+                <td class="govuk-table__cell">01 April 2017</td>
+                <td class="govuk-table__cell">£29,546</td>
+                <td class="govuk-table__cell">£84.98</td>
+                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
               </tr>
               
               
