@@ -18,7 +18,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
 
-    <h1 class="govuk-heading-xl">Create New Settlement Case</h1>
+    <h1 class="govuk-heading-xl">Create new settlement group</h1>
 
     <h2 class="govuk-heading-m">Criteria</h2>
 
@@ -41,7 +41,7 @@
       </div>
       
       <!-- Settlement case number ??? -->
-      <div class="govuk-summary-list__row">
+      <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Settlement case reference
         </dt>
@@ -54,20 +54,20 @@
             <span class="govuk-visually-hidden"> Settlement case reference</span>
           </a>
         </dd>
-      </div>
+      </div> -->
       
       <!-- CDB case number -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          CDB Case Number
+          Matrix reference
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['cdb-case-num'] }}
+          {{ data['matrix-ref'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a href="create-cdb-case">
+          <a href="create-matrix-ref">
             Change
-            <span class="govuk-visually-hidden"> cdb case number</span>
+            <span class="govuk-visually-hidden"> matrix reference</span>
           </a>
         </dd>
       </div>
