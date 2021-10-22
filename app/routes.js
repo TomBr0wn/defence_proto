@@ -112,7 +112,7 @@ router.post("/v3/choose-app-answer", function (req, res) {
 ////////// Edit Case /////////////
 
 router.get('/edit-settlement-case', function(req, res){
-	res.sendFile(path.join(__dirname, '..', '/public/html/edit-settlemant-case'));
+	res.sendFile(path.join(__dirname, '..', '/public/html/edit-settlement-case'));
 });
 
 
