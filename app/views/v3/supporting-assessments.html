@@ -181,7 +181,7 @@
     </div>
 
     <div class="moj-filter-layout__content">
-      
+
       <!------------ BUTTONS ----------->
       <div class="moj-action-bar">
 
@@ -190,14 +190,19 @@
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
 
-            
             {{ govukButton({
-              text: "Add to assessment summary",
-              classes: "govuk-button moj-button-menu__item govuk-button--primary",
-              href: "supporting-assessments-success-message"
-            }) }}
+                text: "Add to assessment summary",
+                classes: "govuk-button moj-button-menu__item govuk-button--primary",
+                href: "supporting-assessments-success-message"
+              }) }}
 
+            {{ govukButton({
+                text: "Add or view remark",
+                classes: "govuk-button moj-button-menu__item govuk-button--secondary",
+                href: "#"
+              }) }}
           </div>
+
         </div>
 
       </div>
@@ -213,7 +218,6 @@
               <tr class="govuk-table__row">
                 <th class="govuk-table__header" scope="col" id="select-all"></th>
                 <th class="govuk-table__header" scope="col">Address</th>
-                <th class="govuk-table__header" scope="col">Exists in Reval file?</th>
                 <th class="govuk-table__header" scope="col">Total significant area</th>
                 <th class="govuk-table__header" scope="col">Price m2</th>
                 <th class="govuk-table__header" scope="col">Adopted value m2</th>
@@ -225,7 +229,7 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              
+
               <!------------ TABLE ROW 1 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -237,7 +241,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">36 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">No</td>
+
                 <td class="govuk-table__cell">359.20</td>
                 <td class="govuk-table__cell">£80.00</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -247,7 +251,7 @@
                 <td class="govuk-table__cell">SKLDV6BH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 2 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -259,7 +263,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">42 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">Yes</td>
+
                 <td class="govuk-table__cell">240.43</td>
                 <td class="govuk-table__cell">£70.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -269,7 +273,7 @@
                 <td class="govuk-table__cell">ADF2234VBH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 3 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -281,7 +285,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">12-14 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">No</td>
+
                 <td class="govuk-table__cell">231.10</td>
                 <td class="govuk-table__cell">£65.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -291,7 +295,7 @@
                 <td class="govuk-table__cell">SKLDV6BH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 4 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -303,7 +307,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">16 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">Yes</td>
+
                 <td class="govuk-table__cell">308.10</td>
                 <td class="govuk-table__cell">£65.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -313,7 +317,7 @@
                 <td class="govuk-table__cell">ADF2234VBH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 5 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -325,7 +329,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">18 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">No</td>
+
                 <td class="govuk-table__cell">80.38</td>
                 <td class="govuk-table__cell">£70.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -335,7 +339,7 @@
                 <td class="govuk-table__cell">SKLDV6BH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 6 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -347,7 +351,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">49 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">Yes</td>
+
                 <td class="govuk-table__cell">80.38</td>
                 <td class="govuk-table__cell">£65.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -357,7 +361,7 @@
                 <td class="govuk-table__cell">ADF2234VBH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 7 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -369,7 +373,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">59 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">No</td>
+
                 <td class="govuk-table__cell">78.96</td>
                 <td class="govuk-table__cell">£65.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -379,7 +383,7 @@
                 <td class="govuk-table__cell">SKLDV6BH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 8 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -391,7 +395,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">74 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">Yes</td>
+
                 <td class="govuk-table__cell">138.20</td>
                 <td class="govuk-table__cell">£70.50</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -401,7 +405,7 @@
                 <td class="govuk-table__cell">ADF2234VBH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 9 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -413,7 +417,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">53 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">No</td>
+
                 <td class="govuk-table__cell">155.28</td>
                 <td class="govuk-table__cell">£80.00</td>
                 <td class="govuk-table__cell">£223.00</td>
@@ -423,7 +427,7 @@
                 <td class="govuk-table__cell">SKLDV6BH</td>
                 <td class="govuk-table__cell">remark_here</td>
               </tr>
-              
+
               <!------------ TABLE ROW 10 ------------>
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -435,7 +439,7 @@
                   </div>
                 </td>
                 <td class="govuk-table__cell">28 CROSS STREET MANCHESTER M2 7AQ</td>
-                <td class="govuk-table__cell">Yes</td>
+
                 <td class="govuk-table__cell">238.06</td>
                 <td class="govuk-table__cell">£80.00</td>
                 <td class="govuk-table__cell">£223.00</td>
