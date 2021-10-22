@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body> {% extends "layout.html" %} {% block pageTitle %} Delete property group {% endblock %} {% block content %}
+    <div class="govuk-width-container">
+        <a class="govuk-back-link" href="/property_group_list">Back</a>
+        <main class="govuk-main-wrapper">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+                    <h1 class="govuk-heading-xl">Delete property group</h1>
+
+                    <strong><p class="govuk-body">Deleting this propert group means:</p></strong>
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Only the description of the property group is deleted</li>
+                        <li>Any comments made previously against records would not be deleted</li>
+                    </ul>
+
+                    <form class="form" action="property_group_delete_success" method="post" name="form">
+                        <div class="govuk-form-group">
+                            <div class="govuk-button-group">
+                                <button class="govuk-button govuk-button--warning" data-module="govuk-button">Delete property group</button>
+                                <p class="govuk-body govuk-!-margin-bottom-9"><a href="property_group_list" class="govuk-link">Do not delete</a></p>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </main>
+    </div> {% endblock %} </body>
+
+</html>
