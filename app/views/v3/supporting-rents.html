@@ -16,31 +16,31 @@
 
 
 <div class="govuk-grid-row">
-  
-  <h1 class="govuk-heading-xl">Rents in settlement group</h1>
-  
-    <!-------------- START OF FILTERS --------------------->
-    <div class="moj-filter-layout">
 
-      <div class="moj-filter-layout__filter">
-  
-        <div class="moj-filter">
-  
-          <div class="moj-filter__header">
-  
-            <div class="moj-filter__header-title">
-              <h2 class="govuk-heading-m">Filter</h2>
-            </div>
-  
-            <div class="moj-filter__header-action">
-  
-            </div>
-  
+  <h1 class="govuk-heading-xl">Rents in settlement group</h1>
+
+  <!-------------- START OF FILTERS --------------------->
+  <div class="moj-filter-layout">
+
+    <div class="moj-filter-layout__filter">
+
+      <div class="moj-filter">
+
+        <div class="moj-filter__header">
+
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-m">Filter</h2>
           </div>
-  
-          <div class="moj-filter__content">
-  
-            <!-- <div class="moj-filter__selected">
+
+          <div class="moj-filter__header-action">
+
+          </div>
+
+        </div>
+
+        <div class="moj-filter__content">
+
+          <!-- <div class="moj-filter__selected">
   
               <div class="moj-filter__selected-heading">
   
@@ -73,88 +73,88 @@
               </ul>
   
             </div> -->
-  
-            <div class="moj-filter__options">
-  
-              <button class="govuk-button" data-module="govuk-button">
-                Apply filters
-              </button>
-  
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m" for="keywords">
-                  Address contains
-                </label>
-  
-                <input class="govuk-input" id="address" name="address" type="text">
-              </div>
-  
-              <div class="govuk-form-group">
-  
-                <fieldset class="govuk-fieldset">
-  
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-  
-                    Rents status indicator
-  
-                  </legend>
-  
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
-  
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
-                      <label class="govuk-label govuk-checkboxes__label" for="type">
-                        Useful (12)
-                      </label>
-  
-                    </div>
-  
-                  </div>
-  
-                </fieldset>
-  
-              </div>
-  
-  
+
+          <div class="moj-filter__options">
+
+            <button class="govuk-button" data-module="govuk-button">
+              Apply filters
+            </button>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-label--m" for="keywords">
+                Address contains
+              </label>
+
+              <input class="govuk-input" id="address" name="address" type="text">
             </div>
-  
+
+            <div class="govuk-form-group">
+
+              <fieldset class="govuk-fieldset">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                  Rents status indicator
+
+                </legend>
+
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
+                    <label class="govuk-label govuk-checkboxes__label" for="type">
+                      Useful (12)
+                    </label>
+
+                  </div>
+
+                </div>
+
+              </fieldset>
+
+            </div>
+
+
           </div>
-  
+
         </div>
-  
+
       </div>
-  
-      <div class="moj-filter-layout__content">
-        
-        <!------------ BUTTONS ----------->
-        <div class="moj-action-bar">
-  
-          <div class="moj-action-bar__filter"></div>
-  
-          <div class="moj-button-menu">
-            <div class="moj-button-menu__wrapper">
-  
-              
-              {{ govukButton({
+
+    </div>
+
+    <div class="moj-filter-layout__content">
+
+      <!------------ BUTTONS ----------->
+      <div class="moj-action-bar">
+
+        <div class="moj-action-bar__filter"></div>
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+
+            {{ govukButton({
                 text: "Add to rents summary",
                 classes: "govuk-button moj-button-menu__item govuk-button--primary",
                 href: "supporting-rents-success-message"
               }) }}
-              
-              {{ govukButton({
+
+            {{ govukButton({
                 text: "Add or view remark",
                 classes: "govuk-button moj-button-menu__item govuk-button--secondary",
-                href: "#"
+                href: "supporting-rents-add-remark"
               }) }}
-  
-            </div>
+
           </div>
-  
         </div>
-  
+
+      </div>
+
       <div class="moj-scrollable-pane">
-  
+
         <div class="moj-scrollable-pane__wrapper">
-  
+
 
           <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
             <thead class="govuk-table__head">
@@ -171,11 +171,11 @@
                 <th class="govuk-table__header" scope="col">Adjusted rent</th>
                 <th class="govuk-table__header" scope="col">Analysed rent £/m2</th>
                 <th class="govuk-table__header" scope="col">Something else?</th>
-                <th class="govuk-table__header" scope="col">Action</th>
+                <!-- <th class="govuk-table__header" scope="col">Action</th> -->
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              
+
               <!--------- ROW 1 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -197,9 +197,9 @@
                 <td class="govuk-table__cell">01 April 2017</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 2 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -221,9 +221,9 @@
                 <td class="govuk-table__cell">01 September 2016</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 3 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -245,9 +245,9 @@
                 <td class="govuk-table__cell">01 June 2016</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 4 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -269,9 +269,9 @@
                 <td class="govuk-table__cell">01 April 2019</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 5 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -293,9 +293,9 @@
                 <td class="govuk-table__cell">01 September 2019</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 6 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -317,9 +317,9 @@
                 <td class="govuk-table__cell">01 April 2017</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 7 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -341,9 +341,9 @@
                 <td class="govuk-table__cell">01 September 2016</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
+
               <!--------- ROW 8 ----------->
               <tr class="govuk-table__row govuk-table__row--selected">
                 <td class="govuk-table__cell">
@@ -365,18 +365,18 @@
                 <td class="govuk-table__cell">01 April 2017</td>
                 <td class="govuk-table__cell">£29,546</td>
                 <td class="govuk-table__cell">£84.98</td>
-                <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td>
+                <!-- <td class="govuk-table__cell"><a href="supporting-rents-add-remark" class="govuk-link">View or add remark</a></td> -->
               </tr>
-              
-              
+
+
             </tbody>
           </table>
-  
+
         </div>
-  
+
       </div>
     </div>
-  
 
-</div>
-{% endblock %}
+
+  </div>
+  {% endblock %}

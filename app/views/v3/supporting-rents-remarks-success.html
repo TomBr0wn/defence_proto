@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+
+
+
+<a class="govuk-back-link govuk-visually-hidden" href="supporting-rents">Back</a> {% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Remark added to rent </h1>
+
+                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'Remark added successfully.', iconFallbackText: 'Success' }) }}
+
+
+                <a href="supporting-rents.html" class="govuk-link">Return to rents</a>
+            </div>
+        </div>
+
+
+
+
+    </main>
+</div>
+{% endblock %}
+
+</body>
+
+</html>
