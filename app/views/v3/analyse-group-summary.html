@@ -18,16 +18,16 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
 
-        <h1 class="govuk-heading-xl">{{ data['description']}}: Summary</h1>
+        <h1 class="govuk-heading-xl">{{ data['description']}}: Group overview</h1>
         
         <div class="govuk-button-group">
             {{ govukButton({
-              text: "Filter results",
+              text: "Filter settlement group",
               href: "filters"
             }) }}
           
             {{ govukButton({
-              text: "Action placeholder",
+              text: "Clear filters",
               classes: "govuk-button--secondary",
               href: "#"
             }) }}
@@ -44,9 +44,6 @@
                 },
                 {
                 text: "Amount"
-                },
-                {
-                text: "Action"
                 }
             ],
             rows: [
@@ -56,9 +53,6 @@
                 },
                 {
                     text: "999"
-                },
-                {
-                    html: "<a href='supporting-assessments'>view</a>"
                 }
                 ],
                 [
@@ -67,9 +61,6 @@
                 },
                 {
                     text: "999"
-                },
-                {
-                    html: "<a href='supporting-rents'>View</a>"
                 }
                 ],
                 [
@@ -78,9 +69,6 @@
                 },
                 {
                     text: "999"
-                },
-                {
-                    html: "<a href='#'>View</a>"
                 }
                 ]
             ]
