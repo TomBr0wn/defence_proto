@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="settlement-task-list">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+        <h1 class="govuk-heading-xl">{{ data['description']}}: Summary</h1>
+        
+        <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Filter results",
+              href: "filters"
+            }) }}
+          
+            {{ govukButton({
+              text: "Action placeholder",
+              classes: "govuk-button--secondary",
+              href: "#"
+            }) }}
+          </div>
+
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+            
+            firstCellIsHeader: false,
+            head: [
+                {
+                text: "Type"
+                },
+                {
+                text: "Amount"
+                },
+                {
+                text: "Action"
+                }
+            ],
+            rows: [
+                [
+                {
+                    text: "Assessments"
+                },
+                {
+                    text: "999"
+                },
+                {
+                    html: "<a href='supporting-assessments'>view</a>"
+                }
+                ],
+                [
+                {
+                    text: "Rents"
+                },
+                {
+                    text: "999"
+                },
+                {
+                    html: "<a href='supporting-rents'>View</a>"
+                }
+                ],
+                [
+                {
+                    text: "Something else???"
+                },
+                {
+                    text: "999"
+                },
+                {
+                    html: "<a href='#'>View</a>"
+                }
+                ]
+            ]
+            }) }}
+
+    </div>
+</div>
+{% endblock %}
