@@ -10,7 +10,7 @@
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="settlement-task-list">Back</a>
+<a class="govuk-back-link" href="filtered-task-list">Back</a>
 {% endblock %}
 {% block content %}
 
@@ -18,6 +18,17 @@
 <div class="govuk-grid-row">
 
   <h1 class="govuk-heading-xl">Rents in settlement group</h1>
+
+  <div class="govuk-!-margin-bottom-6">
+    <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+    {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+    {{ mojBadge({
+      text: 'Area value: more than 1000m2',
+      classes: "moj-badge--black"
+    }) }}
+    <a href="supporting-rents" class="govuk-link govuk-!-margin-left-4"> Clear filters</a>
+  </div>
 
   <!-------------- START OF FILTERS --------------------->
   <div class="moj-filter-layout">
