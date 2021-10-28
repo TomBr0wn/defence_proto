@@ -12,7 +12,19 @@
     </span>
   </p>
 </div>
-<a class="govuk-back-link" href="create-new-case">Back</a>
+<!-- <a class="govuk-back-link" href="create-new-case">Back</a> -->
+    {% if data['description'] and data['description'] != '' %}
+      {{ govukBackLink({
+        text: "Back",
+        href: "create-new-case"
+      }) }}
+    {% else %}
+      {{ govukBackLink({
+        text: "Back",
+        href: "defence-home"
+      }) }}
+    {% endif %}
+
 {% endblock %}
 
 {% block content %}
