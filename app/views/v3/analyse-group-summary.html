@@ -29,12 +29,18 @@
             {{ govukButton({
               text: "Clear filters",
               classes: "govuk-button--secondary",
+              disabled: true,
               href: "#"
             }) }}
         </div>
         <div>
-            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected:</p>
-            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">None</p>
+            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected: </p>
+
+            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+            {{ mojBadge({
+                text: 'None',
+                classes: "moj-badge--black"
+            }) }}
         </div>
 
 

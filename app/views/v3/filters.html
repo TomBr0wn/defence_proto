@@ -31,16 +31,26 @@
                             {
                                 text: 'Filter settlement group',
                                 classes: 'govuk-button--primary',
-                                href: "#"
+                                href: "filtered-task-list"
                             }
                         ]
                     })
                 }}
             </div>
+            
+        </div>
+        <div>
+            <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+            {{ mojBadge({
+                text: 'None',
+                classes: "moj-badge--black"
+            }) }}
         </div>
         <form action="analyse">
 
-            <div class="govuk-grid-row">
+            <div class="govuk-grid-row govuk-!-margin-top-4">
                 <div class="govuk-grid-column-one-third">
                     <h3 class="govuk-heading-m">Initial</h3>
 
