@@ -20,24 +20,25 @@
 
         <h1 class="govuk-heading-xl">{{ data['description']}}: Group overview</h1>
 
+        <div class="govuk-!-margin-bottom-6">
+            <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+            {{ mojBadge({
+              text: 'Area value: more than 1000m2',
+              classes: "moj-badge--black"
+            }) }}
+            <a href="analyse-group-summary" class="govuk-link govuk-!-margin-left-4"> Clear filters</a>
+        </div>
+
         <div class="govuk-button-group">
             {{ govukButton({
               text: "Filter settlement group",
               href: "filters"
             }) }}
 
-            
+
         </div>
-        <div class="govuk-!-margin-bottom-6">
-            <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
-        
-            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-            {{ mojBadge({
-              text: 'Area value: more than 1000m2',
-              classes: "moj-badge--black"
-            }) }}
-            <a href="supporting-rents" class="govuk-link govuk-!-margin-left-4"> Clear filters</a>
-          </div>
 
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
@@ -54,7 +55,7 @@
                     text: "Hereditaments"
                 },
                 {
-                    text: "100"
+                    text: "50"
                 }
                 ],
                 [
@@ -62,7 +63,7 @@
                     text: "Survey unit assessments"
                 },
                 {
-                    text: "105"
+                    text: "48"
                 }
                 ],
                 [
@@ -70,7 +71,7 @@
                     text: "Rents"
                 },
                 {
-                    text: "20"
+                    text: "11"
                 }
                 ],
                 [
@@ -86,7 +87,7 @@
                     text: "Settled cases"
                 },
                 {
-                    text: "20"
+                    text: "8"
                 }
                 ],
                 [
@@ -94,7 +95,7 @@
                     text: "Hereditaments with rents"
                 },
                 {
-                    text: "20"
+                    text: "8"
                 }
                 ]
             ]

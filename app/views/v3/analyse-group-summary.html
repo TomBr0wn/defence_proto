@@ -19,6 +19,17 @@
     <div class="govuk-grid-column-one-half">
 
         <h1 class="govuk-heading-xl">{{ data['description']}}: Group overview</h1>
+        
+        <div class="govuk-!-margin-bottom-6">
+            <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+            {{ mojBadge({
+              text: 'none',
+              classes: "moj-badge--black"
+            }) }}
+            <!-- <a href="analyse-group-summary" class="govuk-link govuk-!-margin-left-4"> Clear filters</a> -->
+        </div>
 
         <div class="govuk-button-group">
             {{ govukButton({
@@ -26,18 +37,8 @@
               href: "filters"
             }) }}
 
-            
-        </div>
-        <div>
-            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected: </p>
 
-            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
-            {{ mojBadge({
-                text: 'None',
-                classes: "moj-badge--black"
-            }) }}
         </div>
-
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
 
