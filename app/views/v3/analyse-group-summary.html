@@ -19,40 +19,48 @@
     <div class="govuk-grid-column-one-half">
 
         <h1 class="govuk-heading-xl">{{ data['description']}}: Group overview</h1>
-        
+
         <div class="govuk-button-group">
             {{ govukButton({
               text: "Filter settlement group",
               href: "filters"
             }) }}
-          
+
             {{ govukButton({
               text: "Clear filters",
               classes: "govuk-button--secondary",
               href: "#"
             }) }}
-          </div>
+        </div>
+        <div>
+            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected:</p>
+            <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">None</p>
+        </div>
+
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
 
         {{ govukTable({
-            
+            caption: "Settlement group information",
+            captionClasses: "govuk-table__caption--m",
             firstCellIsHeader: false,
-            head: [
-                {
-                text: "Type"
-                },
-                {
-                text: "Amount"
-                }
-            ],
+            classes: "govuk-!-margin-top-4",
+            
             rows: [
                 [
                 {
-                    text: "Assessments"
+                    text: "Hereditaments"
                 },
                 {
-                    text: "999"
+                    text: "100"
+                }
+                ],
+                [
+                {
+                    text: "Survey unit assessments"
+                },
+                {
+                    text: "105"
                 }
                 ],
                 [
@@ -60,15 +68,31 @@
                     text: "Rents"
                 },
                 {
-                    text: "999"
+                    text: "20"
                 }
                 ],
                 [
                 {
-                    text: "Something else???"
+                    text: "Matrices"
                 },
                 {
-                    text: "999"
+                    text: "20"
+                }
+                ],
+                [
+                {
+                    text: "Settled cases"
+                },
+                {
+                    text: "20"
+                }
+                ],
+                [
+                {
+                    text: "Hereditaments with rents"
+                },
+                {
+                    text: "20"
                 }
                 ]
             ]
