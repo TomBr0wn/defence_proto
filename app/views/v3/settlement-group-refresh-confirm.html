@@ -18,14 +18,14 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Are you sure you want to refresh property group?</h1>
+        <h1 class="govuk-heading-xl">Are you sure you want to refresh settlement?</h1>
 
         <strong>
-            <p class="govuk-body">Refreshing this propert group means:</p>
+            <p class="govuk-body">Refreshing this settlement group means:</p>
         </strong>
         <ul class="govuk-list govuk-list--bullet">
             <li>New data will be loaded from CDB</li>
-            <li>When the data has loaded your property group status will be updated to
+            <li>When the data has loaded your settlement status will be updated to
                 {{ govukTag({
                     text: "Ready",
                     classes: "govuk-tag--green"
@@ -35,7 +35,7 @@
 
         <div class="govuk-button-group">
             {{ govukButton({
-                  text: "Refresh property group",
+                  text: "Refresh settlement group",
                   classes: "govuk-button--primary",
                   href: "settlement-group-refresh-success"
                 }) }}
