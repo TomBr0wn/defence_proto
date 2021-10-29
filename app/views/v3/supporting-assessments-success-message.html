@@ -21,10 +21,19 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">Assessments added to settlement group</h1>
 
-                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'All assessments added.', iconFallbackText: 'Success' }) }}
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    All assessments added
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                    html: html,
+                    type: 'success'
+                }) }}
 
 
-                <a href="settlement-task-list" class="govuk-link">Return to group progress list</a>
+                <a href="settlement-task-list" class="govuk-link">Go to group progress list</a>
             </div>
         </div>
 

@@ -21,7 +21,16 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">Remark added to assessment </h1>
 
-                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'Remark added successfully.', iconFallbackText: 'Success' }) }}
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    Remark added
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                    html: html,
+                    type: 'success'
+                }) }}
 
 
                 <a href="supporting-assessments" class="govuk-link">Return to assessment</a>

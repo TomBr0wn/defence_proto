@@ -21,7 +21,16 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">Rents attached to matrix </h1>
 
-                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'Rents added to matrix.', iconFallbackText: 'Success' }) }}
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    Rents added to matrix
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                    html: html,
+                    type: 'success'
+                }) }}
 
 
                 <a href="settlement-task-list" class="govuk-link">Return to group progress list</a>

@@ -21,7 +21,16 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">{{ data['description']}} group refreshed</h1>
 
-                {%- from "moj/components/banner/macro.njk" import mojBanner -%} {{ mojBanner({ type: 'success', text: 'Group refreshed successfully.', iconFallbackText: 'Success' }) }}
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    Settlement group refreshed 
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                    html: html,
+                    type: 'success'
+                }) }}
 
                 <a href="defence-home-filled" class="govuk-link">Return to settlement groups</a>
             </div>
