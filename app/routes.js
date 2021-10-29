@@ -91,7 +91,7 @@ router.post("/v3/compare-with-another-dataset", function (req, res) {
 	formData.push(req.session.data);
 	//res.render("defence-home", { results: formData });
 	res.redirect("existing-and-comparable-new");
-});
+});	
 
 // // Run this code when a form is submitted to 'choose-app-answer'
 router.post("/v3/choose-app-answer", function (req, res) {
@@ -107,6 +107,13 @@ router.post("/v3/choose-app-answer", function (req, res) {
 		res.redirect("/v3/property-groups");
 	}
 	req.session.destroy();
+});
+
+// 
+router.get("/v3/edit-case-clear-criteria", function (req, res) {
+	
+	req.session.destroy();
+	res.redirect("/v3/edit-settlement-case");
 });
 
 ////////// Edit Case /////////////

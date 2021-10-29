@@ -23,7 +23,7 @@
     <h2 class="govuk-heading-m">Criteria</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      
+
       <!-- Decription -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -39,7 +39,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Settlement case number ??? -->
       <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -55,7 +55,7 @@
           </a>
         </dd>
       </div> -->
-      
+
       <!-- Matrix reference -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -71,7 +71,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Regional valuation units -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -87,7 +87,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Economic regions -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -103,7 +103,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Billing authority codes -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -119,7 +119,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Bulk class indicators -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -135,7 +135,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Sub locations -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -151,7 +151,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Scat code -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -167,7 +167,7 @@
           </a>
         </dd>
       </div>
-      
+
       <!-- Scat suffixes -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -183,18 +183,23 @@
           </a>
         </dd>
       </div>
-      
+
     </dl>
 
 
 
     <form action="edit-settlement-case-success" method="post" novalidate>
 
-      <input type="hidden" name="answers-checked" value="true">
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Update group criteria"
+        }) }}
 
-      {{ govukButton({
-        text: "Update group criteria"
-      }) }}
+        
+        <a href="edit-case-clear-criteria" class="govuk-link">Clear criteria</a>
+        
+
+      </div>
 
     </form>
 
