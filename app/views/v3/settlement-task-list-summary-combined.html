@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="defence-home-filled">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+      <h1 class="govuk-heading-xl">Settlement group summary and progress</h1>
+      
+      <div class="govuk-!-margin-bottom-6">
+          <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+          {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+          {{ mojBadge({
+            text: 'none',
+            classes: "moj-badge--black"
+          }) }}
+          
+      </div>
+
+      
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+          caption: "Summary",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          classes: "govuk-!-margin-top-4",
+          
+          rows: [
+              [
+              {
+                  text: "Hereditaments"
+              },
+              {
+                  text: "100"
+              }
+              ],
+              [
+              {
+                  text: "Survey unit assessments"
+              },
+              {
+                  text: "105"
+              }
+              ],
+              [
+              {
+                  text: "Rents"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Matrices"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Settled cases"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Hereditaments with rents"
+              },
+              {
+                  text: "20"
+              }
+              ]
+          ]
+          }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-xl">{{ data['description'] }}</span>
+
+    
+
+    <ol class="app-task-list">
+      <!-- STAGE 1 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Before you begin
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="analyse-group-summary" aria-describedby="analyse-filter-status">
+                Analyse and apply filters
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="submit-pay-status">Completed</strong>
+          </li>
+        </ul>
+      </li>
+
+      <!-- STAGE 2 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Gather supporting evidence
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-assessments" aria-describedby="assessments-status">
+                Assessments
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="submit-pay-status">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-rents" aria-describedby="rents-status">
+                Rents
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--yellow app-task-list__tag" id="submit-pay-status">IN progress</strong>
+          </li>
+        </ul>
+      </li>
+
+      <!-- STAGE 3 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Generate schedules
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-assessments-generate-schedule.html" aria-describedby="rents-status">
+                Assessment summary
+              </a>
+            </span>
+            <strong class="govuk-tag  app-task-list__tag" id="submit-pay-status">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-rents-generate-schedule.html" aria-describedby="rents-status">
+                Rental summary
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Reg 17 / 31
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Related assessment summary
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+
+{% endblock %}
