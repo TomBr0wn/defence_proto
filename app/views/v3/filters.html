@@ -18,26 +18,17 @@
     <main class="govuk-main-wrapper">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
 
-                {{
-                    mojPageHeaderActions
-                    ({heading:
-                        {
-                            text: 'Filter settlement group'
-                        },
-                        items:
-                        [
-                            {
-                                text: 'Filter settlement group',
-                                classes: 'govuk-button--primary',
-                                href: "filtered-task-list"
-                            }
-                        ]
-                    })
-                }}
+                <span class="govuk-caption-xl">Name of settlement group</span>
+                <h1 class="govuk-heading-xl">Filter settlement group</h1>
+
+                {{ govukButton({
+                    text: 'Apply filters',
+                    classes: 'govuk-button--primary',
+                    href: "filtered-task-list"
+                }) }}
             </div>
-            
+
         </div>
         <div>
             <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
@@ -51,8 +42,10 @@
         <form action="analyse">
 
             <div class="govuk-grid-row govuk-!-margin-top-4">
-                <div class="govuk-grid-column-one-third">
+                <!------------------------------------------------------ INITIAL ------------------------------------------------------->
+                <div class="govuk-grid-column-one-quarter">
                     <h3 class="govuk-heading-m">Initial</h3>
+                    <p class="govuk-body">Select a check box to reveal options</p>
 
                     <!----------- STREET ------------>
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -67,6 +60,11 @@
                                 <label class="govuk-label" for="initial-street">Address contains</label>
                                 <input class="govuk-input govuk-!-width-full" id="initial-street" name="initial-street" type="text" spellcheck="false">
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
 
@@ -79,9 +77,14 @@
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-1">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="initial-postcode">Postcode</label>
+                                <label class="govuk-label" for="initial-postcode">Postcode begins with</label>
                                 <input class="govuk-input govuk-!-width-full" id="initial-postcode" name="initial-postcode" type="text" spellcheck="false">
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
 
@@ -93,10 +96,30 @@
                         </div>
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-2">
+
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Equals
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Does not equal
+                                    </label>
+                                </div>
+                            </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="inital-scat-code">Scat Code</label>
+                                <!-- <label class="govuk-label" for="inital-scat-code">Scat Code</label> -->
                                 <input class="govuk-input govuk-!-width-full" id="inital-scat-code" name="inital-scat-code" type="text" spellcheck="false">
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
                         <!----------- SUB LOCATION ------------>
@@ -112,24 +135,6 @@
                             </div>
                         </div>
 
-                        <!----------- SUB LOCATION CURRENT ------------>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="initial-4" name="initial" type="checkbox" value="Sub location current" data-aria-controls="conditional-initial-4" {{ checked( "initial", "Sub location current" )}}>
-                            <label class="govuk-label govuk-checkboxes__label" for="initial-4">Sub location current</label>
-                        </div>
-
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-4">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label" for="inital-scat-code">Sub location current</label>
-                                <input class="govuk-input govuk-!-width-full" id="inital-scat-code" name="inital-scat-code" type="text" spellcheck="false">
-                            </div>
-                        </div>
-
-                        <!----------- SUB LOCATION REVAL ------------>
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="initial-5" name="initial" type="checkbox" value="Sub location reval" data-aria-controls="conditional-initial-5" {{ checked( "initial", "Sub location reval" )}}>
-                            <label class="govuk-label govuk-checkboxes__label" for="initial-5">Sub location reval</label>
-                        </div>
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-5">
                             <div class="govuk-form-group">
@@ -138,17 +143,36 @@
                             </div>
                         </div>
 
-                        <!----------- PATTERN MATRIX CURRENT ------------>
+                        <!----------- PATTERN MATRIX  ------------>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="initial-6" name="initial" type="checkbox" value="Pattern matrix current" data-aria-controls="conditional-initial-6" {{ checked( "initial", "Pattern matrix current" )}}>
-                            <label class="govuk-label govuk-checkboxes__label" for="initial-6">Pattern matrix current</label>
+                            <label class="govuk-label govuk-checkboxes__label" for="initial-6">Pattern matrix</label>
                         </div>
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-6">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Equals
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Does not equal
+                                    </label>
+                                </div>
+                            </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="inital-scat-code">Pattern matrix current</label>
+                                <!-- <label class="govuk-label" for="inital-scat-code">Scat Code</label> -->
                                 <input class="govuk-input govuk-!-width-full" id="inital-scat-code" name="inital-scat-code" type="text" spellcheck="false">
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
                         <!----------- BILLING AUTHORITY ------------>
@@ -158,17 +182,38 @@
                         </div>
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-initial-7">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Equals
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Does not equal
+                                    </label>
+                                </div>
+                            </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="inital-scat-code">Billing Authority</label>
+                                <!-- <label class="govuk-label" for="inital-scat-code">Scat Code</label> -->
                                 <input class="govuk-input govuk-!-width-full" id="inital-scat-code" name="inital-scat-code" type="text" spellcheck="false">
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
                     </div>
                 </div>
 
-                <div class="govuk-grid-column-one-third">
+                <!------------------------------------------------------ SIZE MATRIX------------------------------------------------------->
+                <div class="govuk-grid-column-one-quarter">
                     <h3 class="govuk-heading-m">Size Matrix</h3>
+                    <p class="govuk-body">Select a check box to reveal options</p>
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
                         <!---------------------------------------------- SIZE MATRIX (AREA) ------------------------------------------------->
@@ -188,7 +233,6 @@
                             </div>
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="size-matrix-street">Size (Area)</label>
-                                <!-- <input class="govuk-input govuk-!-width-one-third" id="size-matrix-street" name="size-matrix-street" type="text" spellcheck="false"> -->
                                 <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                             </div>
                         </div>
@@ -203,21 +247,23 @@
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix-1">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="size-matrix-postcode">Age is</label>
-                                <br>
-                                <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
-                                    <option value="between" selected>Between</option>
-                                    <option value="updated">More than</option>
-                                    <option value="updated">Less than</option>
+                                <label class="govuk-label" for="area options">Age is</label>
+                                <select class="govuk-select" id="area" name="area">
+                                    <option value="More">More than</option>
+                                    <option value="Less" selected>Less than</option>
                                 </select>
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label" for="size-matrix-postcode">&nbsp;</label>
-                                    <input class="govuk-input govuk-!-width-one-half" id="size-matrix-postcode" name="size-matrix-postcode" type="number" spellcheck="false">
-                                </div>
-                                <div class="govuk-form-group">
-                                    <p>and</p>
-                                    <input class="govuk-input govuk-!-width-one-half" id="size-matrix-postcode" name="size-matrix-postcode" type="number" spellcheck="false">
-                                </div>
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="size-matrix-street">Years</label>
+                                <select class="govuk-select" id="area" name="area">
+                                    <option value="Less" selected>2000</option>
+                                    <option value="More">2001</option>
+                                    <option value="Less">2002</option>
+                                    <option value="Less">2003</option>
+                                    <option value="Less">2004</option>
+                                    <option value="Less">etc</option>
+                                    <option value="Less">etc</option>
+                                </select>
                             </div>
                         </div>
 
@@ -229,22 +275,22 @@
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix-2">
                             <div class="govuk-form-group">
-                                <div class="govuk-radios">
+                                <div class="govuk-radios govuk-radios--small">
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="heating-n" name="heating" type="radio" value="central-heating-n">
-                                        <label class="govuk-label govuk-radios__label" for="heating-n">N (full name)</label>
+                                        <label class="govuk-label govuk-radios__label" for="heating-n">N</label>
                                     </div>
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="heating-f" name="heating" type="radio" value="central-heating-f">
-                                        <label class="govuk-label govuk-radios__label" for="heating-f">F (full name)</label>
+                                        <label class="govuk-label govuk-radios__label" for="heating-f">F</label>
                                     </div>
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="heating-p" name="heating" type="radio" value="central-heating-p">
-                                        <label class="govuk-label govuk-radios__label" for="heating-p">P (full name)</label>
+                                        <label class="govuk-label govuk-radios__label" for="heating-p">P</label>
                                     </div>
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="heating-f-p" name="heating" type="radio" value="central-heating-f-p">
-                                        <label class="govuk-label govuk-radios__label" for="heating-f-p">F&P (full name)</label>
+                                        <label class="govuk-label govuk-radios__label" for="heating-f-p">F&P</label>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +306,7 @@
                             <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
                                     <legend class="govuk-fieldset__legend">This address</legend>
-                                    <div class="govuk-radios">
+                                    <div class="govuk-radios govuk-radios--small">
                                         <div class="govuk-radios__item">
                                             <input class="govuk-radios__input" id="heating-n" name="heating" type="radio" value="central-heating-n">
                                             <label class="govuk-label govuk-radios__label" for="heating-n">Has a passenger lift</label>
@@ -278,8 +324,10 @@
                 </div>
 
                 <!------------------------------------------------------ RENTAL INFO ------------------------------------------------------->
-                <div class="govuk-grid-column-one-third">
+                <div class="govuk-grid-column-one-quarter">
                     <h3 class="govuk-heading-m">Rental Information</h3>
+                    <p class="govuk-body">Select a check box to reveal options</p>
+
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
                         <!----------- DATA OF RENT ------------>
@@ -415,26 +463,69 @@
 
                         <!----------- RSI ------------>
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="rent-info-2" name="rent-info" type="checkbox" value="RSI" data-aria-controls="conditional-rent-info-2" {{ checked( "rent-info", "RSI" )}}>
+                            <input class="govuk-checkboxes__input govuk-!-width-full" id="rent-info-2" name="rent-info" type="checkbox" value="RSI" data-aria-controls="conditional-rent-info-2" {{ checked( "rent-info", "RSI" )}}>
                             <label class="govuk-label govuk-checkboxes__label" for="rent-info-2">Rent status indicator</label>
                         </div>
 
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-2">
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden govuk-!-width-full" id="conditional-rent-info-2">
+                            <div class="govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Equals
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        Does not equal
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <div class="govuk-!-width-full govuk-!-display-block">
+                                <div class="govuk-form-group govuk-!-display-block">
+                                    <select class="govuk-select" id="sort" name="sort">
+                                        <option value="published">Aborted</option>
+                                        <option value="updated" selected>Adjusted</option>
+                                        <option value="views">Input</option>
+                                        <option value="comments">Issued</option>
+                                        <option value="comments">Etc</option>
+                                        <option value="comments">Etc</option>
+                                        <option value="comments">Etc</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!----------- Anaylsis type ------------>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="rent-info-4" name="rent-info" type="checkbox" value="Analysis type" data-aria-controls="conditional-rent-info-4" {{ checked( "rent-info", "Analysis type" )}}>
+                            <label class="govuk-label govuk-checkboxes__label" for="rent-info-4">Analysis type</label>
+                        </div>
+
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-4">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="rent-info-postcode">Rent status indicator is</label>
-                                <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
-                                    <option value="between" selected>Not to be adjusted</option>
-                                    <option value="updated">Something else</option>
-                                    <option value="updated">Another thing</option>
+                                <select class="govuk-select" id="area" name="area">
+                                    <option value="Less" selected>Automatic</option>
+                                    <option value="More">Manual</option>
+                                    <option value="Less">Not USeful</option>
+                                    <option value="Less">Reviewed</option>
                                 </select>
                             </div>
+                            {{ govukButton({
+                                text: 'Add another',
+                                classes: 'govuk-button--secondary',
+                                href: "#"
+                            }) }}
                         </div>
 
                         <!----------- Rent Value ------------>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="rent-info-3" name="rent-info" type="checkbox" value="Rent value" data-aria-controls="conditional-rent-info-3 {{
                           checked(" rent-info ", "Rent value " )}}">
-                            <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Analysed Rent (£/m2)</label>
+                            <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Rent value</label>
                         </div>
 
                         <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-3">
@@ -463,23 +554,42 @@
                             </div>
                         </div>
 
-                        <!----------- Anaylsis type ------------>
+
+
+                    </div>
+                </div>
+
+                <!------------------------------------------------------ ADDRESS MATRIX  ------------------------------------------------------->
+                <!-- <div class="govuk-grid-column-one-quarter">
+                    <h3 class="govuk-heading-m">Address Matrix</h3>
+                    <p class="govuk-body">Select a check box to reveal options</p>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        
+
                         <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="rent-info-4" name="rent-info" type="checkbox" value="Analysis type" data-aria-controls="conditional-rent-info-4" {{ checked( "rent-info", "Analysis type" )}}>
-                            <label class="govuk-label govuk-checkboxes__label" for="rent-info-4">Analysis type</label>
+                            <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Area (ITMS)</label>
                         </div>
 
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-4">
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="rent-info-postcode">
-                                    Anaylsis type
-                                </label>
-                                <input class="govuk-input govuk-!-width-full" id="address-postcode" name="address-postcode" type="text" spellcheck="false">
+                                <label class="govuk-label" for="area options">Area is</label>
+                                <select class="govuk-select" id="area" name="area">
+                                    <option value="More">More than</option>
+                                    <option value="Less" selected>Less than</option>
+                                </select>
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="size-matrix-street">Size (Area)</label>
+                                
+                                <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </form>
 
