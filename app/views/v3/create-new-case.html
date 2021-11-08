@@ -58,22 +58,6 @@
         </dd>
       </div>
 
-      <!-- Economic regions -->
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Economic regions
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['economic-region'] }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a href="create-economic-regions">
-            Change
-            <span class="govuk-visually-hidden"> economic regions</span>
-          </a>
-        </dd>
-      </div>
-
       <!-- Billing authority codes -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -179,9 +163,13 @@
 
       <input type="hidden" name="answers-checked" value="true">
 
-      {{ govukButton({
-        text: "Submit and create group"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Create settlement group"
+        }) }}
+      
+        <a class="govuk-link" href="#">Clear selection</a>
+      </div>
 
     </form>
 
