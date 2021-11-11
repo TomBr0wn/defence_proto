@@ -27,9 +27,10 @@
       
       {%- from "moj/components/badge/macro.njk" import mojBadge -%}
       {{ mojBadge({
-        text: 'None',
+        text: 'Area value: more than 1000m2',
         classes: "moj-badge--black"
       }) }}
+      <a href="settlement-task-list" class="govuk-link govuk-!-margin-left-4"> Clear filters</a>
     </div>
     <!-- <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p> -->
 
@@ -42,7 +43,7 @@
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="analyse-group-summary" aria-describedby="analyse-filter-status">
+              <a href="filtered-group-summary" aria-describedby="analyse-filter-status">
                 Analyse and apply filters
               </a>
             </span>
@@ -59,7 +60,7 @@
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="supporting-assessments" aria-describedby="assessments-status">
+              <a href="filtered-assessments" aria-describedby="assessments-status">
                 Assessments
               </a>
             </span>
@@ -67,7 +68,7 @@
           </li>
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
-              <a href="supporting-rents" aria-describedby="rents-status">
+              <a href="filtered-rents" aria-describedby="rents-status">
                 Rents
               </a>
             </span>
@@ -85,7 +86,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="supporting-assessments-generate-schedule.html" aria-describedby="rents-status">
-                Assessment summary & settled cases
+                Assessment summary
               </a>
             </span>
             <strong class="govuk-tag  app-task-list__tag" id="submit-pay-status">Completed</strong>
@@ -93,10 +94,22 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="supporting-rents-generate-schedule.html" aria-describedby="rents-status">
-                Rental summary & Reg 17
+                Rental summary
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Reg 17 / 31
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Related assessment summary
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
           </li>
         </ul>
       </li>

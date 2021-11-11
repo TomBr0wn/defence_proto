@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="settlement-task-list">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+        <h1 class="govuk-heading-xl">Settlement group overview</h1>
+        
+        <div class="govuk-!-margin-bottom-6">
+            <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
+            {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+            {{ mojBadge({
+              text: 'none',
+              classes: "moj-badge--black"
+            }) }}
+            <!-- <a href="analyse-group-summary" class="govuk-link govuk-!-margin-left-4"> Clear filters</a> -->
+        </div>
+
+        <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Filter settlement group",
+              href: "filters"
+            }) }}
+        </div>
+
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+            caption: "Settlement group information",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: false,
+            classes: "govuk-!-margin-top-4",
+            
+            rows: [
+                [
+                {
+                    text: "Hereditaments"
+                },
+                {
+                    text: "100"
+                }
+                ],
+                [
+                {
+                    text: "Survey unit assessments"
+                },
+                {
+                    text: "105"
+                }
+                ],
+                [
+                {
+                    text: "Rents"
+                },
+                {
+                    text: "20"
+                }
+                ],
+                [
+                {
+                    text: "Matrices"
+                },
+                {
+                    text: "20"
+                }
+                ],
+                [
+                {
+                    text: "Settled cases"
+                },
+                {
+                    text: "20"
+                }
+                ],
+                [
+                {
+                    text: "Hereditaments with rents"
+                },
+                {
+                    text: "20"
+                }
+                ]
+            ]
+            }) }}
+
+    </div>
+</div>
+{% endblock %}

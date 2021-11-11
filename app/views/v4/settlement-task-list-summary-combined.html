@@ -16,22 +16,95 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl">{{ data['description'] }}</span>
-    <h1 class="govuk-heading-xl">
-      Settlement group progress
-    </h1>
+  <div class="govuk-grid-column-one-half">
 
-    <div>
-      <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected: </p>
-      
+    <h1 class="govuk-heading-xl">Settlement group summary and progress</h1>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+          text: "Filter settlement group",
+          href: "filters"
+        }) }}
+    </div>
+
+    <div class="govuk-!-margin-bottom-6">
+      <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
+
       {%- from "moj/components/badge/macro.njk" import mojBadge -%}
       {{ mojBadge({
-        text: 'None',
-        classes: "moj-badge--black"
-      }) }}
+            text: 'none',
+            classes: "moj-badge--black"
+          }) }}
+
     </div>
-    <!-- <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p> -->
+
+
+
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+
+    {{ govukTable({
+          caption: "Summary",
+          captionClasses: "govuk-table__caption--m",
+          firstCellIsHeader: false,
+          classes: "govuk-!-margin-top-4",
+          
+          rows: [
+              [
+              {
+                  text: "Hereditaments"
+              },
+              {
+                  text: "100"
+              }
+              ],
+              [
+              {
+                  text: "Survey unit assessments"
+              },
+              {
+                  text: "105"
+              }
+              ],
+              [
+              {
+                  text: "Rents"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Matrices"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Settled cases"
+              },
+              {
+                  text: "20"
+              }
+              ],
+              [
+              {
+                  text: "Hereditaments with rents"
+              },
+              {
+                  text: "20"
+              }
+              ]
+          ]
+          }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
 
     <ol class="app-task-list">
       <!-- STAGE 1 -->
@@ -85,7 +158,7 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="supporting-assessments-generate-schedule.html" aria-describedby="rents-status">
-                Assessment summary & settled cases
+                Assessment summary
               </a>
             </span>
             <strong class="govuk-tag  app-task-list__tag" id="submit-pay-status">Completed</strong>
@@ -93,10 +166,22 @@
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="supporting-rents-generate-schedule.html" aria-describedby="rents-status">
-                Rental summary & Reg 17
+                Rental summary
               </a>
             </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Reg 17 / 31
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              Related assessment summary
+            </span>
+            <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
           </li>
         </ul>
       </li>

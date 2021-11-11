@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+
+
+
+<a class="govuk-back-link govuk-visually-hidden" href="supporting-assessments">Back</a> {% endblock %} {% block content %}
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">{{ data['description']}} group refreshed</h1>
+
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    Settlement group refreshed 
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                    html: html,
+                    type: 'success'
+                }) }}
+
+                <a href="defence-home-filled" class="govuk-link">Return to settlement groups</a>
+            </div>
+        </div>
+
+
+
+
+    </main>
+</div>
+{% endblock %}
+
+</body>
+
+</html>

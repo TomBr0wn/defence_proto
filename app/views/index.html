@@ -101,6 +101,40 @@
           ]
         ]
       }) }}
+      
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Version"
+          },
+          {
+            text: "Comments"
+          },
+          {
+            text: "Action"
+          }
+        ],
+        rows:
+        [
+          [
+            {
+              text: "4.1"
+            },
+            {
+              html: "<ul class='govuk-list govuk-list--bullet'>
+                    <li>Combined Rental Summary & Reg 17 workflow</li>
+                    <li>Add addrees</li>
+                    <li>Ask for format (ITMS/TSA)</li>
+                    </ul>"
+                    
+            },
+            {
+              html: "<a href='/v4/choose-app'>Open</a>"
+            }
+          ]
+        ]
+      }) }}
 
   </div>
 </div>

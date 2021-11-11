@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="settlement-task-list">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
+    {{ mojPageHeaderActions
+            ({ heading:
+                { text:
+                    'Generate schedule of assessment summary'
+                },
+                items: [{
+                    text: "Generate schedule",
+                    href: "supporting-assessments-preview-schedule",
+                    classes: "govuk-button--primary"
+                }]
+            })
+        }}
+
+
+    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <!------------ TABLE HEADERS ------------>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col" id="select-all"></th>
+          <th class="govuk-table__header" scope="col">Address</th>
+          <th class="govuk-table__header" scope="col">Exists in Reval file?</th>
+          <th class="govuk-table__header" scope="col">Total significant area</th>
+          <th class="govuk-table__header" scope="col">Price m2</th>
+          <th class="govuk-table__header" scope="col">Adopted value m2</th>
+          <th class="govuk-table__header" scope="col">Rateable value</th>
+          <th class="govuk-table__header" scope="col">Survey unit type</th>
+          <th class="govuk-table__header" scope="col">Survey unit value</th>
+          <th class="govuk-table__header" scope="col">Matrix reference</th>
+          <th class="govuk-table__header" scope="col">Remarks</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <!------------ TABLE ROW 1 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">36 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">359.20</td>
+          <td class="govuk-table__cell">£80.00</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SKLDV6BH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 2 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">42 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">240.43</td>
+          <td class="govuk-table__cell">£70.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">ADF2234VBH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 3 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">12-14 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">231.10</td>
+          <td class="govuk-table__cell">£65.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SKLDV6BH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 4 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">16 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">308.10</td>
+          <td class="govuk-table__cell">£65.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">ADF2234VBH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 5 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">18 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">80.38</td>
+          <td class="govuk-table__cell">£70.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SKLDV6BH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 6 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">49 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">80.38</td>
+          <td class="govuk-table__cell">£65.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">ADF2234VBH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 7 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">59 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">78.96</td>
+          <td class="govuk-table__cell">£65.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SKLDV6BH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 8 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">74 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">138.20</td>
+          <td class="govuk-table__cell">£70.50</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">ADF2234VBH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 9 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">53 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">155.28</td>
+          <td class="govuk-table__cell">£80.00</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SKLDV6BH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+        <!------------ TABLE ROW 10 ------------>
+        <tr class="govuk-table__row govuk-table__row--selected">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              </label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">28 CROSS STREET MANCHESTER M2 7AQ</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">238.06</td>
+          <td class="govuk-table__cell">£80.00</td>
+          <td class="govuk-table__cell">£223.00</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">SHOP</td>
+          <td class="govuk-table__cell">£444.00</td>
+          <td class="govuk-table__cell">ADF2234VBH</td>
+          <td class="govuk-table__cell">remark_here</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
