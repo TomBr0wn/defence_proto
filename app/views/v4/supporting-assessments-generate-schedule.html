@@ -17,20 +17,24 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of assessments / Settled cases</h1>
+    <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}</h2>
+    
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Generate assessments",
+        href: "supporting-assessments-preview-schedule",
+        classes: "govuk-button--primary"
+      }) }}
+    
+      {{ govukButton({
+        text: "Generate settled cases",
+        href: "#",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
 
-    {% from "moj/components/page-header-actions/macro.njk" import mojPageHeaderActions %}
-    {{ mojPageHeaderActions
-            ({ heading:
-                { text:
-                    'Generate schedule of assessment summary'
-                },
-                items: [{
-                    text: "Generate schedule",
-                    href: "supporting-assessments-preview-schedule",
-                    classes: "govuk-button--primary"
-                }]
-            })
-        }}
+  
 
 
     <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
