@@ -151,11 +151,32 @@ router.post("/v4/create-new-case-route", function (req, res) {
 	res.redirect("create-new-case");
 });
 
-router.get("/v4/edit-case-clear-criteria", function (req, res) {
-	
+
+
+
+
+router.post("/v4/add-case-address", function (req, res) {
+	console.log("Here we go...");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
+
+	var caseAddress = req.session.data["case-address"];
+
+	console.log("Case Address: " + caseAddress);
+
+	res.redirect("add-case-task-list");
+});
+
+
+
+
+
+router.get("/v4/edit-case-clear-criteria", function (req, res) {	
 	req.session.destroy();
 	res.redirect("/v4/edit-settlement-case");
 });
+
 
 
 
