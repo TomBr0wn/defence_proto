@@ -15,7 +15,7 @@
 {% block content %}
 
 
-    
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -86,22 +86,22 @@
           <span class="app-task-list__section-number">3. </span> Generate schedules
         </h2>
         {% endif %}
-        
+
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               {% if data['case-address'] and data['case-address'] != '' %}
               <a href="add-case-address-new" class="govuk-!-text-align-right"> Change Address</a>
               {% else %}
-              <a href="add-case-address-new" >
+              <a href="add-case-address-new">
                 Add case address to schedule
               </a>
               {% endif %}
-              
+
             </span>
-            
+
           </li>
-          
+
           <li class="app-task-list__item">
             <span class="app-task-list__task-name">
               <a href="supporting-assessments-generate-schedule.html" aria-describedby="rents-status">
