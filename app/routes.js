@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path');
+const path = require("path");
 const router = express.Router();
 
 const formData = [];
@@ -39,8 +39,6 @@ router.post("/v2/defence-home-add-row", function (req, res, next) {
 	res.redirect("defence-home-filled");
 });
 
-
-
 //////////////  Create V3 dataset route   V3 ////////////////////////////////////
 router.post("/v3/create-new-case-route", function (req, res) {
 	console.log("Here we go...");
@@ -64,8 +62,6 @@ router.post("/v3/create-new-case-route", function (req, res) {
 	res.redirect("create-new-case");
 });
 
-
-
 //////////////  Create V3 dataset home new record/row   ////////////////////////////////////
 router.post("/v3/defence-home-add-row", function (req, res, next) {
 	console.log("res");
@@ -87,7 +83,6 @@ router.post("/v2/compare-with-another-dataset", function (req, res) {
 	res.redirect("existing-and-comparable-new");
 });
 
-
 // // Run this code when a form is submitted to 'choose-app-answer'
 router.post("/v3/choose-app-answer", function (req, res) {
 	// Make a variable and give it the value from 'pick-service'
@@ -95,7 +90,7 @@ router.post("/v3/choose-app-answer", function (req, res) {
 
 	// Check whether the variable matches a condition
 	if (whichService == "settlement") {
-		// Send user to next page	
+		// Send user to next page
 		res.redirect("/v3/defence-home");
 	} else {
 		// Send user to other page
@@ -104,9 +99,8 @@ router.post("/v3/choose-app-answer", function (req, res) {
 	req.session.destroy();
 });
 
-// 
+//
 router.get("/v3/edit-case-clear-criteria", function (req, res) {
-	
 	req.session.destroy();
 	res.redirect("/v3/edit-settlement-case");
 });
@@ -120,7 +114,7 @@ router.post("/v4/choose-app-answer", function (req, res) {
 
 	// Check whether the variable matches a condition
 	if (whichService == "settlement") {
-		// Send user to next page	
+		// Send user to next page
 		res.redirect("/v4/defence-home");
 	} else {
 		// Send user to other page
@@ -147,13 +141,8 @@ router.post("/v4/create-new-case-route", function (req, res) {
 	var createScatSuffix = req.session.data["scat-suffix"];
 
 	console.log(formData);
-
 	res.redirect("create-new-case");
 });
-
-
-
-
 
 router.post("/v4/add-case-address", function (req, res) {
 	console.log("Here we go...");
@@ -165,28 +154,22 @@ router.post("/v4/add-case-address", function (req, res) {
 
 	console.log("Case Address: " + caseAddress);
 
-	res.redirect("add-case-task-list");
+	if (req.session.data["case-address"] != " ") {
+		res.redirect("add-case-task-list");
+	} else {
+		res.redirect("settlement-task-list");
+	}
 });
 
-
-
-
-
-router.get("/v4/edit-case-clear-criteria", function (req, res) {	
+router.get("/v4/edit-case-clear-criteria", function (req, res) {
 	req.session.destroy();
 	res.redirect("/v4/edit-settlement-case");
 });
 
-
-
-
-
 ////////// Edit Case /////////////
 
-router.get('/edit-settlement-case', function(req, res){
-	res.sendFile(path.join(__dirname, '..', '/public/html/edit-settlement-case'));
+router.get("/edit-settlement-case", function (req, res) {
+	res.sendFile(path.join(__dirname, "..", "/public/html/edit-settlement-case"));
 });
-
-
 
 module.exports = router;
