@@ -22,17 +22,35 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="add-case-address" method="post" novalidate>
-      {{ govukInput({
+  
+      {{ govukSelect({
+        classes: "govuk-input--width-20",
+        id: "case-address",
+        name: "case-address",
         label: {
           text: "Add case address",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
-        classes: "govuk-input--width-20",
-        text: data['case-address'],
-        value: data['case-address'],
-        name: "case-address",
-        id: "case-address"
+        items: [
+          {
+            value: data['case-address'],
+            text: "14 Cross Street Manchester M2 7AQ"
+          },
+          {
+            value: data['case-address'],
+            text: "36 Cross Street Manchester M2 7AQ",
+            selected: true
+          },
+          {
+            value: data['case-address'],
+            text: "49 Cross Street Manchester M2 7AQ"
+          },
+          {
+            value: data['case-address'],
+            text: "59 Cross Street Manchester M2 7AQ"
+          }
+        ]
       }) }}
 
       {{ govukButton({
