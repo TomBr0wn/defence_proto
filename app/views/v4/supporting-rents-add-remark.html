@@ -51,56 +51,56 @@
 {% from "govuk/components/table/macro.njk" import govukTable %}
 
 {{ govukTable({
-            firstCellIsHeader: false,
-            head: [
-                {
-                text: "Survey unit address",
-                classes: 'app-custom-class'
-                },
-                {
-                text: "Existing remark",
-                classes: 'app-custom-class'
-                },
-                {
-                text: "Remark last updated by",
-                classes: 'app-custom-class'
-                },
-                {
-                    text: "Remark last updated on",
-                    classes: 'app-custom-class'
-                },
-                {
-                    text: "Edit remark",
-                    classes: 'govuk-visually-hidden'
-                },
-                {
-                    text: "Delete remark",
-                    classes: 'govuk-visually-hidden'
-                }
-            ],
-            rows: [
-                [
-                {
-                    text: "xxxxxxx"
-                },
-                {
-                    text: "xxxxxxx"
-                },
-                {
-                    text: "xxxxxxx"
-                },
-                {
-                    text: "xxxxxxx"
-                },
-                {
-                    html: "<a href='#'>Edit</a>"
-                },
-                {
-                    html: "<a href='#'>Delete</a>"
-                }
-                ]
-            ]
-            }) }}
+    firstCellIsHeader: false,
+    head: [
+        {
+            text: "Survey unit address",
+            classes: 'col-two-eighth'
+        },
+        {
+            text: "Existing remark",
+            classes: 'col-two-eighth'
+        },
+        {
+            text: "Remark last updated by",
+            classes: 'col-one-eighth'
+        },
+        {
+            text: "Remark last updated on",
+            classes: 'col-one-eighth'
+        },
+        {
+            text: "Edit remark",
+            classes: 'govuk-visually-hidden col-one-eighth'
+        },
+        {
+            text: "Delete remark",
+            classes: 'govuk-visually-hidden col-one-eighth'
+        }
+    ],
+    rows: [
+        [
+        {
+            text: "36 CROSS STREET MANCHESTER M2 7AQ"
+        },
+        {
+            text: "People always told me be careful of what you do And dont go around breaking young girls' hearts And mother always told me be careful of who you love And be careful of what you do cause the lie becomes the truth."
+        },
+        {
+            text: "John Smith"
+        },
+        {
+            text: "1/1/21"
+        },
+        {
+            html: "<a href='#'>Edit</a>"
+        },
+        {
+            html: "<a href='#'>Delete</a>"
+        }
+        ]
+    ]
+}) }}
 
 <!-- END OF TABLE  -->
 
