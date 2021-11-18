@@ -24,7 +24,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of assessments / Settled cases</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of assessments & settled cases</h1>
     {% if data['case-address'] and data['case-address'] != '' %}
     <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}
       <br><span class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-font-weight-bold">Address: {{ data['case-address'] }}</span>
@@ -42,6 +42,12 @@
     
       {{ govukButton({
         text: "Generate settled cases schedule",
+        href: "format-assessments-cases",
+        classes: "govuk-button--secondary"
+      }) }}
+      
+      {{ govukButton({
+        text: "Generate both",
         href: "format-assessments-cases",
         classes: "govuk-button--secondary"
       }) }}

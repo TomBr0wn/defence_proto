@@ -23,7 +23,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of rents or Reg17/31</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of rents & reg 17/31</h1>
     {% if data['case-address'] and data['case-address'] != '' %}
     <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}
       <br><span class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-font-weight-bold">Address: {{ data['case-address'] }}</span>
@@ -34,13 +34,19 @@
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Generate Rents schedule",
+        text: "Generate rents schedule",
         href: "format-rents-reg17",
         classes: "govuk-button--primary"
       }) }}
 
       {{ govukButton({
-        text: "Generate Reg17/31",
+        text: "Generate reg 17/31",
+        href: "format-rents-reg17",
+        classes: "govuk-button--secondary"
+      }) }}
+      
+      {{ govukButton({
+        text: "Generate both",
         href: "format-rents-reg17",
         classes: "govuk-button--secondary"
       }) }}
