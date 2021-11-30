@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="create-new-case">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Set Billing authorities</h1>
+
+    <p class="govuk-body-s govuk-!-display-inline">You can select up to 20 billing authorities </p>
+
+    <form action="create-new-case-route" method="post" novalidate>
+
+      {{ govukButton({
+        text: "Save and continue",
+        classes: " govuk-!-margin-top-4"
+      }) }}
+
+      <div class="govuk-grid-row">
+        <!-- A -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur (3805)"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale (0905)"
+              },
+              {
+                value: " Amber Valley",
+                text: "Amber Valley (1005)"
+              },
+              {
+                value: " Arun",
+                text: "Arun (3810)"
+              },
+              {
+                value: " Ashfield",
+                text: "Ashfield (3005)"
+              },
+              {
+                value: " Aylesbury Vale",
+                text: "Aylesbury Vale (0405)"
+              },{
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barking & Dagenham",
+                text: "Barking & Dagenham"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Barnsley",
+                text: "Barnsley"
+              },
+              {
+                value: " Barrow-In-Furness",
+                text: "Barrow-In-Furness"
+              },
+              {
+                value: " Basildon",
+                text: "Basildon"
+              },{
+                value: " Caerphilly",
+                text: "Caerphilly"
+              },
+              {
+                value: " Calderdale",
+                text: "Calderdale"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Camden",
+                text: "Camden"
+              },
+              {
+                value: " Cannock Chase",
+                text: "Cannock Chase"
+              },
+              {
+                value: " Canterbury",
+                text: "Canterbury"
+              },{
+                value: " Dacorum",
+                text: "Dacorum"
+              },
+              {
+                value: " Darlington",
+                text: "Darlington"
+              },
+              {
+                value: " Dartford",
+                text: "Dartford"
+              },
+              {
+                value: " Daventry",
+                text: "Daventry"
+              },
+              {
+                value: " Denbigshire",
+                text: "Denbigshire"
+              },
+              {
+                value: " Derby",
+                text: "Derby"
+              },{
+                value: " Ealing",
+                text: "Ealing"
+              },
+              {
+                value: " East Cambridgeshire",
+                text: "East Cambridgeshire"
+              },
+              {
+                value: " East Devon",
+                text: "East Devon"
+              },
+              {
+                value: " East Hampshire",
+                text: "East Hampshire"
+              },
+              {
+                value: " East Hertfordshire",
+                text: "East Hertfordshire"
+              },
+              {
+                value: " East Riding Of Yorkshire",
+                text: "East Riding Of Yorkshire"
+              },{
+                value: " Fareham",
+                text: "Fareham"
+              },
+              {
+                value: " Folkstone & Hythe",
+                text: "Folkstone & Hythe"
+              },
+              {
+                value: " Forrest Of Dean",
+                text: "Forrest Of Dean"
+              },
+              {
+                value: " Fylde",
+                text: "Fylde"
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

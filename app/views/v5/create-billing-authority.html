@@ -1,0 +1,1100 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="create-new-case">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Set Billing authority codes</h1>
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#A">A</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#B">B</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#C">C</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#D">D</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#E">E</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#F">F</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#G">G</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#H">H</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#I">I</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#J">J</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#K">K</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#L">L</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#M">M</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#N">N</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#O">O</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#P">P</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#Q">Q</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#R">R</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#T">T</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#U">U</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#V">V</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link" href="#W">W</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="#Y">Y</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form action="create-new-case-route" method="post" novalidate>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <div class="govuk-grid-row">
+        <!-- A -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='A'>A</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Adur",
+                text: "Adur"
+              },
+              {
+                value: " Allerdale",
+                text: "Allerdale"
+              },
+              {
+                value: " Amber Valley",
+                text: "Amber Valley"
+              },
+              {
+                value: " Arun",
+                text: "Arun"
+              },
+              {
+                value: " Ashfield",
+                text: "Ashfield"
+              },
+              {
+                value: " Aylesbury Vale",
+                text: "Aylesbury Vale"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- B -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='B'>B</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Babergh",
+                text: "Babergh"
+              },
+              {
+                value: " Barking & Dagenham",
+                text: "Barking & Dagenham"
+              },
+              {
+                value: " Barnet",
+                text: "Barnet"
+              },
+              {
+                value: " Barnsley",
+                text: "Barnsley"
+              },
+              {
+                value: " Barrow-In-Furness",
+                text: "Barrow-In-Furness"
+              },
+              {
+                value: " Basildon",
+                text: "Basildon"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- C -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='C'>C</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Caerphilly",
+                text: "Caerphilly"
+              },
+              {
+                value: " Calderdale",
+                text: "Calderdale"
+              },
+              {
+                value: " Cambridge",
+                text: "Cambridge"
+              },
+              {
+                value: " Camden",
+                text: "Camden"
+              },
+              {
+                value: " Cannock Chase",
+                text: "Cannock Chase"
+              },
+              {
+                value: " Canterbury",
+                text: "Canterbury"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- D -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='D'>D</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Dacorum",
+                text: "Dacorum"
+              },
+              {
+                value: " Darlington",
+                text: "Darlington"
+              },
+              {
+                value: " Dartford",
+                text: "Dartford"
+              },
+              {
+                value: " Daventry",
+                text: "Daventry"
+              },
+              {
+                value: " Denbigshire",
+                text: "Denbigshire"
+              },
+              {
+                value: " Derby",
+                text: "Derby"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- E -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='E'>E</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Ealing",
+                text: "Ealing"
+              },
+              {
+                value: " East Cambridgeshire",
+                text: "East Cambridgeshire"
+              },
+              {
+                value: " East Devon",
+                text: "East Devon"
+              },
+              {
+                value: " East Hampshire",
+                text: "East Hampshire"
+              },
+              {
+                value: " East Hertfordshire",
+                text: "East Hertfordshire"
+              },
+              {
+                value: " East Riding Of Yorkshire",
+                text: "East Riding Of Yorkshire"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- F -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='F'>F</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Fareham",
+                text: "Fareham"
+              },
+              {
+                value: " Folkstone & Hythe",
+                text: "Folkstone & Hythe"
+              },
+              {
+                value: " Forrest Of Dean",
+                text: "Forrest Of Dean"
+              },
+              {
+                value: " Fylde",
+                text: "Fylde"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- G -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='G'>G</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Gateshead",
+                text: "Gateshead"
+              },
+              {
+                value: " Gedling",
+                text: "Gedling"
+              },
+              {
+                value: " Gloucester",
+                text: "Gloucester"
+              },
+              {
+                value: " Great Yarmouth",
+                text: "Great Yarmouth"
+              },
+              {
+                value: " Greenwich",
+                text: "Greenwich"
+              },
+              {
+                value: " Guildford",
+                text: "Guildford"
+              },
+              {
+                value: " Gwynedd",
+                text: "Gwynedd"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- <!-- A -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='H'>H</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Hackney",
+                text: "Hackney"
+              },
+              {
+                value: " Hammersmith & Fulham",
+                text: "Hammersmith & Fulham"
+              },
+              {
+                value: " Hart",
+                text: "Hart"
+              },
+              {
+                value: " Hartlepoole",
+                text: "Hartlepoole"
+              },
+              {
+                value: " Hastings",
+                text: "Hastings"
+              },
+              {
+                value: " Havant",
+                text: "Havant"
+              },
+              {
+                value: " Herefordshire",
+                text: "Herefordshire"
+              },
+              {
+                value: " Hinckley & Bosworth",
+                text: "Hinckley & Bosworth"
+              },
+              {
+                value: " Hyndburn",
+                text: "Hyndburn"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- I -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='I'>I</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Ipswich",
+                text: "Ipswich"
+              },
+              {
+                value: " Isle Of Anglesey",
+                text: "Isle Of Anglesey"
+              },
+              {
+                value: " Isle Of Wight",
+                text: "Isle Of Wight"
+              },
+              {
+                value: " Isles of Scilly",
+                text: "Isles of Scilly"
+              },
+              {
+                value: " Islington",
+                text: "Islington"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- K -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='K'>K</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Kensington & Chelsea",
+                text: "Kensington & Chelsea"
+              },
+              {
+                value: " Kettering",
+                text: "Kettering"
+              },
+              {
+                value: " Kings Lynn & West Norfolk",
+                text: "Kings Lynn & West Norfolk"
+              },
+              {
+                value: " Kingston Upon Thames",
+                text: "Kingston Upon Thames"
+              },
+              {
+                value: " Kirklees",
+                text: "Kirklees"
+              },
+              {
+                value: " Knowsley",
+                text: "Knowsley"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- L -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='L'>L</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Lambeth",
+                text: "Lambeth"
+              },
+              {
+                value: " Lancaster",
+                text: "Lancaster"
+              },
+              {
+                value: " Leeds",
+                text: "Leeds"
+              },
+              {
+                value: " Lewes",
+                text: "Lewes"
+              },
+              {
+                value: " Liverpool",
+                text: "Liverpool"
+              },
+              {
+                value: " Luton",
+                text: "Luton"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- M -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='M'>M</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Maidstone",
+                text: "Maidstone"
+              },
+              {
+                value: " Maldon",
+                text: "Maldon"
+              },
+              {
+                value: " Manchester",
+                text: "Manchester"
+              },
+              {
+                value: " Mansfield",
+                text: "Mansfield"
+              },
+              {
+                value: " Medway",
+                text: "Medway"
+              },
+              {
+                value: " Melton",
+                text: "Melton"
+              },
+              {
+                value: " Merthyr Tydfil",
+                text: "Merthyr Tydfil"
+              },
+              {
+                value: " Milton Keynes",
+                text: "Milton Keynes"
+              },
+              {
+                value: " Monmouthshire",
+                text: "Monmouthshire"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- N -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='N'>N</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Neath and Port Talbot",
+                text: "Neath and Port Talbot"
+              },
+              {
+                value: " New Forest",
+                text: "New Forest"
+              },
+              {
+                value: " Newcastle Upon Tyne",
+                text: "Newcastle Upon Tyne"
+              },
+              {
+                value: " North Devon",
+                text: "North Devon"
+              },
+              {
+                value: " North East Lincolnshire",
+                text: "North East Lincolnshire"
+              },
+              {
+                value: " North Hertfordshire",
+                text: "North Hertfordshire"
+              },
+              {
+                value: " North Norfolk",
+                text: "North Norfolk"
+              },
+              {
+                value: " North Tyneside",
+                text: "North Tyneside"
+              },
+              {
+                value: " North West Leicestershire",
+                text: "North West Leicestershire"
+              },
+              {
+                value: " Nuneaton & Bedworth",
+                text: "Nuneaton & Bedworth"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- O -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='O'>O</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Oadby & Wigston",
+                text: "Oadby & Wigston"
+              },
+              {
+                value: " Oldham",
+                text: "Oldham"
+              },
+              {
+                value: " Oxford",
+                text: "Oxford"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              },
+              {
+                value: " O",
+                html: "<p> </p>"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- P -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='P'>P</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Pembrokeshire",
+                text: "Pembrokeshire"
+              },
+              {
+                value: " Pendle",
+                text: "Pendle"
+              },
+              {
+                value: " Peterborough",
+                text: "Peterborough"
+              },
+              {
+                value: " Plymouth",
+                text: "Plymouth"
+              },
+              {
+                value: " Powys 1 (Montgomerryshire)",
+                text: "Powys 1 (Montgomerryshire)"
+              },
+              {
+                value: " Preston",
+                text: "Preston"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              },
+              {
+                value: " P",
+                html: "<p> </p>"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- R -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='R'>R</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Reading",
+                text: "Reading"
+              },
+              {
+                value: " Redcar and Cleveland",
+                text: "Redcar and Cleveland"
+              },
+              {
+                value: " Rhondda Cynon Taff",
+                text: "Rhondda Cynon Taff"
+              },
+              {
+                value: " Richmond Upon Thames",
+                text: "Richmond Upon Thames"
+              },
+              {
+                value: " Rochdale",
+                text: "Rochdale"
+              },
+              {
+                value: " Rossendale",
+                text: "Rossendale"
+              },
+              {
+                value: " Rotherham",
+                text: "Rotherham"
+              },
+              {
+                value: " Rugby",
+                text: "Rugby"
+              },
+              {
+                value: " Rushcliffe",
+                text: "Rushcliffe"
+              },
+              {
+                value: " Rutland",
+                text: "Rutland"
+              },
+              {
+                value: " Ryedale",
+                text: "Ryedale"
+              },
+              {
+                value: " Rossendale",
+                text: "Rossendale"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- S -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='S'>S</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Sandwell",
+                text: "Sandwell"
+              },
+              {
+                value: " Selby",
+                text: "Selby"
+              },
+              {
+                value: " Solihull",
+                text: "Solihull"
+              },
+              {
+                value: " Somerset West & Taunton (West Somerset)",
+                text: "Somerset West & Taunton (West Somerset)"
+              },
+              {
+                value: " South Buckinghamshire",
+                text: "South Buckinghamshire"
+              },
+              {
+                value: " Swansea",
+                text: "Swansea"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- T -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='T'>T</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Tameside",
+                text: "Tameside"
+              },
+              {
+                value: " Telford and Wrekin",
+                text: "Telford and Wrekin"
+              },
+              {
+                value: " Tewksbury",
+                text: "Tewksbury"
+              },
+              {
+                value: " Torbay",
+                text: "Torbay"
+              },
+              {
+                value: " Torafen",
+                text: "Torafen"
+              },
+              {
+                value: " Tower Hamlets",
+                text: "Tower Hamlets"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- U -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='U'>U</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Uttlesford",
+                text: "Uttlesford"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- V -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='V'>V</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Vale of Glamorgan",
+                text: "Vale of Glamorgan"
+              },
+              {
+                value: " Vale of White Horse",
+                text: "Vale of White Horse"
+              }
+            ]
+          }) }}
+        </div>
+        <!-- W -->
+        <div class="govuk-grid-column-one-quarter">
+          {{ govukCheckboxes({
+            idPrefix: "bill-auth-codes",
+            name: "bill-auth-codes",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+              legend: {
+                html: "<a href='#' id='W'>W</a>",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: " Wakefield",
+                text: "Wakefield"
+              },
+              {
+                value: " Watford",
+                text: "Watford"
+              },
+              {
+                value: " Wellingborough",
+                text: "Wellingborough"
+              },
+              {
+                value: " West Berkshire",
+                text: "West Berkshire"
+              },
+              {
+                value: " West Oxfordshire",
+                text: "West Oxfordshire"
+              },
+              {
+                value: " Windsor and Maidenhead",
+                text: "Windsor and Maidenhead"
+              },
+              {
+                value: " Wolverhampton",
+                text: "Wolverhampton"
+              },
+              {
+                value: " Wrexham",
+                text: "Wrexham"
+              },
+              {
+                value: " Wyre Forest",
+                text: "Wyre Forest"
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

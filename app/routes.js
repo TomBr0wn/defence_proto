@@ -166,6 +166,68 @@ router.get("/v4/edit-case-clear-criteria", function (req, res) {
 	res.redirect("/v4/edit-settlement-case");
 });
 
+
+//////////////////////////// V% Stuff ////////////////////////////
+
+// // Run this code when a form is submitted to 'choose-app-answer'
+router.post("/v5/choose-app-answer", function (req, res) {
+	// Make a variable and give it the value from 'pick-service'
+	var whichService = req.session.data["pick-service"];
+
+	// Check whether the variable matches a condition
+	if (whichService == "settlement") {
+		// Send user to next page
+		res.redirect("/v5/defence-home");
+	} else {
+		// Send user to other page
+		res.redirect("/v5/property-groups");
+	}
+	req.session.destroy();
+});
+
+router.post("/v5/create-new-case-route", function (req, res) {
+	console.log("Here we go...");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
+
+	var createDescription = req.session.data["description"];
+	var createRegValUnit = req.session.data["reg-val-units"];
+
+	var createEconRegion = req.session.data["economic-region"];
+	var createbillAuthCodes = req.session.data["bill-auth-codes"];
+	var createBulkClassInd = req.session.data["bulk-class-indicator"];
+
+	var createSubLocation = req.session.data["sub-location"];
+	var createScatCode = req.session.data["scat-code"];
+	var createScatSuffix = req.session.data["scat-suffix"];
+
+	console.log(formData);
+	res.redirect("create-new-case");
+});
+
+router.post("/v5/add-case-address", function (req, res) {
+	console.log("Here we go...");
+	console.log(req.session.data);
+	// this also works as long as the variable doesn't have a - in the name
+	formData.push(req.session.data);
+
+	var caseAddress = req.session.data["case-address"];
+
+	console.log("Case Address: " + caseAddress);
+
+	if (req.session.data["case-address"] != " ") {
+		res.redirect("add-case-task-list");
+	} else {
+		res.redirect("settlement-task-list");
+	}
+});
+
+router.get("/v5/edit-case-clear-criteria", function (req, res) {
+	req.session.destroy();
+	res.redirect("/v4/edit-settlement-case");
+});
+
 ////////// Edit Case /////////////
 
 router.get("/edit-settlement-case", function (req, res) {

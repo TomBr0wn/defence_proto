@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="create-new-dataset">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="create-new-dataset-route" method="post" novalidate>
+      <!-- {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "text-file-type",
+        name: "text-file-type",
+        fieldset: {
+          legend: {
+            text: "Choose Reval, Defence or both text files",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select one of the options below."
+        },
+        items: [
+          {
+            value: "Reval",
+            text: "Reval",
+            checked: checked("text-file-type", "Reval")
+          },
+          {
+            value: "Defence",
+            text: "Defence",
+            checked: checked("text-file-type", "Defence")
+          }
+        ]
+      }) }} -->
+      
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "text-file-type",
+          name: "text-file-type",
+          fieldset: {
+            legend: {
+              text: "Choose Reval, Defence or both text files",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: " Reval",
+              text: "Reval"
+            },
+            {
+              value: " Defence",
+              text: "Defence"
+            }
+          ]
+        }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="defence-home-filled">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">Create new settlement group</h1>
+
+    <h2 class="govuk-heading-m">Criteria</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Decription -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Description
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['description'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-description">
+            Change
+            <span class="govuk-visually-hidden"> description</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-------------------------------------- TOP OF CRITERIA  --------------------------------------->
+      
+      <!-- List year -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          List year
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['list-year'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-list-year">
+            Change
+            <span class="govuk-visually-hidden"> List year</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Regional valuation units -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Regional valuation units
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['reg-val-units'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-reg-val-units">
+            Change
+            <span class="govuk-visually-hidden"> Regional valuation units</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Billing authority codes -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Billing authority codes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bill-auth-codes'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-billing-authority-long">
+            Change
+            <span class="govuk-visually-hidden"> Billing authority codes</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Bulk class indicators -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Bulk class indicators
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bulk-class-indicator'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-bulk-class-ind">
+            Change
+            <span class="govuk-visually-hidden"> Bulk class indicators</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Matrix reference -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Matrix reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['matrix-ref'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-matrix-ref">
+            Change
+            <span class="govuk-visually-hidden"> matrix reference</span>
+          </a>
+        </dd>
+      </div>
+
+
+      <!-- Sub locations -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sub Location
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['sub-location'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-sub-location">
+            Change
+            <span class="govuk-visually-hidden"> cdb case</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Scat code -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Scat code
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['scat-code'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-scat-code">
+            Change
+            <span class="govuk-visually-hidden"> Scat code</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Scat suffixes -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Scat suffixes
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['scat-suffix'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="create-scat-suffix">
+            Change
+            <span class="govuk-visually-hidden"> Scat suffixes</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+    <form action="create-case-success" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Create settlement group"
+        }) }}
+      
+        <a class="govuk-link" href="#">Clear selection</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

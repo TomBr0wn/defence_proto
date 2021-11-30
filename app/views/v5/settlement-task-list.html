@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="defence-home-filled">Back</a>
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Settlement group progress</h1>
+    <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}</h2>
+    <div>
+      <p class="govuk-body-s govuk-!-display-inline govuk-!-margin-bottom-4">Filters Selected: </p>
+
+      {%- from "moj/components/badge/macro.njk" import mojBadge -%}
+      {{ mojBadge({
+        text: 'None',
+        classes: "moj-badge--black"
+      }) }}
+    </div>
+    <!-- <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p> -->
+
+    <ol class="app-task-list">
+      <!-- STAGE 1 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Settlement Group Overview
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="analyse-group-summary" aria-describedby="analyse-filter-status">
+                Analyse and apply filters
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="submit-pay-status">100 of 100 available</strong>
+          </li>
+        </ul>
+      </li>
+
+      <!-- STAGE 2 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2. </span> Gather supporting evidence
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-assessments" aria-describedby="assessments-status">
+                Assessments
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="submit-pay-status">60 of 60 available</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-rents" aria-describedby="rents-status">
+                Rents
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="submit-pay-status">40 of 40 available</strong>
+          </li>
+        </ul>
+      </li>
+
+      <!-- STAGE 3 -->
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3. </span> Generate schedules
+        </h2>
+        <ul class="app-task-list__items">
+          
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="add-case-address-new" aria-describedby="rents-status">
+                Add case address to schedule
+              </a>
+            </span>
+          </li>
+          
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-assessments-generate-schedule.html" aria-describedby="rents-status">
+                Assessment summary & settled cases
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">no selected</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="supporting-rents-generate-schedule.html" aria-describedby="rents-status">
+                Rental summary & Reg 17/31
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">no selected</strong>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</div>
+
+{% endblock %}
