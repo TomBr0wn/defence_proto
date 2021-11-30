@@ -57,6 +57,9 @@
                 },
                 {
                     text: "58"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -65,6 +68,9 @@
                 },
                 {
                     text: "44"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -73,6 +79,10 @@
                 },
                 {
                     text: "36"
+                },
+                {
+                    html: "<img/>",
+                    src: "public/images/black-dot.png"
                 }
                 ],
                 [
@@ -81,6 +91,9 @@
                 },
                 {
                     text: "20"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -89,6 +102,9 @@
                 },
                 {
                     text: "20"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -97,6 +113,9 @@
                 },
                 {
                     text: "24"
+                },
+                {
+                    html: "<span>S</span>"
                 }
                 ],
                 [
@@ -105,6 +124,9 @@
                 },
                 {
                     text: "16"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -121,10 +143,21 @@
                 },
                 {
                     text: "10"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ]
             ]
             }) }}
+
+        <div class="govuk-button-group">
+            {{ govukButton({
+                text: "Add address to schedule",
+                classes: "govuk-button govuk-button--secondary",
+                href: "add-case-address-new"
+            }) }}
+        </div>
 
     </div>
     <div class="govuk-grid-column-three-quarters">

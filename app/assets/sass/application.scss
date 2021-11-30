@@ -148,3 +148,23 @@ $govuk-assets-path: "/govuk/assets/";
 .blueText {
 	color: #003078;
 }
+
+.blackCircle { 
+	width: 8px !important;
+	height: 8px !important;
+	background: #000000;
+	border: 1px solid white; 
+	-moz-border-radius: 70px; 
+	-webkit-border-radius: 70px; 
+	border-radius: 70px;
+}
+
+.whiteCircle { 
+	width: 16px;
+	height: 16px;
+	background: #ffffff;
+	border: 1px solid #000000; 
+	-moz-border-radius: 70px; 
+	-webkit-border-radius: 70px; 
+	border-radius: 70px;
+}
