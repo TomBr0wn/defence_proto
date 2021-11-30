@@ -560,9 +560,9 @@
                 </div>
             </div>
 
-            <!------------------------------------------------------ ADDRESS MATRIX  ------------------------------------------------------->
-            <!-- <div class="govuk-grid-column-one-quarter">
-                    <h3 class="govuk-heading-m">Address Matrix</h3>
+            <!------------------------------------------------------ SETTLED CASES INFO  ------------------------------------------------------->
+            <div class="govuk-grid-column-one-quarter">
+                    <h3 class="govuk-heading-m">Comparable assessment information</h3>
                     <p class="govuk-body">Select a check box to reveal options</p>
 
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -571,10 +571,25 @@
 
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
-                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Area (ITMS)</label>
+                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Assessment with no challenge</label>
+                        </div>
+                        
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Assessment with unresolved challenge</label>
+                        </div>
+                        
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Assessment with settled challenge</label>
+                        </div>
+                        
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                            <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Appeal</label>
                         </div>
 
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix">
+                        <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix">
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="area options">Area is</label>
                                 <select class="govuk-select" id="area" name="area">
@@ -587,10 +602,10 @@
                                 
                                 <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
-                </div> -->
+                </div>
         </div>
     </form>
 </div>
