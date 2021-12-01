@@ -16,9 +16,10 @@
 
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
 
-        <h1 class="govuk-heading-xl">Settlement group overview</h1>
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Settlement group overview</h1>
+        <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}</h2>
 
         <div class="govuk-!-margin-bottom-6">
             <p class="govuk-body-s govuk-!-display-inline">Filters Selected: </p>
@@ -36,10 +37,10 @@
               text: "Filter settlement group",
               href: "filters"
             }) }}
-
-
         </div>
+    </div>
 
+    <div class="govuk-grid-column-one-quarter">
 
         {% from "govuk/components/table/macro.njk" import govukTable %}
 
@@ -55,7 +56,10 @@
                     text: "Hereditaments"
                 },
                 {
-                    text: "50"
+                    text: "58"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -63,7 +67,10 @@
                     text: "Survey unit assessments"
                 },
                 {
-                    text: "48"
+                    text: "44"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -71,7 +78,21 @@
                     text: "Rents"
                 },
                 {
-                    text: "11"
+                    text: "36"
+                },
+                {
+                    html: '<img src="/public/images/black-dot.png" alt="rents black dot">'
+                }
+                ],
+                [
+                {
+                    text: "Hereditaments with rents"
+                },
+                {
+                    text: "20"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -80,6 +101,9 @@
                 },
                 {
                     text: "20"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ],
                 [
@@ -87,20 +111,59 @@
                     text: "Settled cases"
                 },
                 {
-                    text: "8"
+                    text: "24"
+                },
+                {
+                    html: '<img src="/public/images/white-dot.png" alt="cases white dot">'
                 }
                 ],
                 [
                 {
-                    text: "Hereditaments with rents"
+                    text: "Unresolved"
                 },
                 {
-                    text: "8"
+                    text: "16"
+                },
+                {
+                    html: "<span></span>"
+                }
+                ],
+                [
+                {
+                    text: "No challenge"
+                },
+                {
+                    text: "20"
+                },
+                {
+                    html: "<span></span>"
+                }
+                ],
+                [
+                {
+                    text: "Appeals"
+                },
+                {
+                    text: "10"
+                },
+                {
+                    html: "<span></span>"
                 }
                 ]
             ]
             }) }}
 
+        <div class="govuk-button-group">
+            {{ govukButton({
+                    text: "Add case address",
+                    classes: "govuk-button govuk-button--secondary",
+                    href: "add-case-address-new"
+                }) }}
+        </div>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <img src="/public/images/manc1.jpg" alt="map" style="width: 80%; height: 80%;">
     </div>
 </div>
 {% endblock %}
