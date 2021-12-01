@@ -44,45 +44,154 @@
 
             <div class="moj-filter__options">
 
-              <button class="govuk-button" data-module="govuk-button">
-                Apply filters
-              </button>
+              <button class="govuk-button" data-module="govuk-button">Apply filters</button>
 
+              <!-------------------------- ADDRESS ----------------------------->
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m" for="keywords">
-                  Address contains
-                </label>
-
+                <label class="govuk-label govuk-label--m" for="keywords">Address contains</label>
                 <input class="govuk-input" id="address" name="address" type="text">
               </div>
 
+              <!-------------------------- TOTAL SIGNIFICANT AREA ----------------------------->
               <div class="govuk-form-group">
-
                 <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Total significant area</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-                    Rents status indicator
-
-                  </legend>
-
-                  <div class="govuk-checkboxes govuk-checkboxes--small">
 
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
-                      <label class="govuk-label govuk-checkboxes__label" for="type">
-                        Useful (12)
-                      </label>
-
+                      <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                      <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Area</label>
                     </div>
 
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="area options">Area is</label>
+                        <select class="govuk-select" id="area" name="area">
+                          <option value="More">More than</option>
+                          <option value="Less" selected>Less than</option>
+                        </select>
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="size-matrix-street">Size (Area)</label>
+                        <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
                   </div>
-
                 </fieldset>
-
               </div>
+              <!-------------------------- END OF TOTAL SIGNIFICANT AREA ----------------------------->
 
 
+              <!-------------------------- Price m2 ----------------------------->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Price m2</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="rent-info-3" name="rent-info" type="checkbox" value="Rent value" data-aria-controls="conditional-rent-info-3 {{
+                        checked(" price-m2 ", "Price m2 " )}}">
+                      <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Price m2</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-3">
+                      <div class="govuk-form-group">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="rent-info-postcode">Look for values</label>
+                          <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
+                            <option value="between" selected>Between</option>
+                            <option value="updated">Above</option>
+                            <option value="updated">Below</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                      <p>and</p>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <!-------------------------- END OF PRICE m2 ----------------------------->
+              
+              <!-------------------------- Adopted value m2 ----------------------------->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Adopted value m2</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="rent-info-3" name="rent-info" type="checkbox" value="Rent value" data-aria-controls="conditional-rent-info-3 {{
+                        checked(" price-m2 ", "Price m2 " )}}">
+                      <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Adopted value m2</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-3">
+                      <div class="govuk-form-group">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="rent-info-postcode">Look for values</label>
+                          <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
+                            <option value="between" selected>Between</option>
+                            <option value="updated">Above</option>
+                            <option value="updated">Below</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                      <p>and</p>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <!-------------------------- Adopted value m2 m2 ----------------------------->
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Rateable value</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                      <label class="govuk-label govuk-checkboxes__label" for="status">£50.00</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">£75.00</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">£100.00</label>
+                    </div>
+                  </div>
+                  
+                </fieldset>
+              </div>
             </div>
 
           </div>
