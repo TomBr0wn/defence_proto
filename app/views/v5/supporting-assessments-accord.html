@@ -1,0 +1,891 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="settlement-task-list">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Assessments in settlement group</h1>
+      <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}</h2>
+
+
+    </div>
+
+
+    <!-------------- START OF FILTERS --------------------->
+    <div class="moj-filter-layout">
+
+      <div class="moj-filter-layout__filter">
+
+        <div class="moj-filter">
+
+          <div class="moj-filter__header">
+
+            <div class="moj-filter__header-title">
+              <h2 class="govuk-heading-m">Filter</h2>
+            </div>
+
+            <div class="moj-filter__header-action">
+
+            </div>
+
+          </div>
+
+          <div class="moj-filter__content">
+
+
+            <div class="moj-filter__options">
+
+              <button class="govuk-button" data-module="govuk-button">Apply filters</button>
+
+              <!-------------------------- ADDRESS ----------------------------->
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="keywords">Address contains</label>
+                <input class="govuk-input" id="address" name="address" type="text">
+              </div>
+
+              <!-------------------------- TOTAL SIGNIFICANT AREA ----------------------------->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Total significant area</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="size-matrix-0" name="size-matrix" type="checkbox" value="Size Area" data-aria-controls="conditional-size-matrix" {{ checked( "size-matrix", "Size Area" )}}>
+                      <label class="govuk-label govuk-checkboxes__label" for="size-matrix-0">Area</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-size-matrix">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="area options">Area is</label>
+                        <select class="govuk-select" id="area" name="area">
+                          <option value="More">More than</option>
+                          <option value="Less" selected>Less than</option>
+                        </select>
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="size-matrix-street">Size (Area)</label>
+                        <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <!-------------------------- END OF TOTAL SIGNIFICANT AREA ----------------------------->
+
+
+              <!-------------------------- Price m2 ----------------------------->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Price m2</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="rent-info-3" name="rent-info" type="checkbox" value="Rent value" data-aria-controls="conditional-rent-info-3 {{
+                        checked(" price-m2 ", "Price m2 " )}}">
+                      <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Price m2</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-3">
+                      <div class="govuk-form-group">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="rent-info-postcode">Look for values</label>
+                          <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
+                            <option value="between" selected>Between</option>
+                            <option value="updated">Above</option>
+                            <option value="updated">Below</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                      <p>and</p>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <!-------------------------- END OF PRICE m2 ----------------------------->
+
+              <!-------------------------- Adopted value m2 ----------------------------->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Adopted value m2</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="rent-info-3" name="rent-info" type="checkbox" value="Rent value" data-aria-controls="conditional-rent-info-3 {{
+                        checked(" price-m2 ", "Price m2 " )}}">
+                      <label class="govuk-label govuk-checkboxes__label" for="rent-info-3">Adopted value m2</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-rent-info-3">
+                      <div class="govuk-form-group">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="rent-info-postcode">Look for values</label>
+                          <select class="govuk-select" id="size-matrix-postcode" name="size-matrix-postcode">
+                            <option value="between" selected>Between</option>
+                            <option value="updated">Above</option>
+                            <option value="updated">Below</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                      <p>and</p>
+                      <div class="govuk-form-group">
+                        <div class="govuk-input__wrapper">
+                          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                          <input class="govuk-input govuk-input--width-5" id="cost" name="cost" type="text" spellcheck="false">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <!-------------------------- Adopted value m2 m2 ----------------------------->
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Rateable value</legend>
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="1">
+                      <label class="govuk-label govuk-checkboxes__label" for="status">£50.00</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="2">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-2">£75.00</label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="3">
+                      <label class="govuk-label govuk-checkboxes__label" for="status-3">£100.00</label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="moj-filter-layout__content">
+
+        <!------------ BUTTONS ----------->
+        <div class="moj-action-bar">
+
+          <div class="moj-action-bar__filter"></div>
+
+          <div class="moj-button-menu">
+            <div class="moj-button-menu__wrapper">
+
+              {{ govukButton({
+                text: "Add to assessment summary",
+                classes: "govuk-button moj-button-menu__item govuk-button--primary",
+                href: "supporting-assessments-success-message"
+              }) }}
+              
+
+            </div>
+            
+
+          </div>
+
+          
+
+        </div>
+
+        <div class="moj-scrollable-pane">
+
+          <div class="moj-scrollable-pane__wrapper">
+
+            <!------------------ START OF ACCORDION ---------------------------------------->
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+              <!--------------------------------- ROW 1 ------------------------------------->
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      16 Cross Street, Manchester
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <!------------- CONTENT ------------------>
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+
+                        <!--------------------------- FIRST ROW COLUMN/TD 1 ------------------------->
+                        <td class="govuk-table__cell">
+
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Select for assessment summary</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    &nbsp;
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Total significant area</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysed Value £/m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Adopted value m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Rateable value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FIRST ROW COLUMN/TD 2 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Matrix reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Remarks Y/N</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">Y - Edit remark</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">N - Add remark</a></li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Beacon Factor</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Settlement Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Scheme Reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Property Age</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Previously Settled Proposals</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FIRST ROW COLUMN/TD 3 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Appellant</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit adjustments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Parking</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">P&M</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">End adjustment</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Assessment Status</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Additional Survey Units</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FIRST ROW COLUMN/TD 4 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysis Remarks</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">CCA Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Outstanding Challenge Case</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Proposed Assessments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Custom sort</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                                  Add sort character
+                                </label>
+                                <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--------------------------------- END OF ROW 1 ------------------------------->
+
+
+              <!--------------------------------- START OF ROW 2 ------------------------------------->
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      22 Cross Street, Manchester
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <!------------- CONTENT ------------------>
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+
+                        <!--------------------------- SECOND ROW COLUMN/TD 1 ------------------------->
+                        <td class="govuk-table__cell">
+
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Select for assessment summary</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    &nbsp;
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Total significant area</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysed Value £/m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Adopted value m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Rateable value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- SECOND ROW COLUMN/TD 2 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Matrix reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Remarks Y/N</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">Y - Edit remark</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">N - Add remark</a></li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Beacon Factor</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Settlement Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Scheme Reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Property Age</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Previously Settled Proposals</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- SECOND ROW COLUMN/TD 3 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Appellant</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit adjustments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Parking</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">P&M</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">End adjustment</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Assessment Status</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Additional Survey Units</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- SECOND ROW COLUMN/TD 4 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysis Remarks</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">CCA Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Outstanding Challenge Case</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Proposed Assessments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Custom sort</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                                  Add sort character
+                                </label>
+                                <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--------------------------------- END OF ROW 2 ------------------------------->
+
+              <!--------------------------------- START OF ROW 3 ------------------------------------->
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      39 Cross Street, Manchester
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <!------------- CONTENT ------------------>
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+
+                        <!--------------------------- THIRD ROW COLUMN/TD 1 ------------------------->
+                        <td class="govuk-table__cell">
+
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Select for assessment summary</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    &nbsp;
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Total significant area</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysed Value £/m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Adopted value m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Rateable value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- THIRD ROW COLUMN/TD 2 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Matrix reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Remarks Y/N</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">Y - Edit remark</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">N - Add remark</a></li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Beacon Factor</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Settlement Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Scheme Reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Property Age</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Previously Settled Proposals</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- THIRD ROW COLUMN/TD 3 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Appellant</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit adjustments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Parking</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">P&M</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">End adjustment</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Assessment Status</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Additional Survey Units</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- THIRD ROW COLUMN/TD 4 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysis Remarks</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">CCA Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Outstanding Challenge Case</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Proposed Assessments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Custom sort</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                                  Add sort character
+                                </label>
+                                <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--------------------------------- END OF ROW 3 ------------------------------->
+
+
+
+              <!--------------------------------- START OF ROW 4 ------------------------------------->
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      42 Cross Street, Manchester
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <!------------- CONTENT ------------------>
+                  <table class="govuk-table">
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+
+                        <!--------------------------- FOURTH ROW COLUMN/TD 1 ------------------------->
+                        <td class="govuk-table__cell">
+
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Select for assessment summary</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                    &nbsp;
+                                  </label>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Total significant area</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysed Value £/m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Adopted value m2</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Rateable value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit value</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FOURTH ROW COLUMN/TD 2 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Matrix reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Remarks Y/N</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">Y - Edit remark</a></li>
+                            <li class="govuk-list govuk-!-font-size-16"><a href="supporting-rents-add-remark.html" class="govuk-link">N - Add remark</a></li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Beacon Factor</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Settlement Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Scheme Reference</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Property Age</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Previously Settled Proposals</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FOURTH ROW COLUMN/TD 3 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Appellant</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Survey unit adjustments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Parking</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">P&M</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">End adjustment</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Assessment Status</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Additional Survey Units</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                        </td>
+
+                        <!--------------------------- FOURTH ROW COLUMN/TD 4 ------------------------->
+                        <td class="govuk-table__cell">
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Analysis Remarks</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">CCA Type</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Outstanding Challenge Case</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Proposed Assessments</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+                          </ul>
+                          <ul class="govuk-list">
+                            <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline govuk-link--no-visited-state" href="#">Custom sort</a></li>
+                            <li class="govuk-list govuk-!-font-size-16">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                                  Add sort character
+                                </label>
+                                <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                              </div>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--------------------------------- END OF ROW 3 ------------------------------->
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
