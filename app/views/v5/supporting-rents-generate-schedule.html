@@ -49,214 +49,128 @@
 
     <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
       <thead class="govuk-table__head">
+        <!------------ TABLE HEADERS ------------>
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col" id="select-all"></th>
-          <th class="govuk-table__header" scope="col">Address</th>
-          <th class="govuk-table__header" scope="col">FOR case number</th>
-          <th class="govuk-table__header" scope="col">Total significant area m2</th>
-          <th class="govuk-table__header" scope="col">Useful indicator</th>
-          <th class="govuk-table__header" scope="col">Rent status indicator</th>
-          <th class="govuk-table__header" scope="col">Analysis type</th>
-          <th class="govuk-table__header" scope="col">Effective date of rent</th>
-          <th class="govuk-table__header" scope="col">Adjusted rent</th>
-          <th class="govuk-table__header" scope="col">Analysed rent £/m2</th>
-          <!-- <th class="govuk-table__header" scope="col">Remarks Y/N</th> -->
-          <!-- <th class="govuk-table__header" scope="col">Custom sort</th> -->
+          <th class="govuk-table__header col-one-quarter" scope="col" id="select-all"></th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">
+            <!-- SORT DROPDOWN -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                Sort by
+              </label>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="published">Advise sort criteria please</option>
+                <option value="updated" selected>Advise sort criteria please</option>
+                <option value="views">Advise sort criteria please</option>
+                <option value="comments">Advise sort criteria please</option>
+              </select>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
 
-        <!--------- ROW 1 ----------->
+        <!--------------------------------- ROW 1 ------------------------------->
         <tr class="govuk-table__row govuk-table__row--selected">
           <td class="govuk-table__cell">
             <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
+              <input type="checkbox" class="govuk-checkboxes__input" id="settlement-group-row-1">
+              <label class="govuk-label govuk-checkboxes__label" for="settlement-group-row-1">
+                <span class="govuk-visually-hidden">settlement group row 1</span>
               </label>
             </div>
           </td>
-          <td class="govuk-table__cell">16 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108712349875</td>
-          <td class="govuk-table__cell">62.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 April 2017</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
 
-          </td>
-        </tr>
-
-        <!--------- ROW 2 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
+          <!--------------------------- FIRST ROW COLUMN/TD 1 ------------------------->
           <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Address</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">FOR case number</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total significant area m2</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Useful indicator</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
           </td>
-          <td class="govuk-table__cell">15 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">107242637494</td>
-          <td class="govuk-table__cell">425.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 September 2016</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
 
-          </td>
-        </tr>
-
-        <!--------- ROW 3 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
+          <!--------------------------- FIRST ROW COLUMN/TD 2 ------------------------->
           <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Rent status indicator</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis type</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Effective date of rent</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Adjusted rent</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
           </td>
-          <td class="govuk-table__cell">49 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108262427305</td>
-          <td class="govuk-table__cell">312.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 June 2016</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
 
-          </td>
-        </tr>
-
-        <!--------- ROW 4 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
+          <!--------------------------- FIRST ROW COLUMN/TD 3 ------------------------->
           <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysed rent £/m2</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total Area: In Terms of Main Space (ITMS)</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Basis of rent</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Property Age</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
           </td>
-          <td class="govuk-table__cell">18 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108712347252</td>
-          <td class="govuk-table__cell">120.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 April 2019</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
 
-          </td>
-        </tr>
-
-        <!--------- ROW 5 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
+          <!--------------------------- FIRST ROW COLUMN/TD 4 ------------------------->
           <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Remarks Y/N</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Assessment Status</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis Remarks</a></li>
+              <li class="govuk-list govuk-!-font-size-16">Dummy data to come...</li>
+            </ul>
+            <ul class="govuk-list">
+              <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Custom sort</a></li>
+              <li class="govuk-list govuk-!-font-size-16">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                    Add sort character
+                  </label>
+                  <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                </div>
+              </li>
+            </ul>
           </td>
-          <td class="govuk-table__cell">53 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108637389875</td>
-          <td class="govuk-table__cell">160.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 September 2019</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
 
-          </td>
-        </tr>
-
-        <!--------- ROW 6 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
-          </td>
-          <td class="govuk-table__cell">25 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">1042526272</td>
-          <td class="govuk-table__cell">281.52</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 April 2017</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
-
-          </td>
-        </tr>
-
-        <!--------- ROW 7 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
-          </td>
-          <td class="govuk-table__cell">27 CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108712349875</td>
-          <td class="govuk-table__cell">200.53</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 September 2016</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
-
-          </td>
-        </tr>
-
-        <!--------- ROW 8 ----------->
-        <tr class="govuk-table__row govuk-table__row--selected">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
-              <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
-                <span class="govuk-visually-hidden">Select Aconcagua</span>
-              </label>
-            </div>
-          </td>
-          <td class="govuk-table__cell"> CROSS STREET MANCHESTER M2 7AQ</td>
-          <td class="govuk-table__cell">108712349875</td>
-          <td class="govuk-table__cell">120.32</td>
-          <td class="govuk-table__cell">A</td>
-          <td class="govuk-table__cell">Useful</td>
-          <td class="govuk-table__cell">R</td>
-          <td class="govuk-table__cell">N</td>
-          <td class="govuk-table__cell">01 April 2017</td>
-          <td class="govuk-table__cell">£29,546</td>
-          <!-- <td class="govuk-table__cell">N</td> -->
-
-          </td>
-        </tr>
       </tbody>
     </table>
   </div>
