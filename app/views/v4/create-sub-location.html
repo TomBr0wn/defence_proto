@@ -26,16 +26,18 @@
           isPageHeading: true,
           classes: "govuk-label--l"
         },
-        hint: {
-          html:
-          "<p>If selecting a specific sublocation code(s) type in exact sublocation code as it appears in CDB. If selecting a wildcard entering the characters a sublocation begins with followed by % will bring through all assessments with that prefix e.g. A% would bring through ABC1, ABC2, ABC3 etc.
-          <br>Multiple wildcard values are not permitted.
-          <br>When specifying a wildcard search the Bulk Class Indicator must also be selected.</p>"
-        },
         classes: "govuk-input--width-20",
         text: data['sub-location'],
         name: "sub-location",
         id: "sub-location"
+      }) }}
+      
+      {{ govukDetails({
+        summaryText: "Help with Sub location",
+        html:
+          "<p>If selecting a specific sublocation code(s) type in exact sublocation code as it appears in CDB. If selecting a wildcard entering the characters a sublocation begins with followed by % will bring through all assessments with that prefix e.g. A% would bring through ABC1, ABC2, ABC3 etc.
+          <br>Multiple wildcard values are not permitted.
+          <br>When specifying a wildcard search the Bulk Class Indicator must also be selected.</p>"
       }) }}
 
       {{ govukButton({
