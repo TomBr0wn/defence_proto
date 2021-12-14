@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+{% if data['case-address'] and data['case-address'] != '' %}
+<a class="govuk-back-link" href="add-case-task-list">Back</a>
+{% else %}
+<a class="govuk-back-link" href="settlement-task-list">Back</a>
+{% endif %}
+
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Generate schedule of rents & reg 17/31</h1>
+    {% if data['case-address'] and data['case-address'] != '' %}
+    <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}
+      <br><span class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-font-weight-bold">Address: {{ data['case-address'] }}</span>
+    </h2>
+    {% else %}
+    <h2 class="govuk-caption-xl govuk-!-margin-bottom-9">{{ data['description'] }}</h2>
+    {% endif %}
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Generate rents schedule",
+        href: "format-rents-reg17",
+        classes: "govuk-button--primary"
+      }) }}
+
+      {{ govukButton({
+        text: "Generate reg 17/31",
+        href: "#",
+        classes: "govuk-button--secondary"
+      }) }}
+      
+      {{ govukButton({
+        text: "Generate reg 17/31 Letter",
+        href: "#",
+        classes: "govuk-button--secondary"
+      }) }}
+
+    </div>
+
+    <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <!------------ TABLE HEADERS ------------>
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header col-one-quarter" scope="col" id="select-all"></th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">&nbsp;</th>
+          <th class="govuk-table__header col-two-quarter" scope="col">
+            <!-- SORT DROPDOWN -->
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                Sort by
+              </label>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="published">Advise sort criteria please</option>
+                <option value="updated" selected>Advise sort criteria please</option>
+                <option value="views">Advise sort criteria please</option>
+                <option value="comments">Advise sort criteria please</option>
+              </select>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+                <!--------------------------------- ROW 1 ------------------------------->
+                <tr class="govuk-table__row govuk-table__row--selected">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="settlement-group-row-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="settlement-group-row-1">
+                        <span class="govuk-visually-hidden">settlement group row 1</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 1 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Address</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">UNIT 2 HILL FARM ORCHARDS, DROXFORD ROAD, SWANMORE, SOUTHAMPTON, SO32 2PY</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">FOR case number</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">9045792212</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total significant area m2</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">62.51</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Useful indicator</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 2 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Rent status indicator</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">2</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis type</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">R</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Effective date of rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">02/03/2014</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Adjusted rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">6020</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 3 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysed rent £/m2</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total Area: In Terms of Main Space (ITMS)</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">52.6</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Basis of rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Property Age</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 4 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Remarks Y/N</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Assessment Status</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">2</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis Remarks</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">Y</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Custom sort</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                            Add sort character
+                          </label>
+                          <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <!--------------------------------- END OF ROW 1 ------------------------------->
+                
+                
+                <!--------------------------------- ROW 2 ------------------------------->
+                <tr class="govuk-table__row govuk-table__row--selected">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="settlement-group-row-1">
+                      <label class="govuk-label govuk-checkboxes__label" for="settlement-group-row-1">
+                        <span class="govuk-visually-hidden">settlement group row 1</span>
+                      </label>
+                    </div>
+                  </td>
+
+                  <!--------------------------- SECOND ROW COLUMN/TD 1 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Address</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">BISHOPS WALTHAM PHARMACY, 9 HIGH STREET, BISHOPS WALTHAM, SOUTHAMPTON, SO32 1AB</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">FOR case number</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">11232529583</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total significant area m2</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">154.95</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Useful indicator</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">3</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- SECOND ROW COLUMN/TD 2 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Rent status indicator</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">1</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis type</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">R</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Effective date of rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">01/04/2018</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Adjusted rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">17194</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 3 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysed rent £/m2</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Total Area: In Terms of Main Space (ITMS)</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">56.89</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Basis of rent</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Property Age</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                  </td>
+
+                  <!--------------------------- FIRST ROW COLUMN/TD 4 ------------------------->
+                  <td class="govuk-table__cell">
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Remarks Y/N</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">###</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Assessment Status</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">2</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Analysis Remarks</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">Y</li>
+                    </ul>
+                    <ul class="govuk-list">
+                      <li class="govuk-list govuk-!-font-size-19 govuk-!-font-weight-bold"><a class="govuk-link govuk-link--no-underline" href="#">Custom sort</a></li>
+                      <li class="govuk-list govuk-!-font-size-16">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-!-font-size-16" for="width-3">
+                            Add sort character
+                          </label>
+                          <input class="govuk-input govuk-input--width-3" id="width-3" name="width-2" type="text">
+                        </div>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <!--------------------------------- END OF ROW 1 ------------------------------->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</div>
+{% endblock %}
