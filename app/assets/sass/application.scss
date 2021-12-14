@@ -19,10 +19,9 @@ $govuk-assets-path: "/govuk/assets/";
 	margin: 0 auto;
 }
 
-#accordion-default{
+#accordion-default {
 	overflow-x: hidden !important; /* Hide horizontal scrollbar */
 }
-
 
 // Custom Table columns
 
@@ -80,8 +79,13 @@ $govuk-assets-path: "/govuk/assets/";
 	width: 8.333%;
 }
 
+
 .col-one-forty-eighth {
 	width: 2.083%;
+}
+
+.col-one-twenty-fifth {
+	width: 4%;
 }
 
 // Grid settings for analyse
@@ -154,39 +158,94 @@ $govuk-assets-path: "/govuk/assets/";
 	color: #003078;
 }
 
-.blackCircle { 
+.blackCircle {
 	width: 8px !important;
 	height: 8px !important;
 	background: #000000;
-	border: 1px solid white; 
-	-moz-border-radius: 70px; 
-	-webkit-border-radius: 70px; 
+	border: 1px solid white;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;
 	border-radius: 70px;
 }
 
-.whiteCircle { 
+.whiteCircle {
 	width: 16px;
 	height: 16px;
 	background: #ffffff;
-	border: 1px solid #000000; 
-	-moz-border-radius: 70px; 
-	-webkit-border-radius: 70px; 
+	border: 1px solid #000000;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;
 	border-radius: 70px;
 }
 
-.set-to-left{
+.set-to-left {
 	display: flex;
 	justify-content: flex-start;
 }
 
-.set-to-right{
+.set-to-right {
 	display: flex;
 	justify-content: flex-end;
 }
 
-
-.float-right{
+.float-right {
 	display: inline;
 	float: right;
 }
 
+// SCROLLABLE TABLE
+
+.scrollableTable {
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.stickyCellOne {	
+	/* Stick to the left */
+	left: 0;
+	position: sticky;
+	
+	/* Background color */
+	background-color: #ffffff;
+	
+	/* Displayed on top of other rows when scrolling */
+	z-index: 2000;
+}
+
+
+.stickyCellTwo {	
+	/* Stick to the left */
+	
+	position: sticky;
+	
+	/* Background color */
+	background-color: #ffffff;
+	
+	/* Displayed on top of other rows when scrolling */
+	z-index: 3000;
+}
+
+
+.stickyCellThree {	
+	/* Stick to the left */
+	left: 8%;
+	position: sticky;
+	
+	/* Background color */
+	background-color: #ffffff;
+	/* Displayed on top of other rows when scrolling */
+	z-index: 4000;
+}
+
+
+.stickyCellFour {	
+	/* Stick to the left */
+	left: 12%;
+	position: sticky;
+	
+	/* Background color */
+	background-color: #ffffff;
+	/* Displayed on top of other rows when scrolling */
+	z-index: 5000;
+}
