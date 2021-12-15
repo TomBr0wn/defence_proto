@@ -84,9 +84,7 @@ $govuk-assets-path: "/govuk/assets/";
 	width: 2.083%;
 }
 
-.col-one-twenty-fifth {
-	width: 4%;
-}
+
 
 // Grid settings for analyse
 
@@ -193,17 +191,37 @@ $govuk-assets-path: "/govuk/assets/";
 	float: right;
 }
 
-// SCROLLABLE TABLE
+//////////////////////////// SCROLLABLE TABLE ///////////////////////////
+
+.col-one-twenty-fifth {
+	width: 4%;
+}
 
 .scrollableTable {
 	display: block;
 	overflow-x: auto;
 	white-space: nowrap;
+	background-color: #ffffff;
 }
+
 
 .stickyCellOne {	
 	/* Stick to the left */
 	left: 0;
+	position: sticky;
+
+	/* Background color */
+	background-color: #ffffff;
+	
+	/* Displayed on top of other rows when scrolling */
+	z-index: 6000;
+}
+
+
+.stickyCellTwo {	
+	/* Stick to the left */
+	left: 36px;
+	// left: calc(8% + 36px);
 	position: sticky;
 	
 	/* Background color */
@@ -214,38 +232,38 @@ $govuk-assets-path: "/govuk/assets/";
 }
 
 
-.stickyCellTwo {	
+.stickyCellThree {	
 	/* Stick to the left */
-	
+	left: calc(18% + 36px);
 	position: sticky;
-	
+	padding-left: 0.5%;
 	/* Background color */
 	background-color: #ffffff;
-	
 	/* Displayed on top of other rows when scrolling */
 	z-index: 3000;
 }
 
 
-.stickyCellThree {	
+.stickyCellFour {	
 	/* Stick to the left */
-	left: 8%;
+	// left: 13%;
+	left: calc(23% + 36px);
 	position: sticky;
-	
+	padding-left: 0.5%;
 	/* Background color */
 	background-color: #ffffff;
 	/* Displayed on top of other rows when scrolling */
 	z-index: 4000;
 }
 
-
-.stickyCellFour {	
+.stickyCellFive {	
 	/* Stick to the left */
-	left: 12%;
+	// left: 16%;
+	left: calc(27% + 36px);
 	position: sticky;
-	
+	padding-left: 0.5%;
 	/* Background color */
 	background-color: #ffffff;
 	/* Displayed on top of other rows when scrolling */
-	z-index: 5000;
+	z-index: 6000;
 }
