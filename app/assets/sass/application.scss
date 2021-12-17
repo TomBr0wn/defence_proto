@@ -278,3 +278,17 @@ $govuk-assets-path: "/govuk/assets/";
 	/* Displayed on top of other rows when scrolling */
 	z-index: 6000;
 }
+
+.stickyCellSix {	
+	/* Stick to the left */
+	// left: 16%;
+	left: calc(31% + 36px);
+	position: sticky;
+	padding-right: 36px;
+	padding-left: 24px;
+	margin-right: 56px;
+	/* Background color */
+	background-color: #ffffff;
+	/* Displayed on top of other rows when scrolling */
+	z-index: 7000;
+}
