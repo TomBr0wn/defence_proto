@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="create-new-case">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="create-new-case-route" method="post" novalidate>
+      
+      {{ govukCheckboxes({
+        idPrefix: "economic-region",
+        name: "economic-region",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Set economic regions",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: " East Midlands (UKF)",
+            text: "East Midlands (UKF)"
+          },
+          {
+            value: " Eastern (UKH)",
+            text: "Eastern (UKH)"
+          },
+          {
+            value: " Inner London (IIL)",
+            text: "Inner London (IIL)"
+          },
+          {
+            value: "North East (UKC)",
+            text: "North East (UKC)"
+          },
+          {
+            value: " North West (UKD)",
+            text: "North West (UKD)"
+          },
+          {
+            value: " Outer London (IOL)",
+            text: "Outer London (IOL)"
+          },
+          {
+            value: " South East (UKJ)",
+            text: "South East (UKJ)"
+          },
+          {
+            value: " South West (UKK)",
+            text: "South West (UKK)"
+          },
+          {
+            value: " Wales (UKL)",
+            text: "Wales (UKL)"
+          },
+          {
+            value: " West Midlands (UKG)",
+            text: "West Midlands (UKG)"
+          },
+          {
+            value: " York's and Humber (UKE)",
+            text: "York's and Humber (UKE)"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

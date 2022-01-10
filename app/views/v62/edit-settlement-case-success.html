@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="#" style="visibility: hidden;">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+        {{ govukPanel({
+        titleText: "Settlement group criteria edited",
+        text: data["description"]
+        }) }}
+        
+        <h3 class="govuk-heading-m">What happens next </h3>
+        <p class="govuk-body">Matching property records from CDB will be retrieved as soon as possible</p>
+        <p class="govuk-body">When the property records have been retrieved the status of your group will change to
+            {{ govukTag({
+                text: "Ready",
+                classes: "govuk-tag--green"
+            }) }}
+        </p>
+    </div>
+</div>
+<p class="govuk-body-m"><a href="defence-home-filled" class="govuk-link">Go to settlement groups</a></p>
+
+{% endblock %}
